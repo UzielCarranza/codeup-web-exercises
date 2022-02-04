@@ -1,4 +1,5 @@
 "use strict";
+
  console.log("hello from external");
  alert("Welcome to my website!")
 
@@ -73,18 +74,19 @@ if ( (buy2Items == "yes" && offerExpired == "no") || userPremium == "yes"){
 let enterUsername = prompt("enter your username");
 
 if (enterUsername.length <= 20){
-    alert("password pass")
+    alert("username pass")
 }
 
-let enterPassword = prompt("enter your new password!")
-enterPassword = enterPassword.trim();
+let enterPassword = prompt("enter your new password!");
+
 if(enterPassword.length <= 4 ){
-   enterPassword = prompt("password must be more then 5 characters")
+   enterPassword = prompt("password must be more then 5 characters");
 }
 if ( enterPassword.includes(enterUsername)){
-    alert("password must not contain username")
+    alert("password must not contain username");
+} else {
+    alert("password meets standards");
 }
-
 
 /*
 
@@ -109,6 +111,140 @@ if (passLength || passIndex || userLength) {
 
 
  //walkthrough
+
+
+//alert("Welcome to my website")
+
+
+//alert( prompt("What is your favorite color") + " " + "is my favorite color too");
+
+
+/*
+let lilMermaid = parseInt(prompt("how long did you rent little mermaid?"));
+
+
+let broBear = parseInt(prompt("how long did you rent bro bear?"));
+
+
+let herc = parseInt(prompt("how long did you rent hercules?"));
+
+alert((lilMermaid + broBear + herc) * 3 )
+
+*/
+
+//console.log(lilMermaid ? lilMermaid * 3 : "you didnt enter a number");
+
+
+
+/*
+
+let googleHours = parseInt(prompt("how many hours did you work at google?")) * 400;
+
+let facebookHours = parseInt(prompt("how many hours did you work at facebook?")) * 350;
+
+
+let amazonHours = parseInt(prompt("how many hours did you work at amazon?")) * 380;
+
+alert("your paycheck is " + (googleHours + facebookHours + amazonHours));
+
+*/
+
+
+/*
+let nameOfCompanu = "google"
+
+let rate = 400;
+while (...) {
+    parseInt(prompt("how many hours did you work  for ${nameOfCompany}?"))
+}
+*/
+
+
+/*
+let hasConflict = confirm("do you have a class at 10:00 am");
+let seatsRemaining = 29;
+
+if ( !hasConflict && seatsRemaining){
+    alert("you are enrolled in theoretical class");
+} else {
+    alert("sorry you cannot enroll in this class")
+}
+
+
+*/
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
