@@ -29,7 +29,6 @@ console.log(helloMessage);
  * console.
  */
 let myName = "Carranza";
-sayHello(myName);
 console.log(sayHello(myName));
 
 
@@ -93,8 +92,8 @@ function calculateTip(tip, total){
  * then display the dollar amount they should tip
  */
 
-let askForTotal = prompt("What is your total amount?");
-let tipPercentaje = prompt("How much percentage would you like to tip?")
+let askForTotal = prompt("What is your total amount to pay?");
+let tipPercentaje = prompt("How much percentage do you want to tip")
 
 var totalTip = calculateTip(askForTotal,tipPercentaje);
 console.log(totalTip);
@@ -136,52 +135,86 @@ alert("Your new price is: " + newPrice2);
 
 
 
-
-
-
 /*
-*
-*
-* Functions notes js 1
-*
-*
-*
-* */
+// second try
+function getDiscount(){
+    let userDiscount = parseFloat(prompt("Please enter your discount here!"))
+    if(userDiscount){
 
-
-
-
-
-tryGetRideShare(15, true, getFundsAvailable());
-
-
-function getFundsAvailable(){
-    let moneyInAccount =parseFloat(prompt("how mush is in the account"))
-    let creditsInAccount = parseFloat(prompt("how much is in the account"))
-
-    return moneyInAccount + creditsInAccount;
-    // can use only return to scape
-
+        console.log("this is your discount" + userDiscount)
+        return userDiscount;
+    } return alert("You must enter a number")
 }
 
+let userResponseDiscount = getDiscount();
 
-
-function tryGetRideShare(costOfRide, driverAvailable, totalFundsAvailable){
- /*
-    let numOfRiders;
-    if(confirm("are you splitting this ride with someone else")){
-        numOfRiders = prompt("how many riders do you have")
-    }
-    if (numOfRiders){
-
-    }
+console.log(userResponseDiscount);
 */
-    if(driverAvailable && totalFundsAvailable >= costOfRide){
-        console.log("driver is on the way");
-    } else {
-        console.log("driver is not available at this time");
-    }
+
+
+//walkthrough
+
+
+//1st
+
+function add(num1, num2){
+    return num1 + num2;
 }
+
+console.log(add(19, 2))
+
+//
+
+let add2 = function(num1, num2){
+    return num1 + num2;
+}
+
+
+console.log(add2(19, 2))
+
+let add3 = (num1, num2) => {
+    return num1 + num2;
+}
+console.log(add3);
+
+//3
+
+
+
+
+//IFFE
+
+
+(function (){
+    function add(num1, num2){
+        return num1 + num2;
+    }
+})()
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
