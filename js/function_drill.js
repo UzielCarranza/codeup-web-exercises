@@ -3,42 +3,6 @@
 
 Functions using conditionals but not loops or arrays:
 
-## Even More Function Bonuses
-
-1. Create a function that will return how many whitespace characters are at the
-   beginning and end of a string.
-
-1. Create a function that takes in two string inputs.
-
-    - If the second string input is present in the first, return the first input
-      string with the second input string removed from it.
-    - If the second string input is present multiple times in the first, the
-      second string will only be removed where it first occurs in the first
-      string.
-    - If the second string input is not present in the first, return the first
-      string as entered in the function.
-
-1. Create a function that takes in a string and returns true if the last letter
-   is an "a" (otherwise, return false).
-
-1. EXTRA CHALLENGE: create a function that will return how many whitespace
-   characters are at the beginning of a string (hint: use regex).
-
-1. Create a function `returnTrueMessage()` that returns the string "Hey, it's true!"
-
-    - Create a function `returnFalseMessage()` that returns the string "Hey, it's false!"
-    - Create a function `returnMessage()` that takes in a function and returns the call to the function
-    - Experiement passing in different functions.
-
-1. Create a function, `willLoginUser()` that takes in a username string,
-   password string, user age, a boolean indicating if they are an admin.
-
-   The function will return true if the username is not the same as the
-   password and the user is at least 18 years old. If the user is an admin,
-   they do not have to be a certain age but the password must still not match
-   the username.
-*/
-
 /*
 Functions using conditionals but not loops or arrays:
 
@@ -123,7 +87,7 @@ function isFalse(boolean){
 }
 
 function isTruthy(input){
-    if(Boolean(input) == true){
+    if(Boolean(input)){
         return "truthy";
     } return "falsy";
 }
@@ -171,7 +135,7 @@ function isLowerCase(letter){
  */
 
 function hasLowerCase(string){
-    return str.toUpperCase() != str;
+    return string.toUpperCase() != string;
 }
 
 function isSpace(letter){
@@ -310,7 +274,7 @@ function trim(string){
 }
 
 function areEqual(input1, input2){
-    if(input1 == inout2){
+    if(input1 == input2){
         return "they are equal in value";
     } else {
         return "they are not!! equal in value";
@@ -634,3 +598,101 @@ are the two numbers to run that function on.
 function doMath(operator, a, b){
     //operator caannot be used as a parameter
 }
+
+//## Even More Function Bonuses
+
+/*
+1. Create a function that will return how many whitespace characters are at the
+beginning and end of a string.
+*/
+
+
+function countWhiteSpaces(str){
+
+        let spacesAtStart = str.length - str.trimStart().length;
+
+        let spacesAtRight = str.length - str.trimEnd().length;
+        let totalCount = spacesAtStart + spacesAtRight;
+        return totalCount;
+}
+
+
+/*
+1. Create a function that takes in two string inputs.
+
+- If the second string input is present in the first, return the first input
+string with the second input string removed from it.
+- If the second string input is present multiple times in the first, the
+second string will only be removed where it first occurs in the first
+string.
+- If the second string input is not present in the first, return the first
+string as entered in the function.
+ */
+
+function strings(str1, str2) {
+    return str1;
+}
+
+
+/*
+1. Create a function that takes in a string and returns true if the last letter
+is an "a" (otherwise, return false).
+ */
+
+function lastElementA(input) {
+        return input.charAt(input.length - 1);
+}
+
+/*
+    1. EXTRA CHALLENGE: create a function that will return how many whitespace
+    characters are at the beginning of a string (hint: use regex).
+*/
+
+function beginningSpaces(input){
+ return input.search(/\S|$/);
+}
+    /*
+    1. Create a function `returnTrueMessage()` that returns the string "Hey, it's true!"
+    - Create a function `returnFalseMessage()` that returns the string "Hey, it's false!"
+    - Create a function `returnMessage()` that takes in a function and returns the call to the function
+    - Experiement passing in different functions.
+     */
+
+function returnTrueMessage(){
+    return "Hey, it's true!"
+}
+
+function returnFalseMessage(){
+    return "Hey, it's false!"
+}
+function returnMessage(){
+    return returnTrueMessage();
+}
+
+/*
+1. Create a function, `willLoginUser()` that takes in a username string,
+   password string, user age, a boolean indicating if they are an admin.
+
+   The function will return true if the username is not the same as the
+   password and the user is at least 18 years old. If the user is an admin,
+   they do not have to be a certain age but the password must still not match
+   the username.
+*/
+
+function willLoginUser(userName, password, age,admin){
+    //return true if username !== password
+    // && user >= 18
+
+    //if admin true no age limit
+    //but uernsame !== password
+    if((admin) && (password !== userName)){
+        return "welcome admin"
+    } else if ((!admin) && (password !== userName) && (age >= 18)){
+        return "welcome!";
+    } else if  ((!admin) && (password !== userName) && (age < 18)){
+        return "must be older then 18";
+    } else {
+        return " password must not match username";
+    }
+}
+
