@@ -58,7 +58,7 @@ Be sure to log to the user if they can or cannot get a rideshare
 //walkthrough
 
 
-
+/*
 function getToDestination(age, isInsured, hasCar,){
     if (age > 16 && isInsured && hasCar){
         console.log("you can use your own vehicle")
@@ -70,8 +70,24 @@ function getToDestination(age, isInsured, hasCar,){
         console.log("better call a friend, sorry")
     }
 }
+ */
 
-getToDestination(17, false, true, true)
+function getToDestination(age, isInsured, hasCar,hasMoney, driversNearby){
+    if (age > 16 && isInsured && hasCar){
+        console.log("you can use your own vehicle")
+    } else if (canGetRideShare(driversNearby,hasMoney)){
+        //alternative
+        //else if (canGetRideShare)
+        console.log("you can get a rideshare")
+    } else {
+        console.log("better call a friend, sorry")
+    }
+}
+
+
+
+
+getToDestination(17, false, true, true, true, )
 
 
 
@@ -85,11 +101,58 @@ function canGetRideShare(hasDriversNearby, hasEnoughMoney){
     //retunr !!(hasDriversNearby, hasEnoughMoney)
 }
 
+//2nd exercise
+function checkWeather(todaysWeather){
+    if (todaysWeather === "snowing"){
+        console.log("please stay inside")
+    } else if (todaysWeather === "raining"){
+        console.log("grab an umbrella")
+    } else if (todaysWeather === "hailing"){
+        console.log("recover your car")
+    } else {
+        console.log("go play outside")
+    }
+}
+
+checkWeather("raining");
+
+//switch statement
+
+
+checkWeather("raining");
+
+function checkWeatherBreak(todaysWeather){
+    switch(todaysWeather){
+        case "snowing":
+            console.log("please stay inside");
+            break;
+        case "raining":
+            console.log("grab umbrella");
+            break;
+        case "hailing":
+            console.log("cover your car");
+            break;
+        default:
+            console.log("go play outside");
+            break;
+    }
+}
+
+
+checkWeatherBreak("raining");
+
+
+
+
+
+
+
+
+
+
+
 /*
-
-//extra project to work on it
-
-
+//extra project to work on it... make it better
 
 //declare values
 let ageUser = 16
@@ -98,7 +161,7 @@ let hasCar = true;
 
 
 //define whether or not to take a rideShare
-function getToDestination(riderAge, isInsured, hasCar, canGetRideShare){
+function getToDestination(riderAge, isInsured, hasCar){
     if(riderAge >= 16 && (isInsured == false) && (hasCar == false || hasCar == true)
         && canGetRideshare(driverAva== true && hasMoney == true)){
         console.log("better to get a ride share!");
