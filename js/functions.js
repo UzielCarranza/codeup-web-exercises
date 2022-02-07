@@ -8,9 +8,11 @@
  * > sayHello("codeup") // returns "Hello, codeup!"
  */
 function sayHello(name){
-    let message = "Hello" + " " + name;
+    let message = "Hello" + " " + name + "!";
     return message;
 }
+
+
 
 /**
  * TODO:
@@ -79,9 +81,9 @@ console.log(isTwo(random));
  * > calculateTip(0.15, 33.42) // returns 5.013
  */
 
-function calculateTip(tip, total){
-    let tipTotal = (tip / 100) * total;
-    return tipTotal;
+function calculateTip(tipPercentaje, totalBill){
+    var tipAmount = tipPercentaje * totalBill;
+    return totalBill + tipAmount;
 }
 
 
@@ -115,13 +117,13 @@ alert("You should tip: $" + totalTip);
  */
 
 
-
 function applyDiscount(originalPrice, discountPercent){
-    let discount = (discountPercent / 100) * originalPrice ;
+    let discount = discountPercent * originalPrice ;
     let newTotal =  originalPrice - discount;
     return newTotal;
 }
-let newPrice = applyDiscount(100, 10);
+
+let newPrice = applyDiscount(45.99, 0.12);
 console.log(newPrice);
 
 
@@ -130,9 +132,6 @@ let getDiscount = prompt("Please enter your discount percentaje");
 let newPrice2 = applyDiscount(getOriginalPrice, getDiscount);
 console.log(newPrice2);
 alert("Your new price is: " + newPrice2);
-
-
-
 
 
 /*
@@ -180,16 +179,6 @@ console.log(add3);
 //3
 
 
-
-
-//IFFE
-
-
-(function (){
-    function add(num1, num2){
-        return num1 + num2;
-    }
-})()
 
 
 

@@ -250,6 +250,8 @@ function degreesToRadians(number){
 function radiansToDegrees(number){
 
 }
+
+
 function isBlank(input){
         if(input.indexOf(' ') >= 0){
             return "it does!"
