@@ -193,7 +193,7 @@ alert( userGetsDiscounted);
  * Can you refactor your code to use functions?
  * HINT: The way we prompt for a value could be improved
  */
-
+/*
 let userConfirms = confirm(" do you want to enter a number?")
 if (userConfirms){
     let askUserForNumber = parseInt(prompt("enter your number"));
@@ -214,5 +214,31 @@ if (userConfirms){
         alert(askUserForNumber + " is negative")
     }
 }
+ */
 
+
+function tellingNumbers(number){
+
+    if (number){
+        let sumOf100 = number + 100;
+        while (!number){
+            alert("please enter a valid number");
+            number = parseInt(prompt("enter your number"));
+            sumOf100 = number + 100;
+        }
+        if (number % 2 === 0){
+            alert(number + " is is even and adding 100 is " + sumOf100)
+        } else {
+            (number % 2 === 1)
+            alert("your number is odd and adding 100 is " + sumOf100)
+        } if (number > 0){
+            alert(number + " is positive")
+        } else {
+            alert(number + " is negative")
+        }
+    }
+}
+
+let ask = prompt("enter a number")
+console.log(tellingNumbers(ask))
 
