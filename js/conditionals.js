@@ -21,15 +21,6 @@
  * Test your function by passing various string literals to it and
  * console.logging the function's return value
  */
-// Don't change the next two lines!
-// These lines create two variables for you:
-// - `colors`: a list of the colors of the rainbow
-// - `randomColor`: contains a single random color value from the list (this
-//                  will contain a different color every time the page loads)
-var colors = ['red', 'orange', 'yellow', 'green', 'blue', 'indigo', 'violet'];
-var randomColor = colors[Math.floor(Math.random() * colors.length)];
-
-
 function analyzeColor(color){
     if (color === "blue"){
         return color + " as the sky";
@@ -49,12 +40,25 @@ function analyzeColor(color){
         return "i don't know this color...";
     }
 }
+
+
+
+// Don't change the next two lines!
+// These lines create two variables for you:
+// - `colors`: a list of the colors of the rainbow
+// - `randomColor`: contains a single random color value from the list (this
+//                  will contain a different color every time the page loads)
+var colors = ['red', 'orange', 'yellow', 'green', 'blue', 'indigo', 'violet'];
+var randomColor = colors[Math.floor(Math.random() * colors.length)];
+
 /**
  * TODO:
  * Pass the `randomColor` variable to your 'analyzeColor' function and console.log the results.
  * You should see a different message every time you refresh the page
  */
 
+
+console.log(randomColor);
 console.log(analyzeColor(randomColor))
 
 /**
@@ -131,13 +135,13 @@ alert(analyzeColor(userAnswer));
 function calculateTotal(luckyNumber, totalAmount){
     let discount;
     if (luckyNumber == 0){
-        return "sorry, youu didn't get a discount";
+        return "sorry, you didn't get a discount";
     } else if (luckyNumber == 1){
         discount = (totalAmount * 10) / 100
         return "your new total is: $" + (totalAmount - discount) + "." + " You received a dscount of 10%";
     } else if (luckyNumber == 2){
         discount = (totalAmount * 25) / 100
-        return "your new total is: $" + (totalAmount - discount) + "." + " You got a discount for 25%";
+        return "your new total is: $" + (totalAmount - discount) + "." + " You got a discount of 25%";
     } else if (luckyNumber == 3){
         discount = (totalAmount * 35) / 100
         return "your new total is: $" + (totalAmount - discount) + "." + " You received a discount of 35%";
@@ -169,8 +173,10 @@ function calculateTotal(luckyNumber, totalAmount){
 
 //Generate a random number between 0 and 6
 var luckyNumber = Math.floor(Math.random() * 6);
+
 let usertotalBill = parseInt(prompt("what is your total bill?"))
 alert("your lucky number was" + " " + luckyNumber)
+
 let userGetsDiscounted = calculateTotal(luckyNumber, usertotalBill);
 alert( userGetsDiscounted);
 
@@ -193,7 +199,9 @@ alert( userGetsDiscounted);
  * Can you refactor your code to use functions?
  * HINT: The way we prompt for a value could be improved
  */
-/*
+
+//exercise completed
+
 let userConfirms = confirm(" do you want to enter a number?")
 if (userConfirms){
     let askUserForNumber = parseInt(prompt("enter your number"));
@@ -214,20 +222,42 @@ if (userConfirms){
         alert(askUserForNumber + " is negative")
     }
 }
- */
 
 
+//needs to be a function
+let ask = parseInt(prompt("enter a number"))
+while(!ask){
+    alert("entee a valid number")
+    ask = parseInt(prompt("enter your number"));
+}
+
+//working to on a function to validate number
+
+// function isNum(){
+//     let userInput = prompt("enter a numberrrr");
+//     if (userInput != null){
+//         return tellingNumbers();
+//     } else {
+//         alert("only numbers are allowed");
+//         isNum();
+//     }
+// }
+// isNum();
+
+
+//turn the answer into a function
 function tellingNumbers(number){
 
     if (number){
         let sumOf100 = number + 100;
-        while (!number){
-            alert("please enter a valid number");
-            number = parseInt(prompt("enter your number"));
-            sumOf100 = number + 100;
-        }
+        //does not validate if a number or not
+        // while (!number){
+        //     alert("please enter a valid number");
+        //     number = parseInt(prompt("enter your number"));
+        //     sumOf100 = number + 100;
+        // }
         if (number % 2 === 0){
-            alert(number + " is is even and adding 100 is " + sumOf100)
+            alert(number + " is is even and adding 100 is " + " " + sumOf100)
         } else {
             (number % 2 === 1)
             alert("your number is odd and adding 100 is " + sumOf100)
@@ -239,6 +269,5 @@ function tellingNumbers(number){
     }
 }
 
-let ask = prompt("enter a number")
 console.log(tellingNumbers(ask))
 
