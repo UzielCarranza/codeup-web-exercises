@@ -201,35 +201,43 @@ alert( userGetsDiscounted);
  */
 
 //exercise completed
-
-let userConfirms = confirm(" do you want to enter a number?")
-if (userConfirms){
-    let askUserForNumber = parseInt(prompt("enter your number"));
-    let sumOf100 = askUserForNumber + 100;
-    while (!askUserForNumber){
-        alert("please enter a valid number");
-        askUserForNumber = parseInt(prompt("enter your number"));
-        sumOf100 = askUserForNumber + 100;
-    }
-    if (askUserForNumber % 2 === 0){
-        alert(askUserForNumber + " is is even and adding 100 is " + sumOf100)
-    } else {
-        (askUserForNumber % 2 === 1)
-        alert("your number is odd and adding 100 is " + sumOf100)
-    } if (askUserForNumber > 0){
-        alert(askUserForNumber + " is positive")
-    } else {
-        alert(askUserForNumber + " is negative")
+function firstFunc() {
+    let userConfirms = confirm(" do you want to enter a number?")
+    if (userConfirms) {
+        let askUserForNumber = parseInt(prompt("enter your number"));
+        let sumOf100 = askUserForNumber + 100;
+        while (!askUserForNumber) {
+            alert("please enter a valid number");
+            askUserForNumber = parseInt(prompt("enter your number"));
+            sumOf100 = askUserForNumber + 100;
+        }
+        if (askUserForNumber % 2 === 0) {
+            alert(askUserForNumber + " is is even and adding 100 is " + sumOf100)
+        } else {
+            (askUserForNumber % 2 === 1)
+            alert("your number is odd and adding 100 is " + sumOf100)
+        }
+        if (askUserForNumber > 0) {
+            alert(askUserForNumber + " is positive")
+        } else {
+            alert(askUserForNumber + " is negative")
+        }
     }
 }
 
+console.log(firstFunc())
 
+
+
+//mistake, will restructure
 //needs to be a function
-let ask = parseInt(prompt("enter a number"))
-while(!ask){
-    alert("entee a valid number")
-    ask = parseInt(prompt("enter your number"));
-}
+// function isNum() {
+//     let ask = parseInt(prompt("enter a number"))
+//     while (!ask) {
+//         alert("entee a valid number")
+//         ask = parseInt(prompt("enter your number"));
+//     }
+// }
 
 //working to on a function to validate number
 
@@ -246,28 +254,22 @@ while(!ask){
 
 
 //turn the answer into a function
-function tellingNumbers(number){
-
-    if (number){
-        let sumOf100 = number + 100;
-        //does not validate if a number or not
-        // while (!number){
-        //     alert("please enter a valid number");
-        //     number = parseInt(prompt("enter your number"));
-        //     sumOf100 = number + 100;
-        // }
-        if (number % 2 === 0){
-            alert(number + " is is even and adding 100 is " + " " + sumOf100)
-        } else {
-            (number % 2 === 1)
-            alert("your number is odd and adding 100 is " + sumOf100)
-        } if (number > 0){
-            alert(number + " is positive")
-        } else {
-            alert(number + " is negative")
-        }
-    }
-}
-
-console.log(tellingNumbers(ask))
+// function tellingNumbers(number){
+//
+//     if (number){
+//         let sumOf100 = number + 100;
+//         if (number % 2 === 0){
+//             alert(number + " is is even and adding 100 is " + " " + sumOf100)
+//         } else {
+//             (number % 2 === 1)
+//             alert("your number is odd and adding 100 is " + sumOf100)
+//         } if (number > 0){
+//             alert(number + " is positive")
+//         } else {
+//             alert(number + " is negative")
+//         }
+//     }
+// }
+//
+// console.log(tellingNumbers(ask))
 
