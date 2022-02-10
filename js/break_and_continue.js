@@ -10,12 +10,12 @@ function oddNumber() {
         }
     } while (userInput % 2 === 0 || isNaN(userInput))
 
-    for (let i = 1; i <= counting;i+= 2) {
+    for (let i = 1; i <= counting; i+= 2  ) {
         if (userInput === i){
             console.log("we don't want this number!!! " + userInput)
             continue;
         }
-        console.log(i)
+        console.log("here is an odd number " + i)
     }
 }
 
