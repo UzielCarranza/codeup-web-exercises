@@ -17,3 +17,21 @@ for (let i = 0; i <= limitNumber; i++){
 // TODO: loop through numbers 1 - 40. Print "marco" if it's divisible by 3. Print "polo" if it's divisible by 5.
 //  -> If it's neither print "I'm not playing"
 //  -> Print "marco polo" if it's divisible by 3 and 5.
+
+let limitNumber2 = 40;
+let showMarco = 0;
+let polo = 0;
+let marcoPolo = 0;
+for (let i = 0; i <= limitNumber2; i++){
+    if (i % 3 === 0){
+        showMarco = i;
+        console.log(showMarco + "Marco")
+    } else if (i % 5 === 0){
+        polo = i;
+        console.log(polo + "polo")
+    }
+    if ( i % 3 == 0 && i % 5 === 0){
+        marcoPolo = i;
+        console.log(marcoPolo + "Marco Polo");
+    }
+}
