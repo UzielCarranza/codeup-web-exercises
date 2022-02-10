@@ -14,7 +14,6 @@ while(incrementor <= 32768){
 var allConesForToday = Math.floor(Math.random() * 50) + 50;
 
 do {
-// This expression will generate a random number between 1 and 5
     console.log("there are " + allConesForToday + " remaining")
    let takingCones =  Math.floor(Math.random() * 5) + 1;
     console.log(takingCones + " sold for today")
