@@ -9,7 +9,7 @@
      * 'names'.
      */
 
-var names = ['Uziel', 'Imer', 'Maria', 'Miguel'];
+    var names = ['Uziel', 'Imer', 'Maria', 'Miguel'];
 
     /**
      * TODO:
@@ -17,17 +17,28 @@ var names = ['Uziel', 'Imer', 'Maria', 'Miguel'];
      * array.
      */
 
+    console.log(names.length);
+
     /**
      * TODO:
      * Create log statements that will print each of the names individually by
      * accessing each element's index.
      */
+    console.log(names[0], names[1], names[2], names[3]);
 
     /**
      * TODO:
      * Write some code that uses a for loop to log every item in the names
      * array.
      */
+    function accessItem(){
+        let items;
+        for (let i = 0; i < names.length; i++){
+            items = names[i];
+            console.log(items);
+        }
+    }
+    accessItem();
 
     /**
      * TODO:
