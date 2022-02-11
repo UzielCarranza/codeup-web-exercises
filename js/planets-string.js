@@ -29,6 +29,8 @@
     console.log(str);
     //this might become helpful when working with HTML to separate brean lines
 
-    // let listPlanets = "Mercury<br>Venus<br>Earth<br>Mars<br>"
+    let listPlanets = '<ul> <li>' + "one|two"+ '</li> </ul>'
+
+    console.log(listPlanets);
 
 })();
