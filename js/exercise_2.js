@@ -45,3 +45,5 @@ function areIdentical(input1, input2){
 }
 
 console.log(areIdentical(color1, color2));
+
+

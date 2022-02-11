@@ -8,7 +8,7 @@
      * 'names'.
      */
 
-    var names = ['Uziel', 'Imer', 'Maria', 'Miguel'];
+    let names = ['Uziel', 'Imer', 'Maria', 'Miguel'];
 
     /**
      * TODO:
@@ -81,6 +81,8 @@
         return arr[arr.length -1]
     }
     console.log(last(names));
+
+
 
 
 })();
