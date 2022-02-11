@@ -44,6 +44,9 @@
      * TODO:
      * Refactor your above code to use a `forEach` loop
      */
+    names.forEach(function(name){
+        console.log("here are the names: " + name )
+    })
 
     /**
      * TODO:
