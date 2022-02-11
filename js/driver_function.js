@@ -17,14 +17,29 @@ function userLocationRandom() {
     var arv  = ['Dallas', 'Irving', 'Plano', 'Duncanville', 'Richardson']
     var randArv = arv[Math.round(Math.random()*(arv.length-1))];
 
+    let userLoc = confirm("This is your starting point: " + randArv)
+    console.log(userLoc + " user confirms location");
+
+}
+userLocationRandom();
+console.log("user is going to  " + arriveUserLocation());
+
+// get user destination
+
+function arriveUserLocation() {
+    var arv  = ['Dallas', 'Irving', 'Plano', 'Duncanville', 'Richardson']
+    var randArv = arv[Math.round(Math.random()*(arv.length-1))];
+    alert("and you are going to: " + randArv )
     return randArv;
+
 }
 
-console.log("you are at" + userLocationRandom());
 
 
+alert("getting you a ride right now...")
+// get driver location
 
-//get driver location
+
  let driverLocation = function DriverRandom() {
     var arv  = ['Dallas', 'Irving', 'Plano', 'Duncanville', 'Richardson']
     var randArv = arv[Math.round(Math.random()*(arv.length-1))];
@@ -32,68 +47,94 @@ console.log("you are at" + userLocationRandom());
     return randArv;
 }
 
+// user confirms drivers location
+let userConfirmation = confirm( "A driver is available in the following location: " + " " + driverLocation() + ". do you want to continue?")
+console.log("user confirms ride " + userConfirmation);
 
-//get user destination
-function arriveUserLocation() {
-    var arv  = ['Dallas', 'Irving', 'Plano', 'Duncanville', 'Richardson']
-    var randArv = arv[Math.round(Math.random()*(arv.length-1))];
-     alert("you are going to " + randArv )
-    return randArv;
+
+
+// estimate costs
+function tripCost() {
+    var tripCost = Math.floor(Math.random() * 500) + 100;
+    //confirm("your total payment is $" + tripCost + ".00 Do you want to continue?")
+    console.log("user confirms rate")
+    return tripCost;
+    console.log(tripCost)
 }
-
-console.log("you are going to" + arriveUserLocation());
-
-
-
-//user confirms drivers location
-let userConfirmation = confirm( "A driver is available in" + " " + driverLocation() + "do you want to continue?")
-console.log(userConfirmation);
-
-
-//ask for funds
-let userFunds = function getFundsAvailable(){
-    let moneyInAccount = parseFloat(prompt("How much is in your account"));
-    let creditsInAccount = parseFloat(prompt("How much credit available is in your account"));
-
-    return  moneyInAccount + creditsInAccount;
-}
-console.log(userFunds())
+//
+// console.log(tripCost())
+// //ask for funds
+//
+// let userFunds = function getFundsAvailable(){
+//     let moneyInAccount = parseFloat(prompt("Enter available fund in your account"));
+//     let creditsInAccount = parseFloat(prompt("How much credit available is in your account"));
+//
+//     return  moneyInAccount + creditsInAccount;
+// }
+// console.log(userFunds());
 
 
-let tripCost = Math.floor(Math.random() * 100);
-confirm("your total payment is of " + tripCost + " do you want to continue?")
 
-
-function tryGetRideshare(tripCost, driverLocation, userFunds,){
+function tryGetRideshare(){
 
 //     // TODO: This is some starter code for splitting the rideshare cost
      let numOfRiders;
 
      if(confirm("Are you splitting this ride with someone else?")){
-         numOfRiders = prompt("How many additional riders do you have?");
+         numOfRiders = parseInt(prompt("How many additional riders do you have?"));
+
      }
-    if(numOfRiders > 4){
+    while(numOfRiders > 4){
         alert("only 4 people are allowed in the vehicle!")
+        numOfRiders = parseInt(prompt("How many additional riders do you have?"));
     }
      if (numOfRiders <= 4){
-      // split the cost and 'message' (fake it up) the other rider
-         prompt("your fare will be splitted between " + numOfRiders)
+         confirm("your fare will be splitted between " + numOfRiders)
      }
 
-     //solved
-     let ridersSplitShare = (numOfRiders / 100) * tripCost;
+     //estimate total after confirming splitting the payment
+     var ridersSplitShare = (tripCost() / numOfRiders);
+     confirm("your new total that you have to pay is: " + ridersSplitShare )
 
-    // function calculatePercentaje(ridersSplitShare, tripCost){
-    //     let total = (numOfRiders / 100) * tripCost;
-    //     return total;
-    // }
 
-    if (driverLocation && userFunds >= calculatePercentaje){
-        console.log("Your ride is on the way");
-    }else{
-        console.log("No drivers are available at this time...");
+     //ask for funds
+
+    function getFundsAvailable(){
+
+         let moneyInAccount = 0
+        console.log(ridersSplitShare)
+        let creditsInAccount = parseFloat(prompt("enter available credits in your account"));
+        while(isNaN(creditsInAccount)){
+            creditsInAccount = parseFloat(prompt("enter available credits in your account"));
+        }
+        ridersSplitShare = ridersSplitShare - creditsInAccount;
+        if (ridersSplitShare <= creditsInAccount ){
+            confirm("you are all done and your driver is on the way!!!")
+        }
+        if (creditsInAccount < ridersSplitShare){
+             moneyInAccount = confirm("you will need to pay the remaining balance of $" + ridersSplitShare + ".00 With funds in your account");
+        }
+        if (moneyInAccount){
+            moneyInAccount = parseFloat(prompt("please pay the remaining balance of $" + ridersSplitShare + ".00 With funds in your account"));
+        }
+        if (ridersSplitShare = 0){
+            alert("your ride is on the way!!!")
+        } else {
+            alert("sorry, you don't have enough money")
+        }
     }
+    console.log(getFundsAvailable());
+
+
+
+    // if (driverLocation && userFunds >= calculatePercentaje){
+    //     console.log("Your ride is on the way");
+    // }else{
+    //     console.log("No drivers are available at this time...");
+    // }
 }
 
+console.log(tryGetRideshare())
 
-console.log(tryGetRideshare(tripCost, driverLocation, userFunds))
+//
+// console.log(tryGetRideshare(tripCost, driverLocation, getFundsAvailable()))
