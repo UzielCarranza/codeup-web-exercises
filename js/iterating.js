@@ -9,7 +9,7 @@
      * 'names'.
      */
 
-
+var names = ['Uziel', 'Imer', 'Maria', 'Miguel'];
 
     /**
      * TODO:
