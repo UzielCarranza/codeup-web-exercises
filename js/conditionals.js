@@ -37,7 +37,7 @@ function analyzeColor(color){
     } else if (color === "violet"){
         return color + " as something else...";
     }  else {
-        return "i don't know this color...";
+        return "i don't know the color: " + userAnswer;
     }
 }
 
@@ -89,13 +89,10 @@ function analyzeColor(color){
             return color + " as something";
             break;
         default:
-            return + "... i don't know this color...";
+            return "... i don't know this color: " + userAnswer;
             break;
     }
 }
-
-console.log(analyzeColor(randomColor));
-
 
 
 /**
@@ -155,6 +152,8 @@ function calculateTotal(luckyNumber, totalAmount){
         return false;
     }
 }
+
+
     console.log(calculateTotal(3, 100))
 
 
@@ -171,14 +170,31 @@ function calculateTotal(luckyNumber, totalAmount){
  */
 
 
+//this is without a FUNCTION
 //Generate a random number between 0 and 6
-var luckyNumber = Math.floor(Math.random() * 6);
+    // var luckyNumber = Math.floor(Math.random() * 6);
+    // let usertotalBill = parseInt(prompt("what is your total bill?"))
+    // while (isNaN(usertotalBill)) {
+    //     usertotalBill = parseInt(prompt("please entere a numerical value"))
+    // }
+    // alert("your lucky number was" + " " + luckyNumber)
+    //
+    // let userGetsDiscounted = calculateTotal(luckyNumber, usertotalBill);
+    // alert(userGetsDiscounted);
 
-let usertotalBill = parseInt(prompt("what is your total bill?"))
-alert("your lucky number was" + " " + luckyNumber)
+//added FUNCTION
+function askUser() {
+    var luckyNumber = Math.floor(Math.random() * 6);
+    let usertotalBill = parseInt(prompt("what is your total bill?"))
+    while (isNaN(usertotalBill)) {
+        usertotalBill = parseInt(prompt("please enter a numerical value"))
+    }
+    alert( luckyNumber + " was your lucky number")
 
-let userGetsDiscounted = calculateTotal(luckyNumber, usertotalBill);
-alert( userGetsDiscounted);
+    let userGetsDiscounted = calculateTotal(luckyNumber, usertotalBill);
+    alert(userGetsDiscounted);
+}
+askUser();
 
 
 /**
@@ -226,50 +242,4 @@ function firstFunc() {
 }
 
 console.log(firstFunc())
-
-
-
-//mistake, will restructure
-//needs to be a function
-// function isNum() {
-//     let ask = parseInt(prompt("enter a number"))
-//     while (!ask) {
-//         alert("entee a valid number")
-//         ask = parseInt(prompt("enter your number"));
-//     }
-// }
-
-//working to on a function to validate number
-
-// function isNum(){
-//     let userInput = prompt("enter a numberrrr");
-//     if (userInput != null){
-//         return tellingNumbers();
-//     } else {
-//         alert("only numbers are allowed");
-//         isNum();
-//     }
-// }
-// isNum();
-
-
-//turn the answer into a function
-// function tellingNumbers(number){
-//
-//     if (number){
-//         let sumOf100 = number + 100;
-//         if (number % 2 === 0){
-//             alert(number + " is is even and adding 100 is " + " " + sumOf100)
-//         } else {
-//             (number % 2 === 1)
-//             alert("your number is odd and adding 100 is " + sumOf100)
-//         } if (number > 0){
-//             alert(number + " is positive")
-//         } else {
-//             alert(number + " is negative")
-//         }
-//     }
-// }
-//
-// console.log(tellingNumbers(ask))
 
