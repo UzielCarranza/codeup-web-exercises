@@ -1,4 +1,3 @@
-"use strict";
 
 (function(){
     "use strict";
@@ -61,5 +60,27 @@
      *  > second([1, 2, 3, 4, 5]) // returns 2
      *  > last([1, 2, 3, 4, 5]) // return 5
      */
+
+    //first element form array
+    function first(arr){
+        return arr[0];
+    }
+
+    console.log(first(names));
+
+
+    //second element from array
+    function second(arr){
+        return  arr[1];
+    }
+    console.log(second(names));
+
+
+    //last element
+    function last(arr){
+        return arr.pop(-1)
+    }
+    console.log(last(names));
+
 
 })();
