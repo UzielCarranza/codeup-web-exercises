@@ -115,7 +115,7 @@ function tryGetRideshare(){
              moneyInAccount = confirm("you will need to pay the remaining balance of $" + ridersSplitShare + ".00 With funds in your account");
         }
         if (moneyInAccount){
-            moneyInAccount = parseFloat(prompt("please pay the remaining balance of $" + ridersSplitShare + ".00 With funds in your account"));
+            moneyInAccount = parseFloat(prompt("please pay the remaining balance of $" + ridersSplitShare + " With funds in your account"));
         }
         if (ridersSplitShare = 0){
             alert("your ride is on the way!!!")
