@@ -78,7 +78,7 @@
 
     //last element
     function last(arr){
-        return arr.pop(-1)
+        return arr[arr.length -1]
     }
     console.log(last(names));
 
