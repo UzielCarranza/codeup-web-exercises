@@ -39,7 +39,10 @@
 
     console.log("Reversing the order of the planets array.");
     console.log(planets);
+    console.log(planets.reverse());
 
     console.log("Sorting the planets array.");
     console.log(planets);
+    //by alphabet order
+    console.log(planets.sort())
 })();
