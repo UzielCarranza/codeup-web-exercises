@@ -25,4 +25,16 @@
      * string, and <li> tags around each planet.
      */
 
+
+//todo:
+    let str = "Mercury<br>Venus<br>Earth<br>Mars<br>";
+    console.log(str);
+    //this might become helpful when working with HTML to separate brean lines
+
+
+//bonus:
+    let listPlanets = '<ul> <li>' + "one|two"+ '</li> </ul>'
+
+    console.log(listPlanets);
+
 })();
