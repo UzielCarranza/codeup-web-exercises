@@ -8,11 +8,11 @@
  * > sayHello("codeup") // returns "Hello, codeup!"
  */
 
-// function sayHello(name){
-//     let message = "Hello" + " " + name + "!";
-//     return message;
-// }
-//
+function sayHello(name){
+    let message = "Hello" + " " + name + "!";
+    return message;
+}
+
 
 
 /**
@@ -23,16 +23,17 @@
  * console.log 'helloMessage' to check your work
  */
 
-// let helloMessage = sayHello("Uziel");
-// console.log(helloMessage);
+let helloMessage = sayHello("Uziel");
+console.log(helloMessage);
 /**
  * TODO:
  * Store your name as a string in a variable named 'myName', and pass that
  * variable to the 'sayHello' function. You should see the same output in the
  * console.
-//  */
-// let myName = "Carranza";
-// console.log(sayHello(myName));
+ */
+
+let myName = "Carranza";
+console.log(sayHello(myName));
 
 
 // Don't modify the following line, it generates a random number between 1 and 3
@@ -57,17 +58,14 @@ var random = Math.floor((Math.random() * 3) + 1);
  * different result everytime you refresh the page if you are using the random
  * number)
  */
-//
-// function isTwo(number){
-//     if(number === 2){
-//         return true;
-//     }
-//     return false;
-// }
-//
-// isTwo(random);
-// console.log(isTwo(random));
-//
+
+function isTwo(number){
+    return number === 2;
+}
+
+isTwo(random);
+console.log(isTwo(random));
+
 
 
 /**
@@ -131,7 +129,7 @@ function applyDiscount(originalPrice, discountPercent){
     return newTotal;
 }
 
-console.log(applyDiscount(20, 0.22) + " asnwser")
+console.log(applyDiscount(20, 0.22) + " answer")
 
 
 let getOriginalPrice = prompt("what is the original price?");
