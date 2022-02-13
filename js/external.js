@@ -1,12 +1,19 @@
 "use strict";
 
+//exercise from curriculum
  console.log("hello from external");
+
+//exercise 1
  alert("Welcome to my website!")
 
+
+//exercise 2
  var userResponse = prompt("What is your favorite color?")
  alert("Great," + " " + userResponse + " " + "is my favorite color too!!")
 
 
+
+//exercise 3
 let littleMermaid = prompt("how many days do you want to rent the movie: the little mermaid?")
 console.log(littleMermaid);
 
@@ -88,93 +95,8 @@ if ( enterPassword.includes(enterUsername)){
     alert("password meets standards");
 }
 
-/*
 
-
-let username = prompt("Enter your username");
-let password = prompt("enter your password")
-
-username = username.trim();
-password = password.trim();
-
-let passLength = password.length >= 5;
-let passIndex = password.indexOf(username) === -1;
-let userLength = username.length <= 20;
-
-if (passLength || passIndex || userLength) {
-    alert("thanks!!")
-} else {
-    alert("try again")
-}
-*/
-
-
-
- //walkthrough
-
-
-//alert("Welcome to my website")
-
-
-//alert( prompt("What is your favorite color") + " " + "is my favorite color too");
-
-
-/*
-let lilMermaid = parseInt(prompt("how long did you rent little mermaid?"));
-
-
-let broBear = parseInt(prompt("how long did you rent bro bear?"));
-
-
-let herc = parseInt(prompt("how long did you rent hercules?"));
-
-alert((lilMermaid + broBear + herc) * 3 )
-
-*/
-
-//console.log(lilMermaid ? lilMermaid * 3 : "you didnt enter a number");
-
-
-
-/*
-
-let googleHours = parseInt(prompt("how many hours did you work at google?")) * 400;
-
-let facebookHours = parseInt(prompt("how many hours did you work at facebook?")) * 350;
-
-
-let amazonHours = parseInt(prompt("how many hours did you work at amazon?")) * 380;
-
-alert("your paycheck is " + (googleHours + facebookHours + amazonHours));
-
-*/
-
-
-/*
-let nameOfCompanu = "google"
-
-let rate = 400;
-while (...) {
-    parseInt(prompt("how many hours did you work  for ${nameOfCompany}?"))
-}
-*/
-
-
-/*
-let hasConflict = confirm("do you have a class at 10:00 am");
-let seatsRemaining = 29;
-
-if ( !hasConflict && seatsRemaining){
-    alert("you are enrolled in theoretical class");
-} else {
-    alert("sorry you cannot enroll in this class")
-}
-
-
-*/
-
-
-
+//end of exercise 3 /////
 
 
 
