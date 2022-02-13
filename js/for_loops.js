@@ -12,8 +12,7 @@ function showMultiplicationTable(number){
             console.log(number + " * " + j + ' = ' + multiply);
         }
 }
-
-console.log(showMultiplicationTable(5))
+showMultiplicationTable(4);
 
 
 
@@ -36,17 +35,28 @@ function random() {
     }
 }
 
-console.log(random())
+random();
+
+
+// generate piramid exercise 4
+function piramidNum(){
+
+
+    for (var i = 1; i < 10; i++) {
+        let result = i.toString();
+
+        console.log(result.repeat(i));
+    }
+}
+piramidNum();
+
 
 //Create a for loop that uses console.log to create the output 100, 95, 90...
 
-
-//
-// generate piramid exercise 4
-
-for (var i = 1; i < 10; i++){
-    let result = i.toString();
-
-    console.log(result.repeat(i));
+function reducingby5(){
+    for(let i = 100; i >= 5; i-= 5){
+        console.log(i)
+    }
 }
+reducingby5();
 
