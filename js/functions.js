@@ -122,36 +122,21 @@ giveUserTipAmount()
  * > applyDiscount(45.99, 0.12) // 40.4712
  */
 
-//
-// function applyDiscount(originalPrice, discountPercent){
-//     let discount = discountPercent * originalPrice ;
-//     let newTotal =  originalPrice - discount;
-//     return newTotal;
-// }
-//
-// let newPrice = applyDiscount(45.99, 0.12);
-// console.log(newPrice);
-//
-//
-// let getOriginalPrice = prompt("what is the original price?");
-// let getDiscount = prompt("Please enter your discount percentaje");
-// let newPrice2 = applyDiscount(getOriginalPrice, getDiscount);
-// console.log(newPrice2);
-// alert("Your new price is: " + newPrice2);
 
+//numbers are between 0 and 1
 
-/*
-// second try
-function getDiscount(){
-    let userDiscount = parseFloat(prompt("Please enter your discount here!"))
-    if(userDiscount){
-
-        console.log("this is your discount" + userDiscount)
-        return userDiscount;
-    } return alert("You must enter a number")
+function applyDiscount(originalPrice, discountPercent){
+    let discount = discountPercent * originalPrice ;
+    let newTotal =  originalPrice - discount;
+    return newTotal;
 }
 
-let userResponseDiscount = getDiscount();
+console.log(applyDiscount(20, 0.22) + " asnwser")
 
-console.log(userResponseDiscount);
-*/
+
+let getOriginalPrice = prompt("what is the original price?");
+let getDiscount = prompt("Please enter your discount percentaje");
+let newPrice2 = applyDiscount(getOriginalPrice, getDiscount);
+console.log(newPrice2);
+alert("Your new price is: $" + newPrice2);
+
