@@ -10,6 +10,9 @@ function oddNumber() {
         }
     } while (userInput % 2 === 0 || isNaN(userInput))
 
+    let userNumber = "number to skip " + userInput;
+    console.log(userNumber);
+
     for (let i = 1; i <= counting; i+= 2  ) {
         if (userInput === i){
             console.log("we don't want this number!!! " + userInput)
@@ -18,5 +21,4 @@ function oddNumber() {
         console.log("here is an odd number " + i)
     }
 }
-
-console.log(oddNumber())
+oddNumber();

@@ -1,4 +1,5 @@
 "use strict";
+console.log("starts while loops exercise")
 
 //while loops
 let incrementor = 1;
@@ -9,7 +10,7 @@ while(incrementor <= 32768){
 }
 
 
-
+//do while loops
 // This is how you get a random number between 50 and 100
 var allConesForToday = Math.floor(Math.random() * 50) + 50;
 
