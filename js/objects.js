@@ -46,7 +46,7 @@
      * represents one shopper. Use a foreach loop to iterate through the array,
      * and console.log the relevant messages for each person
      */
-        console.log('---------------------------')
+    console.log('---------------------------')
     var shoppers = [
         {name: 'Cameron', amount: 180},
         {name: 'Ryan', amount: 250},
@@ -58,11 +58,11 @@
     //if shopper spends more than 200
     //apply discount 12%
     //return name, amount before discount, the discount, amount after discount
-    function applyingDiscount(){
+    function applyingDiscount() {
         let discount = 0;
         let newTotal = 0;
-        shoppers.forEach((i)=>{
-            if(i.amount > 200){
+        shoppers.forEach((i) => {
+            if (i.amount > 200) {
                 discount = (i.amount * 12) / 100;
                 newTotal = i.amount - discount;
                 console.log("your discount was $" + discount);
@@ -71,8 +71,8 @@
         })
 
     }
-    applyingDiscount();
 
+    applyingDiscount();
 
 
     /** TODO:
@@ -89,7 +89,7 @@
      */
 
     var books = [
-        {title: 'book1', author: { firstName: "a",lastName: "A"}},
+        {title: 'book1', author: {firstName: "a", lastName: "A"}},
         {title: 'book2', author: {firstName: "b", lastName: "B"}},
         {title: 'book3', author: {firstName: "c", lastName: "C"}},
         {title: 'book4', author: {firstName: "d", lastName: "D"}},
@@ -98,6 +98,7 @@
     console.log(books[0].title);
     console.log(books[0].author.firstName);
     console.log(books[0].author.lastName);
+    console.log("-------------------")
 
     /**
      * TODO:
@@ -123,6 +124,28 @@
      *      ---
      *      ...
      */
+    function getInfoBooksArr() {
+        let bookNumber;
+        let bookTitle;
+        let authorName;
+        let counter = 1;
+
+        books.forEach((i, bookNum, book) => {
+            let bookNumber = "book # " + counter++
+            console.log(bookNumber)
+
+            let bookTitle = "title: " + books[bookNum].title;
+            console.log(bookTitle)
+
+            let authorName = i.author.firstName + " " + i.author.lastName;
+            console.log("Author: " + authorName);
+            console.log("---")
+        })
+
+    }
+
+    console.log(getInfoBooksArr(books));
+
 
     /**
      * Bonus:
