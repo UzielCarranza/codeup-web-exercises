@@ -29,7 +29,7 @@
      */
 
     myObj.sayHello = function () {
-        return "Hello from";
+        return "Hello from " + myObj.firstName + " " + myObj.lastName;
     };
     console.log(myObj.sayHello());
 
