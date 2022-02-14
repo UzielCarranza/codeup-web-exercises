@@ -32,9 +32,21 @@
     //this might become helpful when working with HTML to separate break lines
 
 
-//bonus:
-    let listPlanets = '<ul> <li>' + "one,two" + '</li> </ul>'
-    let listP = '<ul> <li>one,two</li> </ul>'
-    console.log(listPlanets.split(listP));
+// //bonus:
+//     let listPlanets = '<ul> <li>' + "one,two" + '</li> </ul>'
+//     console.log(listPlanets.split(listPlanets));
 
+    function buildPlanets(arrOfPlanets) {
+        let newString = '<ul>';
+        for (let i = 0; i < arrOfPlanets.length; i++) {
+            newString += '<li>'
+            newString += arrOfPlanets[i];
+            newString += '</li>'
+
+        }
+        newString += '</ul>';
+        return newString;
+    }
+
+    console.log(buildPlanets(planetsArray));
 })();
