@@ -88,6 +88,16 @@
      * > console.log(books[0].author.lastName) // "Adams"
      */
 
+    var books = [
+        {title: 'book1', author: { firstName: "a",lastName: "A"}},
+        {title: 'book2', author: {firstName: "b", lastName: "B"}},
+        {title: 'book3', author: {firstName: "c", lastName: "C"}},
+        {title: 'book4', author: {firstName: "d", lastName: "D"}},
+        {title: 'book5', author: {firstName: "e", lastName: "E"}},
+    ];
+    console.log(books[0].title);
+    console.log(books[0].author.firstName);
+    console.log(books[0].author.lastName);
 
     /**
      * TODO:
