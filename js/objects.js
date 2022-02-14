@@ -12,6 +12,12 @@
      *  > console.log(person.lastName) // "Sanchez"
      */
 
+    var myObj = {};
+
+    myObj.firstName = 'Uziel';
+    myObj.lastName = 'Carranza';
+    console.log(myObj.firstName);
+    console.log(myObj.lastName);
     /**
      * TODO:
      * Add a sayHello method to the person object that returns a greeting using
