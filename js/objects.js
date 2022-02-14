@@ -1,4 +1,4 @@
-(function() {
+(function () {
     "use strict";
 
     /**
@@ -27,6 +27,11 @@
      * Example
      * > console.log(person.sayHello()) // "Hello from Rick Sanchez!"
      */
+
+    myObj.sayHello = function () {
+        return "Hello from";
+    };
+    console.log(myObj.sayHello());
 
     /** TODO:
      * HEB has an offer for the shoppers that buy products amounting to
