@@ -46,12 +46,34 @@
      * represents one shopper. Use a foreach loop to iterate through the array,
      * and console.log the relevant messages for each person
      */
+        console.log('---------------------------')
+    var shoppers = [
+        {name: 'Cameron', amount: 180},
+        {name: 'Ryan', amount: 250},
+        {name: 'George', amount: 320}
+    ];
+    console.log(shoppers)
 
-    // var shoppers = [
-    //     {name: 'Cameron', amount: 180},
-    //     {name: 'Ryan', amount: 250},
-    //     {name: 'George', amount: 320}
-    // ];
+    //conditional how much each one needs to pay
+    //if shopper spends more than 200
+    //apply discount 12%
+    //return name, amount before discount, the discount, amount after discount
+    function applyingDiscount(){
+        let discount = 0;
+        let newTotal = 0;
+        shoppers.forEach((i)=>{
+            if(i.amount > 200){
+                discount = (i.amount * 12) / 100;
+                newTotal = i.amount - discount;
+                console.log("your discount was $" + discount);
+                console.log("your new total is $" + newTotal);
+            }
+        })
+
+    }
+    applyingDiscount();
+
+
 
     /** TODO:
      * Create an array of objects that represent books and store it in a
@@ -65,6 +87,7 @@
      * > console.log(books[0].author.firstName) // "Douglas"
      * > console.log(books[0].author.lastName) // "Adams"
      */
+
 
     /**
      * TODO:
