@@ -130,16 +130,16 @@
         let authorName;
         let counter = 1;
 
-        books.forEach((i, bookNum, book) => {
-            let bookNumber = "book # " + counter++
-            console.log(bookNumber)
+        books.forEach((index, bookNum) => {
+            let bookNumber = "book # " + counter++;
+            console.log(bookNumber);
 
             let bookTitle = "title: " + books[bookNum].title;
-            console.log(bookTitle)
+            console.log(bookTitle);
 
-            let authorName = i.author.firstName + " " + i.author.lastName;
+            let authorName = index.author.firstName + " " + index.author.lastName;
             console.log("Author: " + authorName);
-            console.log("---")
+            console.log("---");
         })
 
     }
@@ -157,5 +157,9 @@
      *   outputs the information described above. Refactor your loop to use your
      *   `showBookInfo` function.
      */
+
+    function createBook(title, author){
+
+    }
 
 })();
