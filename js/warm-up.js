@@ -11,3 +11,14 @@ function findAverage(arrNum){
 }
 
 console.log(findAverage(arrExample));
+
+
+
+function findAverage(grades){
+
+    let sum = 0;
+    for (let i = 0; i < grades.kength; i++){
+        sum += grades[i];
+    }
+    return sum / grades.length;
+}
