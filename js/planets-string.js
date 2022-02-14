@@ -29,12 +29,12 @@
 //todo:
     let str = "Mercury<br>Venus<br>Earth<br>Mars<br>";
     console.log(str);
-    //this might become helpful when working with HTML to separate brean lines
+    //this might become helpful when working with HTML to separate break lines
 
 
 //bonus:
-    let listPlanets = '<ul> <li>' + "one|two"+ '</li> </ul>'
-
-    console.log(listPlanets);
+    let listPlanets = '<ul> <li>' + "one,two"+ '</li> </ul>'
+    let listP = '<ul> <li>one,two</li> </ul>'
+    console.log(listPlanets.split(listP));
 
 })();
