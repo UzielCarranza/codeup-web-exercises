@@ -71,8 +71,10 @@
             if (shopper.amount > 200) {
                 discount = (shopper.amount * 12) / 100;
                 newTotal = shopper.amount - discount;
-                console.log("your discount was $" + discount);
-                console.log("your new total is $" + newTotal);
+                console.log(shopper.name + " your discount was $" + discount);
+                console.log(shopper.name + " your new total is $" + newTotal);
+            } else {
+                console.log(shopper.name + ', your total is $' + shopper.amount + " you didn't get a discount");
             }
         })
 
