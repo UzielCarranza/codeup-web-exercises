@@ -18,6 +18,11 @@
     myObj.lastName = 'Carranza';
     console.log(myObj.firstName);
     console.log(myObj.lastName);
+
+
+    console.log('----------1st exercise-------------')
+
+
     /**
      * TODO:
      * Add a sayHello method to the person object that returns a greeting using
@@ -33,6 +38,8 @@
     };
     console.log(myObj.sayHello());
 
+    console.log('----------2nd exercise-------------')
+
     /** TODO:
      * HEB has an offer for the shoppers that buy products amounting to
      * more than $200. If a shopper spends more than $200, they get a 12%
@@ -46,7 +53,6 @@
      * represents one shopper. Use a foreach loop to iterate through the array,
      * and console.log the relevant messages for each person
      */
-    console.log('---------------------------')
     var shoppers = [
         {name: 'Cameron', amount: 180},
         {name: 'Ryan', amount: 250},
@@ -75,6 +81,7 @@
     applyingDiscount();
 
 
+    console.log('----------3rd exercise-------------')
     /** TODO:
      * Create an array of objects that represent books and store it in a
      * variable named `books`. Each object should have a title and an author
@@ -89,16 +96,17 @@
      */
 
     var books = [
-        {title: 'book1', author: {firstName: "a", lastName: "A"}},
-        {title: 'book2', author: {firstName: "b", lastName: "B"}},
-        {title: 'book3', author: {firstName: "c", lastName: "C"}},
-        {title: 'book4', author: {firstName: "d", lastName: "D"}},
-        {title: 'book5', author: {firstName: "e", lastName: "E"}},
+        {title: 'Cracking the Coding Interview', author: {firstName: "Gayle", lastName: "McDowell"}},
+        {title: 'Atomic Habits', author: {firstName: "James", lastName: "Clear"}},
+        {title: "Can't Hurt Me ", author: {firstName: "David", lastName: "Goggins"}},
+        {title: 'Deep Work', author: {firstName: "Cal", lastName: "Newport"}},
+        {title: 'The 10x Rule', author: {firstName: "Grant", lastName: "Cardone"}},
     ];
     console.log(books[0].title);
     console.log(books[0].author.firstName);
     console.log(books[0].author.lastName);
-    console.log("-------------------")
+
+    console.log('----------4th exercise-------------')
 
     /**
      * TODO:
@@ -131,20 +139,22 @@
         let counter = 1;
 
         books.forEach((index, bookNum) => {
-            let bookNumber = "book # " + counter++;
+
+            bookNumber = "book # " + counter++;
             console.log(bookNumber);
 
-            let bookTitle = "title: " + books[bookNum].title;
+            bookTitle = "title: " + books[bookNum].title;
             console.log(bookTitle);
 
-            let authorName = index.author.firstName + " " + index.author.lastName;
+            authorName = index.author.firstName + " " + index.author.lastName;
             console.log("Author: " + authorName);
             console.log("---");
         })
-
     }
 
     console.log(getInfoBooksArr(books));
+
+    console.log('----------5th exercise-------------')
 
 
     /**
@@ -166,14 +176,15 @@
 
     //recreate array to use function instead
     var booksFunction = [
-        {title: 'book1', author: {firstName: "a", lastName: "A"}},
-        {title: 'book2', author: {firstName: "b", lastName: "B"}},
-        {title: 'book3', author: {firstName: "c", lastName: "C"}},
-        {title: 'book4', author: {firstName: "d", lastName: "D"}},
-        {title: 'book5', author: {firstName: "e", lastName: "E"}},
+        {title: 'Be obsessed or be average', author: {firstName: "Grant", lastName: "Cardone"}},
+        {title: 'Rich Dad Poor Dad', author: {firstName: "Robert", lastName: "Kiyosaki"}},
+        {title: 'CashFlow Quadrant', author: {firstName: "Robert", lastName: "Kiyosaki"}},
+        {title: '48 laws of Power', author: {firstName: "Robert", lastName: "Greene"}},
+        {title: 'Mastery', author: {firstName: "Robert", lastName: "Greene"}},
     ];
     console.log(createBook(booksFunction));
 
+    console.log('----------bonus 1 exercise-------------')
 
     function getInfoBooksArr2() {
         let bookNumber;
@@ -181,11 +192,11 @@
         let authorName;
         let counter = 1;
 
-        books.forEach((index, bookNum) => {
+        booksFunction.forEach((index, bookNum) => {
             let bookNumber = "book # " + counter++;
             console.log(bookNumber);
 
-            let bookTitle = "title: " + books[bookNum].title;
+            let bookTitle = "title: " + booksFunction[bookNum].title;
             console.log(bookTitle);
 
             let authorName = index.author.firstName + " " + index.author.lastName;
@@ -197,5 +208,7 @@
         return getInfoBooksArr2(bookObj);
     }
     console.log(showBookInfo(booksFunction))
+
+    console.log('----------Bonus 2 exercise-------------')
 
 })();
