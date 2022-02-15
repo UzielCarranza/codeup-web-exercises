@@ -67,10 +67,10 @@
     function applyingDiscount() {
         let discount = 0;
         let newTotal = 0;
-        shoppers.forEach((i) => {
-            if (i.amount > 200) {
-                discount = (i.amount * 12) / 100;
-                newTotal = i.amount - discount;
+        shoppers.forEach((shopper) => {
+            if (shopper.amount > 200) {
+                discount = (shopper.amount * 12) / 100;
+                newTotal = shopper.amount - discount;
                 console.log("your discount was $" + discount);
                 console.log("your new total is $" + newTotal);
             }
