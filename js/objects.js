@@ -12,12 +12,12 @@
      *  > console.log(person.lastName) // "Sanchez"
      */
 
-    var myObj = {};
+    var person = {};
 
-    myObj.firstName = 'Uziel';
-    myObj.lastName = 'Carranza';
-    console.log(myObj.firstName);
-    console.log(myObj.lastName);
+    person.firstName = 'Uziel';
+    person.lastName = 'Carranza';
+    console.log(person.firstName);
+    console.log(person.lastName);
 
 
     console.log('----------1st exercise-------------')
@@ -33,10 +33,10 @@
      * > console.log(person.sayHello()) // "Hello from Rick Sanchez!"
      */
 
-    myObj.sayHello = function () {
-        return "Hello from " + myObj.firstName + " " + myObj.lastName;
+    person.sayHello = function () {
+        return "Hello from " + person.firstName + " " + person.lastName;
     };
-    console.log(myObj.sayHello());
+    console.log(person.sayHello());
 
     console.log('----------2nd exercise-------------')
 
@@ -193,13 +193,13 @@
         let counter = 1;
 
         booksFunction.forEach((index, bookNum) => {
-            let bookNumber = "book # " + counter++;
+            bookNumber = "book # " + counter++;
             console.log(bookNumber);
 
-            let bookTitle = "title: " + booksFunction[bookNum].title;
+            bookTitle = "title: " + booksFunction[bookNum].title;
             console.log(bookTitle);
 
-            let authorName = index.author.firstName + " " + index.author.lastName;
+            authorName = index.author.firstName + " " + index.author.lastName;
             console.log("Author: " + authorName);
         })
 
