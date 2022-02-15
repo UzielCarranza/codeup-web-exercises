@@ -157,9 +157,45 @@
      *   outputs the information described above. Refactor your loop to use your
      *   `showBookInfo` function.
      */
+     console.log('------------------------')
+    function createBook(title, ...author){
+        let bookObj = {title, ...author}
+        return bookObj;
+        //return book object
+    }
 
-    function createBook(title, author){
+    //recreate array to use function instead
+    var booksFunction = [
+        {title: 'book1', author: {firstName: "a", lastName: "A"}},
+        {title: 'book2', author: {firstName: "b", lastName: "B"}},
+        {title: 'book3', author: {firstName: "c", lastName: "C"}},
+        {title: 'book4', author: {firstName: "d", lastName: "D"}},
+        {title: 'book5', author: {firstName: "e", lastName: "E"}},
+    ];
+    console.log(createBook(booksFunction));
+
+
+    function getInfoBooksArr2() {
+        let bookNumber;
+        let bookTitle;
+        let authorName;
+        let counter = 1;
+
+        books.forEach((index, bookNum) => {
+            let bookNumber = "book # " + counter++;
+            console.log(bookNumber);
+
+            let bookTitle = "title: " + books[bookNum].title;
+            console.log(bookTitle);
+
+            let authorName = index.author.firstName + " " + index.author.lastName;
+            console.log("Author: " + authorName);
+        })
 
     }
+    function showBookInfo(bookObj){
+        return getInfoBooksArr2(bookObj);
+    }
+    console.log(showBookInfo(booksFunction))
 
 })();
