@@ -19,15 +19,18 @@
 
             // If doRounding is true, round the result to the nearest integer.
             // Otherwise, output the complete value
+            if (doRounding == true) {
+                return Math.round(doRounding)
+            }
 
-            console.log("Area of a circle with radius: " + this.radius + ", is: " + this.getArea());
+            console.log("Area of a circle with radius: " + this.radius + ", is: " + this.getArea() );
         }
     };
 
     // log info about the circle
     console.log("Raw circle information");
     circle.logInfo(false);
-    console.log("Circle information rounded to the nearest whole number");
+    console.log("Circle information rounded to the nearest whole number " + circle.logInfo(true));
     circle.logInfo(true);
 
     console.log("=======================================================");
