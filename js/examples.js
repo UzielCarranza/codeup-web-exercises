@@ -149,7 +149,13 @@ function sayHello(name){
 let helloMessage = sayHello("uziel");
 
 
+console.log("math---------")
 
+let randomNum = Math.random() * (100);
+console.log(randomNum)
+
+let rangedNum = Math.floor((randomNum * 100 + 20)) + 20;
+console.log(randomNum)
 
 
 

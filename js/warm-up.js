@@ -61,12 +61,65 @@ console.log("--------------------next example----------------------------")
 
 
 let personContactInfo = {
-    phoneNumber; '123-123-1234',
-    streetAddress: {
+    phoneNumber: '123-123-1234',
         address: '1234 street',
         zipCode: '123456',
         city: 'city',
         state: 'state'
-    }
 
 }
+
+console.log(personContactInfo)
+
+// personContactInfo.forEach(()=>{
+//
+// })
+
+//
+// JS Object Warmup, pt 3:
+// Create a property on the person object to store their contact info
+//     -> Assign the contact info variable to that property
+//     -> Log that entire object and its properties to the console
+
+person.contactInfo = personContactInfo;
+
+function PersonContact(names, occupation, dob){
+    this.names = names;
+    this.occupation = occupation;
+    this.dob = dob;
+}
+
+let person2 = new PersonContact(
+     ['eadeda'],
+    'coder',
+    '12-12-1222',
+    new Person(
+        "123-123-1212",
+
+    )
+)
+
+console.log(person2);
+
+//defines a contact info object
+function Person(phoneNumber, streetAddress, address,zipCode,city,state) {
+        this.phoneNumber = phoneNumber;
+        this.streetAddress = streetAddress;
+        this.address = address;
+        this.zipCode = zipCode;
+        this.city = city;
+        this.state = state;
+}
+
+
+console.log(person2)
+
+let person3 = new Person(
+    '2323',
+    '2121',
+    '1221333131',
+    '13313131313'
+
+)
+
+console.log(person3)
