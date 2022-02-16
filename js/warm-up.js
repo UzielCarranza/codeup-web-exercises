@@ -40,4 +40,9 @@ var person = {
     occupation: "developer"
 }
 
-console.log(person);
+person.age = 25;
+console.log(person );
+console.log("---");
+console.log(person.name.firstName);
+console.log(person.name.lastName);
+console.log(person.age);
