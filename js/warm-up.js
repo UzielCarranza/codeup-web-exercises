@@ -41,8 +41,32 @@ var person = {
 }
 
 person.age = 25;
-console.log(person );
+console.log(person);
 console.log("---");
 console.log(person.name.firstName);
 console.log(person.name.lastName);
 console.log(person.age);
+
+
+console.log("--------------------next example----------------------------")
+//
+// JS Object Warmup, pt 2:
+// Create an object representing a person’s contact info. It should have:
+//     phone number
+// street address
+// state
+// postal code
+// email address
+// Hard code some values in that object, then log it and its properties to the console
+
+
+let personContactInfo = {
+    phoneNumber; '123-123-1234',
+    streetAddress: {
+        address: '1234 street',
+        zipCode: '123456',
+        city: 'city',
+        state: 'state'
+    }
+
+}
