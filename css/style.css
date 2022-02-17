@@ -1,0 +1,5 @@
+
+/* changed the color of the h1 because of prder of precedence*/
+.fancy-header{
+    color: purple;
+}
