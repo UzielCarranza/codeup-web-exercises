@@ -151,7 +151,21 @@ function ContactInfo(phoneNumber, streetAddress, city, state, postalCode, emailA
 }
 // Defines a person object
 function Person(names, occupation, dob, contactInfo) {
-    this.names = names;
+    this.getNames = () => {
+        let namesArr = [];
+        let hasMoreNames = true;
+
+        while(hasMoreNames){
+            //get those names
+            namesArr.push(prompt('please enter your name'));
+            //prompt for names
+
+            //if they want more names, keep looping. if not, break the loop
+            hasMoreNames = confirm('would you like to enter another name')
+        }
+        return namesArr;
+    }
+    this.names = this.getNames();
     this.occupation = occupation;
     this.dob = dob;
     this.contactInfo = contactInfo;
@@ -170,3 +184,72 @@ let person2 = new Person(
         'nope@no-no-no.no'));
 
 console.log(person2.contactInfo.emailAddress);
+
+
+//my response
+
+//function
+// function askUser(){
+//     let userNames = {};
+//
+//     let userPrompt = prompt('what is your name?');
+//     while(userPrompt){
+//         askingUser = confirm('do you want to add more names?')
+//         if (askingUser === false){
+//             alert('thanks ' + userPrompt);
+//             break;
+//         } else if (askingUser){
+//             userPrompt = prompt('enter your name')
+//             userNames = userPrompt;
+//             return userNames;
+//             console.log(userNames)
+//         }
+//     }
+// }
+//
+// askUser()
+//
+// //
+//
+// Person(askUser(),)
+// console.log(Person)
+
+
+//walkthrough
+
+function getNames(){
+    let namesArr = [];
+    let hasMoreNames = true;
+
+    while(hasMoreNames){
+        //get those names
+        namesArr.push(prompt('please enter your name'));
+        //prompt for names
+
+        //if they want more names, keep looping. if not, break the loop
+        hasMoreNames = confirm('would you like to enter another name')
+    }
+    return namesArr;
+}
+getNames();
+
+console.log(getNames());
+
+let person = new Person(getNames());
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
