@@ -62,8 +62,7 @@ fieldset {
     padding: 10px 10px;
     color: #fff;
     font-weight: bold;
-    border: 1px solid lightgrey;
-
+    outline: 1px solid #d3d3d3;
 }
 
 .form-control {
@@ -74,6 +73,11 @@ fieldset {
     /* See the example at: https://developer.mozilla.org/en-US/docs/Web/CSS/calc */
     /* HINT: Examples are available at: https://glitch.com/~input-button-width */
     width: 100%;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    margin-top: 0.5em;
+    margin-bottom: 0.5em;
+    width: calc(100% - 5px);
 
 }
 
