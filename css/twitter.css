@@ -22,9 +22,7 @@ header {
     min-height: 300px;
     padding-top: 275px;
     width: 100%;
-
-
-
+    display: inline-block;
 }
 a {
     color: var(--link-color);
@@ -34,7 +32,7 @@ a {
     background: var(--light-bg);
     /**/
     width: 100%;
-
+    position: fixed;
 
 }
 
@@ -42,18 +40,14 @@ a {
     list-style-type: none;
     padding: 0;
     margin: 0;
-    position: absolute;
 }
 .nav-link {
     color: var(--main-link-color);
     font-weight: bold;
     text-decoration: none;
-
     padding: 1.5em;
     display: inline-block;
     width: 100%;
-
-
 }
 .nav-item{
     display: inline-block;
@@ -69,7 +63,7 @@ a {
 }
 
 .profile-image{
-    z-index: 1000;
+    position: absolute;
 }
 
 .profile-form{
