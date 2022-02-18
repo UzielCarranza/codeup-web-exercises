@@ -1,7 +1,42 @@
+:root {
+    --main-bg-color: lightgrey;
+}
+
 body, html {
     height: 100%;
     width: 100%;
     padding: 0;
     margin: 0;
     font-family: Arial, Ubuntu, sans-serif;
+}
+
+.message {
+    width: 40%;
+    border-radius: 1%;
+    margin: auto;
+    padding: 10px;
+}
+
+.message-info {
+    margin-top: 30px;
+    background-color: lightblue;
+    color: #3B94D9;
+}
+
+.message-success {
+    margin-top: 20px;
+    background-color: lightgreen;
+    color: #0fb784;
+}
+
+.message-warning {
+    margin-top: 20px;
+    background-color: lightyellow;
+    color: var(--main-bg-color);
+}
+
+.message-error {
+    margin-top: 20px;
+    background-color: lightcoral;
+    color: var(--main-bg-color);
 }
