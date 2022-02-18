@@ -15,28 +15,36 @@ body, html {
     border-radius: 1%;
     margin: auto;
     padding: 10px;
+    opacity: 0.5;
+    color: black;
 }
 
 .message-info {
     margin-top: 30px;
     background-color: lightblue;
-    color: #3B94D9;
+    -webkit-text-stroke: 1px blue;
 }
 
 .message-success {
     margin-top: 20px;
     background-color: lightgreen;
-    color: #0fb784;
+
+    -webkit-text-stroke: 1px green;
+    /*color: #0fb784;*/
 }
 
 .message-warning {
     margin-top: 20px;
-    background-color: lightyellow;
-    color: var(--main-bg-color);
+    background-color: yellow;
+    /*color: var(--main-bg-color);*/
+
+    -webkit-text-stroke: 1px grey;
 }
 
 .message-error {
     margin-top: 20px;
     background-color: lightcoral;
-    color: var(--main-bg-color);
+
+    -webkit-text-stroke: 1px darkred;
+    /*color: var(--main-bg-color);*/
 }
