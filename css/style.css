@@ -1,5 +1,14 @@
 @import url('https://fonts.googleapis.com/css2?family=Source+Sans+Pro:wght@600&display=swap');
 
+body{
+    background-image: url("/img--welcome/CodeupFullColorChevronYT.jpeg");
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: 50%;
+    height: 800px;
+    font-family: Menlo;
+}
+
 /* changed the color of the h1 because of order of precedence*/
 .fancy-header {
     color: black;
@@ -33,24 +42,22 @@ p{
     margin: 10px;
 }
 
-.footer--para{
-    width: 20%;
-    margin: auto;
+
+
+a:hover{
+    background-color: rgb(10%,80%,20%);
+
 }
 
-.anchor--footer{
+a:visited{
     text-decoration: none;
-    color: black;
+    text-underline: none;
 }
 
-body{
-    background-image: url("/img--welcome/CodeupFullColorChevronYT.jpeg");
-    background-repeat: no-repeat;
-    background-position: center;
-    background-size: 50%;
-    height: 800px;
-    font-family: Menlo;
-}
+/*
+lists
+*/
+
 ul {
     text-decoration: none;
     list-style: circle;
@@ -67,6 +74,10 @@ li{
 }
 
 
+
+/*
+table
+*/
 td, tr, th{
     border: 1px solid black;
     height: 100px;
@@ -88,16 +99,10 @@ th{
     margin: 20px;
 }
 
-a:hover{
-    background-color: rgb(10%,80%,20%);
 
-}
-
-a:visited{
-    text-decoration: none;
-    text-underline: none;
-}
-
+/*
+images
+*/
 .section--images{
     display: flex;
     flex-direction: row;
@@ -112,3 +117,34 @@ a:visited{
     width: 10%;
     height: auto;
 }
+
+/*
+footer
+*/
+
+.footer--para{
+    width: 20%;
+    margin: auto;
+}
+
+
+.anchor--footer{
+    text-decoration: none;
+    color: black;
+}
+
+.anchor--footer:after{
+    background-color: black;
+}
+
+
+.anchor--footer:after{
+    content: "";
+    position: absolute;
+    bottom: -3px;
+    height: 3px;
+    width: 0;
+    right: 0;
+    transition: all 300ms ease;
+}
+
