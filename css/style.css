@@ -2,7 +2,9 @@
 
 /* changed the color of the h1 because of order of precedence*/
 .fancy-header {
-    color: purple;
+    color: black;
+    text-decoration: none;
+    margin: 20px;
 }
 
 header{
@@ -18,22 +20,50 @@ h1 {
 h2{
     text-decoration: underline;
 }
+.h2--table{
+    width: 50%;
+    margin: auto;
+    padding: 20px;
+    text-align: center;
+    text-decoration: none;
+}
+
+p{
+    padding: 10px;
+    margin: 10px;
+}
+
+.footer--para{
+    width: 20%;
+    margin: auto;
+}
+
+.anchor--footer{
+    text-decoration: none;
+    color: black;
+}
 
 body{
     background-image: url("/img--welcome/CodeupFullColorChevronYT.jpeg");
     background-repeat: no-repeat;
     background-position: center;
-    background-size: contain;
+    background-size: 50%;
     height: 800px;
     font-family: Menlo;
 }
 ul {
     text-decoration: none;
     list-style: circle;
+    padding: 10px;
 }
 
 ol{
     list-style: upper-alpha;
+    padding: 10px;
+}
+
+li{
+    padding: 10px;
 }
 
 
@@ -53,9 +83,9 @@ th{
 .table{
     width: auto;
     height: auto;
-    outline: 1px solid red;
     display: flex;
     flex-direction: column;
+    margin: 20px;
 }
 
 a:hover{
