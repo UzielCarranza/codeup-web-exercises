@@ -17,7 +17,7 @@
 // function findAverage(grades){
 //
 //     let sum = 0;
-//     for (let i = 0; i < grades.kength; i++){
+//     for (let i = 0; i < grades.length; i++){
 //         sum += grades[i];
 //     }
 //     return sum / grades.length;
@@ -141,50 +141,50 @@ console.log('-----starts new warm up-------')
 
 
 // Defines a contact info object
-function ContactInfo(phoneNumber, streetAddress, city, state, postalCode, emailAddress){
-    this.phoneNumber = phoneNumber;
-    this.streetAddress = streetAddress;
-    this.city = city;
-    this.state = state;
-    this.postalCode = postalCode;
-    this.emailAddress = emailAddress;
-}
-// Defines a person object
-function Person(names, occupation, dob, contactInfo) {
-    this.getNames = () => {
-        let namesArr = [];
-        let hasMoreNames = true;
-
-        while(hasMoreNames){
-            //get those names
-            namesArr.push(prompt('please enter your name'));
+//function ContactInfo(phoneNumber, streetAddress, city, state, postalCode, emailAddress){
+//    this.phoneNumber = phoneNumber;
+//    this.streetAddress = streetAddress;
+//    this.city = city;
+//    this.state = state;
+//    this.postalCode = postalCode;
+//    this.emailAddress = emailAddress;
+//}
+//// Defines a person object
+//function Person(names, occupation, dob, contactInfo) {
+//    this.getNames = () => {
+//        let namesArr = [];
+//        let hasMoreNames = true;
+//
+//        while(hasMoreNames){
+//            //get those names
+//            namesArr.push(prompt('please enter your name'));
             //prompt for names
 
             //if they want more names, keep looping. if not, break the loop
-            hasMoreNames = confirm('would you like to enter another name')
-        }
-        return namesArr;
-    }
-    this.names = this.getNames();
-    this.occupation = occupation;
-    this.dob = dob;
-    this.contactInfo = contactInfo;
-}
-// makes a new person object instance (by invoking the constructor)
-let person2 = new Person(
-    ["Casey", "J", "Edwards"],
-    "Cat Herder / Firefighter",
-    "11.30.1989",
-    new ContactInfo(
-        '123.456.7890',
-        '123 Anywhere Ln',
-        'Beverly Hills',
-        'CA',
-        '90210',
-        'nope@no-no-no.no'));
-
-console.log(person2.contactInfo.emailAddress);
-
+//            hasMoreNames = confirm('would you like to enter another name')
+//        }
+//        return namesArr;
+//    }
+//    this.names = this.getNames();
+//    this.occupation = occupation;
+//    this.dob = dob;
+//    this.contactInfo = contactInfo;
+//}
+//// makes a new person object instance (by invoking the constructor)
+//let person2 = new Person(
+//    ["Casey", "J", "Edwards"],
+//    "Cat Herder / Firefighter",
+//    "11.30.1989",
+//    new ContactInfo(
+//        '123.456.7890',
+//        '123 Anywhere Ln',
+//        'Beverly Hills',
+//        'CA',
+//        '90210',
+//        'nope@no-no-no.no'));
+//
+//console.log(person2.contactInfo.emailAddress);
+//
 
 //my response
 
@@ -216,27 +216,52 @@ console.log(person2.contactInfo.emailAddress);
 
 
 //walkthrough
+//
+//function getNames(){
+//    let namesArr = [];
+//    let hasMoreNames = true;
+//
+//    while(hasMoreNames){
+//        //get those names
+//        namesArr.push(prompt('please enter your name'));
+//        //prompt for names
+//
+//        //if they want more names, keep looping. if not, break the loop
+//        hasMoreNames = confirm('would you like to enter another name')
+//    }
+//    return namesArr;
+//}
+//getNames();
+//
+//console.log(getNames());
+//
+//let person = new Person(getNames());
+//
+//
 
-function getNames(){
-    let namesArr = [];
-    let hasMoreNames = true;
 
-    while(hasMoreNames){
-        //get those names
-        namesArr.push(prompt('please enter your name'));
-        //prompt for names
 
-        //if they want more names, keep looping. if not, break the loop
-        hasMoreNames = confirm('would you like to enter another name')
+
+/*
+Warmup: Create a function which returns true if the given argument is a number, false if it is not a number
+*/
+
+function isANumber(input){
+    if (typeof input == 'number'){
+        console.log(true)
+        return true;
     }
-    return namesArr;
+    else if (isNaN(input)  || input == undefined || typeof input == 'boolean'){
+        console.log(false)
+        return false;
+    }
 }
-getNames();
+isANumber('9');
 
-console.log(getNames());
 
-let person = new Person(getNames());
 
+//walkthrough
+// !isNaN(parseFloat())
 
 
 
