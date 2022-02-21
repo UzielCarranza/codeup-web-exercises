@@ -22,4 +22,12 @@ class computer{
         this.isOn = isOn;
         this.batteryPercentage = batteryPercentage;
     }
+    //add methods like normal function
+    turnComputerOn(on){
+        this.batteryPercentage = on;
+    }
+    usersInComputer(user1, user2){
+        this.users.user1Name = user1;
+        this.users.user2Name = user2;
+    }
 }
