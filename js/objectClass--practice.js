@@ -1,3 +1,11 @@
+/**
+ * Creating classes:
+ *
+ * Class declaration: class Name {}
+ * Class expression:  const Name = class {}
+ */
+
+
 class computer{
     constructor(
         //define parameters:
@@ -31,3 +39,5 @@ class computer{
         this.users.user2Name = user2;
     }
 }
+
+export default computer;
