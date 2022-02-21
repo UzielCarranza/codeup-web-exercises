@@ -12,6 +12,8 @@ const workLaptop = new Computer(
     'uzielca',
     'uziel2',
     true,
-    '25%'
+    '25%',
+    '2020'
 );
 console.log("uziel's work omputer", workLaptop);
+console.log('days since acquired', workLaptop.computerAge())
