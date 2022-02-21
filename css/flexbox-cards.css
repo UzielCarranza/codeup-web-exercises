@@ -1,3 +1,8 @@
+*{
+    outline: 2px solid red;
+}
+
+
 html {
     box-sizing: border-box;
 }
@@ -20,6 +25,8 @@ a {
     max-width: 750px;
     margin: 0 auto;
     /* TODO: Make this a flex container and align it's items to the center*/
+    display: flex;
+    align-items: center;
 }
 
 .card {
