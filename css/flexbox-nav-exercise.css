@@ -14,13 +14,26 @@ Nav bar
     margin: auto;
     display: flex;
     flex-direction: row;
+    justify-content: space-between;
 
 }
 
 .container--nav__left{
     width: 25%;
-    margin: auto;
     outline: 2px solid green;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-evenly;
+}
+
+.container--nav__right{
+    width: 25%;
+    outline: 2px solid green;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: end;
 }
 
 .container--nav__--logo{
@@ -28,9 +41,13 @@ Nav bar
     display: flex;
     align-items: end;
     outline: 2px solid blue;
-
 }
 
-.anchor-nav{
-    display: inline-block;
+ul{
+    display: flex;
+    justify-content: space-between;
+}
+
+li{
+    display: flex;
 }
