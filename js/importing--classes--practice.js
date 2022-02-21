@@ -18,18 +18,18 @@ const workLaptop = new Computer(
 console.log("uziel's work omputer", workLaptop);
 console.log('days since acquired', workLaptop.computerAge());
 
-const contect = `
+const content = `
 <main>
     <article>
-        <h1>Everyday Backpack</h1>
+        <h1>user: ${workLaptop.user}</h1>
         <ul>
-            <li>Volume:</li>
-            <li>Color:</li>
-            <li>Age:</li>
-            <li>Number of pockets:</li>
-            <li>Left strap length:</li>
-            <li>Right strap length:</li>
-            <li>Lid status:</li>
+            <li>user1: ${workLaptop.users.user1Name}</li>
+            <li>size: ${workLaptop.size}</li>
+            <li>os: ${workLaptop.os}</li>
+            <li>color: ${workLaptop.color}</li>
+            <li>status: ${workLaptop.isOn(false)}</li>
+            <li>battery percentaje: ${workLaptop.batteryPercentage}</li>
+            <li>days since I GOT IT: ${workLaptop.computerAge()}</li>
         </ul>
     </article>
 </main>

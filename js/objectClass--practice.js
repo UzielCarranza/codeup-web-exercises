@@ -28,14 +28,10 @@ class Computer{
             user1Name: user1Name,
             user2Name: user2Name
         }
-        this.isOn = isOn;
         this.batteryPercentage = batteryPercentage;
         this.dateAcquired = dateAcquired;
     }
     //add methods like normal function
-    turnComputerOn(on){
-        this.batteryPercentage = on;
-    }
     usersInComputer(user1, user2){
         this.users.user1Name = user1;
         this.users.user2Name = user2;
@@ -47,6 +43,11 @@ class Computer{
         let elapsed = now - acquired; //elapsed time in seconds
         let daysSinceAcquired = Math.floor(elapsed / (1000 * 3600 * 24));
         return daysSinceAcquired;
+    }
+    isOn(status){
+        if(status){
+            return true;
+        } return false;
     }
 }
 
