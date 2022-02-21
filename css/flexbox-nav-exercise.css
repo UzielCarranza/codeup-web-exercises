@@ -1,4 +1,4 @@
-*{
+* {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
@@ -9,7 +9,7 @@
 Nav bar
 */
 
-#main--nav{
+#main--nav {
     width: 100%;
     margin: auto;
     display: flex;
@@ -18,7 +18,7 @@ Nav bar
 
 }
 
-.container--nav__left{
+.container--nav__left {
     width: 25%;
     outline: 2px solid green;
     display: flex;
@@ -27,7 +27,7 @@ Nav bar
     justify-content: space-evenly;
 }
 
-.container--nav__right{
+.container--nav__right {
     width: 25%;
     outline: 2px solid green;
     display: flex;
@@ -36,18 +36,18 @@ Nav bar
     justify-content: end;
 }
 
-.container--nav__--logo{
+.container--nav__--logo {
     width: auto;
     display: flex;
     align-items: end;
     outline: 2px solid blue;
 }
 
-ul{
+ul {
     display: flex;
     justify-content: space-between;
 }
 
-li{
+li {
     display: flex;
 }
