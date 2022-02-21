@@ -6,7 +6,7 @@
  */
 
 
-class computer{
+class Computer{
     constructor(
         //define parameters:
         user,
@@ -40,4 +40,4 @@ class computer{
     }
 }
 
-export default computer;
+export default Computer;

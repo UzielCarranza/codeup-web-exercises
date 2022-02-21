@@ -3,5 +3,6 @@
  * @link https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Classes
  */
 
-import computer from "./objectClass--practice";
+import Computer from "./objectClass--practice";
 
+const workLaptop = new Computer()
