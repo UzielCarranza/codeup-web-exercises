@@ -16,4 +16,23 @@ const workLaptop = new Computer(
     '2020'
 );
 console.log("uziel's work omputer", workLaptop);
-console.log('days since acquired', workLaptop.computerAge())
+console.log('days since acquired', workLaptop.computerAge());
+
+const contect = `
+<main>
+    <article>
+        <h1>Everyday Backpack</h1>
+        <ul>
+            <li>Volume:</li>
+            <li>Color:</li>
+            <li>Age:</li>
+            <li>Number of pockets:</li>
+            <li>Left strap length:</li>
+            <li>Right strap length:</li>
+            <li>Lid status:</li>
+        </ul>
+    </article>
+</main>
+`;
+
+document.body.innerHTML = content;
