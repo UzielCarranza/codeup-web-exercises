@@ -146,3 +146,37 @@ section:nth-of-type(6) {
 .grey-box:nth-of-type(odd) {
     height: 4em;
 }
+
+/*
+Bonus portion
+*/
+
+#flex--container{
+    width: 100%;
+    display: flex;
+    margin: auto;
+    outline: 2px solid #fff;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
