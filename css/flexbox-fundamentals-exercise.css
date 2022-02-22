@@ -43,7 +43,7 @@ h2, h3 {
     display: flex;
     flex-direction: column;
     flex-wrap: nowrap;
-    row-gap: 20px;
+    justify-content: space-around;
 
 }
 
@@ -102,8 +102,7 @@ section:nth-of-type(3) {
 
 section:nth-of-type(3) h3 {
     /* enter needed declarations here */
-    flex-grow: 2;
-
+    flex-grow: 3;
 }
 
 .orange-circle {
