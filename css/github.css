@@ -80,10 +80,20 @@ th{
 }
 
 
+/*
+second nav ul
+*/
 
+.ul--settings{
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    padding: 20px;
+}
 
-
-
+.li--settings{
+    width: 5%;
+}
 
 
 
