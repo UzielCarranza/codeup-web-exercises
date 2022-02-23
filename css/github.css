@@ -2,7 +2,7 @@
     padding: 0;
     margin: 0;
     box-sizing: border-box;
-    outline: 2px solid blue;
+    /*outline: 2px solid blue;*/
 }
 
 
@@ -87,12 +87,22 @@ second nav ul
 .ul--settings{
     display: flex;
     flex-direction: row;
-    justify-content: flex-start;
+    width: 50%;
+    justify-content: space-around;
     padding: 20px;
 }
 
 .li--settings{
-    width: 5%;
+    width: auto;
+    list-style-type: none;
+    display: flex;
+    flex-direction: column;
+}
+
+a{
+
+    text-decoration: none;
+    color: black;
 }
 
 
