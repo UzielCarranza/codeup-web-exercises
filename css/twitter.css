@@ -165,7 +165,9 @@
 /*    margin: .5em;*/
 /*}*/
 
-
+*{
+    box-sizing: border-box;
+}
 
 :root {
     --main-bg: #E6ECF0;
@@ -173,9 +175,6 @@
     --main-link-color: #848487;
     --light-bg: #FFF;
     --separator-color: #DDD;
-}
-* {
-    box-sizing: border-box;
 }
 body, html {
     background-color: var(--main-bg);
@@ -201,6 +200,12 @@ a {
     list-style-type: none;
     padding: 0;
     margin: 0;
+    display:flex;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: center;
+    width: 50%;
+    height: 80px;
 }
 .nav-link {
     color: var(--main-link-color);
@@ -212,12 +217,17 @@ a {
 }
 .profile {
     background: var(--light-bg);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 6em;
 }
 .btn {
     border: 1px solid var(--main-link-color);
     color: var(--main-link-color);
     background: var(--light-bg);
     font-weight: bold;
+    width: 40%;
     padding: 8px;
     border-radius: 5px;
 }
@@ -234,4 +244,89 @@ a {
 }
 .text-muted {
     color: var(--main-link-color);
+}
+
+
+.media{
+    background-color: #fff;
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    flex-wrap: nowrap;
+    align-content: space-between;
+    margin-top: 4px;
+    /*border-top-style: solid;*/
+    /*border-top-color: #DDDDDD;*/
+}
+
+.media-image{
+    display: flex;
+    height: 80px;
+    margin: 0;
+    padding: 5px;
+}
+.media-body{
+    display: flex;
+    flex-flow: column wrap;
+}
+
+
+.img-circle{
+    margin: 0;
+}
+
+.container{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    padding-top: 2em;
+    width: 100%;
+}
+
+
+.profile-details{
+    display: flex;
+    flex-direction: column;
+
+    width: 25%;
+}
+
+.profile-items{
+    display: flex;
+    flex-direction: column;
+    padding-left: 0;
+}
+
+ul{
+    list-style-type: none;
+}
+
+.timeline{
+    width: 50%;
+    height: 80%;
+    display: flex;
+    flex-direction: column;
+}
+
+.who-to-follow{
+    width: 20%;
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    padding-right: 6px;
+    padding-bottom: 5px;
+}
+
+.who--to--folow--h3{
+    text-align: left;
+    width: 100%;
+    padding: 30px 2px;
+    margin: 0;
+    background-color: #fff;
+}
+
+p{
+    padding: 0;
+    margin: 5px;
 }

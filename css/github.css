@@ -2,6 +2,7 @@
     padding: 0;
     margin: 0;
     box-sizing: border-box;
+    outline: 2px solid blue;
 }
 
 
@@ -46,14 +47,25 @@ section codeup
 .logo--codeup{
     display: flex;
     flex-direction: row;
+    justify-content: start;
+    align-items: center;
 }
 
 
-.codeup--logo__img{
-    width: 10%;
-    height: auto;
+/*.codeup--logo__img{*/
+/*    width: 10%;*/
+/*    height: auto;*/
+/*}*/
+
+.img--codeup{
+    width: 5%;
+    height: 3%;
 }
 
+figure{
+    padding: 0;
+    margin: 0;
+}
 h2{
     width: 30%;
 }
