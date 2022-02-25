@@ -18,3 +18,9 @@ h1{
     margin-right: -3%;
 }
 
+.badge{
+    border-radius: 70%;
+    background-color: #848487;
+    color: #DDDDDD;
+}
+
