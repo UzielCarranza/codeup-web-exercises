@@ -1,3 +1,9 @@
+/**{*/
+/*    outline: 1px solid black;*/
+/*}*/
+
+
+
 .jumbotron--img {
     background-image: url('../img--welcome/pizza.png');
     background-size: cover;
@@ -5,7 +11,10 @@
 }
 
 h1{
-    opacity: .6;
-    background-color: lightgrey;
-    width: 100%;
+    opacity: .7;
+    background-color: rgb(255,255,255);
+    color: black;
+    margin-left: -3%;
+    margin-right: -3%;
 }
+
