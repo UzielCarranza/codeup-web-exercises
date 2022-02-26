@@ -49,7 +49,7 @@
         </ul>
     </div>
 </nav>
-<div class="container">
+<div class="container mb-4">
     <!-- Content here -->
     <div class="jumbotron--img jumbotron text-center">
         <h1 class="display-4">Welcome to Pizza world!</h1>
@@ -99,7 +99,8 @@
                             </li>
                             <li class="list-group-item">
                                 <div class="form-check">
-                                    <input class="form-check-input" type="radio" name="exampleRadios" id="exampleRadios2" value="option2">
+                                    <input class="form-check-input" type="radio" name="exampleRadios"
+                                           id="exampleRadios2" value="option2">
                                     <label class="form-check-label" for="exampleRadios2">
                                         Medium (12")
                                     </label>
@@ -127,7 +128,8 @@
                             </li>
                             <li class="list-group-item">
                                 <div class="form-check">
-                                    <input class="form-check-input" type="radio" name="exampleRadios" id="exampleRadios4" value="option2">
+                                    <input class="form-check-input" type="radio" name="exampleRadios"
+                                           id="exampleRadios4" value="option2">
                                     <label class="form-check-label" for="exampleRadios2">
                                         Large (14")
                                     </label>
@@ -136,31 +138,72 @@
                         </ul>
                     </div>
                 </ul>
-
                 <div class="card-footer text-right">
                     <button type="button" class="btn btn-primary btn-sm">Next Step ></button>
                 </div>
             </div>
         </div>
+
+        <!--        second section-->
         <div class="tab-pane fade mt-4" id="profile" role="tabpanel" aria-labelledby="profile-tab">
             <div class="card">
                 <ul class="list-group list-group-flush">
-                    <li class="list-group-item">Cras justo odio</li>
-                    <li class="list-group-item">Dapibus ac facilisis in</li>
-                    <li class="list-group-item">Vestibulum at eros</li>
-                </ul>
-            </div>
-        </div>
-        <div class="tab-pane fade mt-4" id="contact" role="tabpanel" aria-labelledby="contact-tab">
-            <div class="card">
-                <ul class="list-group list-group-flush">
-                    <li class="list-group-item">Cras justo odio</li>
-                    <li class="list-group-item">Dapibus ac facilisis in</li>
-                    <li class="list-group-item">Vestibulum at eros</li>
-                </ul>
+                    <div class="card-header bg-primary text-white">
+                        Choose Size and Crust
+                    </div>
+                    <!--first card-->
+                    <div class="card m-4">
+                        <div class="card-header">
+                            Cheese
+                        </div>
+                        <ul class="list-group list-group-flush">
+                            <li class="list-group-item">How much?
+                                <select class="form-control" id="exampleFormControlSelect1">
+                                    <option>Light</option>
+                                    <option>Normal</option>
+                                    <option>Extra</option>
+                                    <option>Normal</option>
+                                </select>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="card mr-4 ml-4 mb-4">
+                        <div class="card-header">
+                            Sauce
+                        </div>
+                        <ul class="list-group list-group-flush">
+                            <li class="list-group-item">How much?
+                                <select class="form-control" id="exampleFormControlSelect1">
+                                    <option>Tomato Sauce</option>
+                                    <option>Marinara Sauce</option>
+                                    <option>BBQ Sauce</option>
+                                    <option>Alfredo Sauce</option>
+                                </select>
+                            </li>
+                        </ul>
+                    </div>
+                <div class="card-footer text-right">
+                    <div class="btn-group" role="group" aria-label="Basic example">
+                        <button type="button" class="btn btn-primary"> < Previous </button>
+                        <button type="button" class="btn btn-primary">Next ></button>
+                    </div>
+                </div>
             </div>
         </div>
     </div>
+    <!--second section of-->
+
+
+    <div class="tab-pane fade mt-4" id="contact" role="tabpanel" aria-labelledby="contact-tab">
+        <div class="card">
+            <ul class="list-group list-group-flush">
+                <li class="list-group-item">here</li>
+                <li class="list-group-item">Dapibus ac facilisis in</li>
+                <li class="list-group-item">Vestibulum at eros</li>
+            </ul>
+        </div>
+    </div>
+</div>
 
 </div>
 
