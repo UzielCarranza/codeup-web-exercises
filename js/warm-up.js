@@ -246,34 +246,74 @@ console.log('-----starts new warm up-------')
 Warmup: Create a function which returns true if the given argument is a number, false if it is not a number
 */
 
-function isANumber(input){
-    if (typeof input == 'number'){
-        console.log(true)
-        return true;
-    }
-    else if (isNaN(input)  || input == undefined || typeof input == 'boolean'){
-        console.log(false)
-        return false;
-    }
-}
-isANumber('9');
-
+// function isANumber(input){
+//     if (typeof input == 'number'){
+//         console.log(true)
+//         return true;
+//     }
+//     else if (isNaN(input)  || input == undefined || typeof input == 'boolean'){
+//         console.log(false)
+//         return false;
+//     }
+// }
+// isANumber('9');
+//
 
 
 //walkthrough
 // !isNaN(parseFloat())
 
+//
+// Warmup: Write a function called removeAll that takes two parameters.
+// One that represents an array and another that represents a value to be removed from that array.
+// When called this function should return an array with all the values of the original array except the specified value
+// to be removed.
+//     ex:
 
 
+var bugs = ["mosquito", "ant", "scorpion", "ant", "ant", "mosquito", "typo", "reference error", "type error"];
+
+// should print
+// [
+//     'mosquito',
+//     'scorpion',
+//     'mosquito',
+//     'typo',
+//     'reference error',
+//     'type error'
+// ]
 
 
+function removeAll(array, value){
+    let newArr = [];
+
+    for (var i = 0; i < array.length; i++){
+        if (value === array[i]){
+            continue;
+
+        }
+        newArr.push(array[i]);
+    }
+
+    return newArr;
+}
 
 
+//
+// function removeAll(anArr, valueToRemove){
+//     let newArr = [];
+//     anArr.forEach(function (ele){
+//         if (valueToRemove !== ele){
+//             newArr.push(ele);
+//         }
+//     });
+//     return newArr
+// }
+
+console.log(removeAll(bugs, "mosquito"))
 
 
-
-
-
+console.log("hello")
 
 
 
