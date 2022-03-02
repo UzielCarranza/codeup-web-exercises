@@ -1,0 +1,21 @@
+/**{*/
+/*    outline: 3px solid black;*/
+/*}*/
+
+body{
+    background-color: #E6E6E6;
+}
+
+
+.small--nav{
+    background-color: white;
+    margin-top: 20%;
+}
+
+.img-fluid{
+    width: 40%;
+}
+
+.images--section{
+    width: 20%;
+}
