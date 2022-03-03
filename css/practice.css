@@ -1,29 +1,110 @@
-*{
-    outline: 3px solid black;
-}
+Skip to content
+Search or jump to…
+Pull requests
+Issues
+Marketplace
+Explore
 
-body{
+@UzielCarranza
+Daniel-Keith-Uziel
+/
+codeup-design
+Public
+Code
+Issues
+1
+Pull requests
+Actions
+Projects
+Wiki
+Security
+Insights
+Settings
+codeup-design/css/style.css
+@UzielCarranza
+UzielCarranza completed small creen version
+Latest commit bfd7c85 4 hours ago
+History
+3 contributors
+@UzielCarranza@DanielOmarZavala@Islayah
+79 lines (64 sloc)  953 Bytes
+
+    /** {*/
+    /*    outline: 1px solid black;*/
+    /*}*/
+
+body {
     background-color: #E6E6E6;
 }
 
-/*small screen*/
+/**small screen*!*/
 
-.small--nav{
+.small--nav {
     background-color: white;
     margin-top: 20%;
 }
 
-.img-fluid{
+.img-fluid {
     width: 40%;
 }
 
-.images--section{
+.images--section {
     width: 90%;
 }
 
+.circle-border {
+    border-radius: 100%;
+    border: 4px solid #FFF;
+}
 
-/*medium screen*/
+.big-circle-body {
+    height: 100px;
+    width: 100px;
+    border-radius: 50%;
+    color: #FFF;
+    margin: 5px;
+}
+.small-circle-body {
+    height: 18px;
+    width: 18px;
+    border-radius: 50%;
+    color: #000000;
+    margin: 3px;
+}
+.apple-ipad {
+    width: 80%;
+    margin: 50px;
+    border: 8px solid black;
+}
+
+/*
+small device
+*/
 
 .row-m{
     width: 15%;
+    list-style: none;
+}
+
+.img-small{
+    width: 100%;
+}
+
+.nav--small{
+    margin-top: 10%;
+    background-color: #fff;
+}
+
+.line-small{
+    background-color: grey;
+    height: 2px;
+    width: 60%;
+    margin: 0.5em;
+}
+
+
+.apple-ipad--sm {
+    width: 80%;
+    margin: 50px;
+
 }

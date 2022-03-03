@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
-    <title>Title</title>
+    <title>CoolWebsite</title>
 
 
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css"
@@ -13,205 +13,338 @@
           crossorigin="anonymous">
     <link rel="stylesheet" href="css/practice.css">
 </head>
-<body class="container-fluid">
-<!--visible only on xm-->
-<nav class="row d-block d-sm-none">
-    <div class="col-md-8 small--nav">
-        <img class="img-fluid rounded mx-auto d-block" src="img--welcome/github.png" alt="company logo">
-    </div>
-</nav>
+<body>
 
-
-<!--nav-->
-<nav class="container-fluid mx-0 px-0 d-block d-sm-none">
-    <div class="row mx-0 px-0">
-        <div class="col-12 text-center mt-4 mb-2">codeUp design</div>
-        <div class="row mx-0 px-0 text-center">
-            <div class="col-3">services</div>
-
-            <div class="col-3">work</div>
-
-            <div class="col-3">blog</div>
-
-            <div class="col-3">contact</div>
+<!--main header-->
+<header>
+    <!--header image-->
+    <nav class="row d-block d-sm-none">
+        <div class="col-md-8 small--nav">
+            <img class="img-fluid rounded mx-auto d-block" src="assets/logo.png" alt="company logo">
         </div>
-        <h1 class="mt-4">Visual design and web development</h1>
-        <h3 class="mt-4">From park city, Utah</h3>
-    </div>
-</nav>
-<!--visible on medium screens-->
-<nav class=" d-none d-md-block d-lg-none">
-<div class="row justify-content-center">
-    <div class="row-m col-md-2">services</div>
+    </nav>
 
-    <div class="row-m col-md-2">work</div>
+    <!--nav-->
+    <nav class="container-fluid mx-0 px-0 d-block d-sm-none">
+        <div class="row mx-0 px-0">
+            <div class="col-12 text-center mt-4 mb-2">codeUp design</div>
+            <div class="row mx-0 px-0 text-center">
+                <div class="col-3">services</div>
 
-    <div class="row-m col-md-5">blog</div>
+                <div class="col-3">work</div>
 
-    <div class="row-m col-md-2">contact</div>
+                <div class="col-3">blog</div>
 
-    <div class="row-m col-md-2">contact</div>
-</div>
-</nav>
-
-<!--visible on large-->
-<div class="d-none d-lg-block d-xl-none">
-<div class="row">
-    <div class="col-lg-4">
-        1 of 3
-    </div>
-    <div class="col-lg-2">
-        Variable width content
-    </div>
-    <div class="col-lg-2">
-        3 of 3
-    </div>
-    <div class="col-lg-2">
-        3 of 3
-    </div>
-    <div class="col-lg-2">
-        3 of 3
-    </div>
-</div>
-</div>
-
-<!--visible on extra large-->
-<div class="d-none d-xl-block mx-4">
-    <div class="row mx-4">
-        <div class="col-lg-4">
-            1
+                <div class="col-3">contact</div>
+            </div>
         </div>
-        <div class="col-lg-2">
-            Variable width content
+    </nav>
+
+
+    <!--small screens-->
+    <nav class="nav--small d-none d-sm-block d-md-none">
+        <ul class="row justify-content-center text-center align-items-center">
+            <li class="row-m col-md-4">services</li>
+
+            <li class="row-m col-md-2">work</li>
+
+            <li class="row-m col-md-5"><img class="img-small" src="assets/logo.png" alt=""></li>
+
+            <li class="row-m col-md-2">contact</li>
+
+            <li class="row-m col-md-2">contact</li>
+        </ul>
+    </nav>
+
+</header>
+
+<!--main body-->
+<section class="row justify-content-center">
+    <main>
+
+
+        <div class="d-none d-sm-block d-md-none text-center" style="font-size: 35px">
+            <p>Codeup design</p>
         </div>
-        <div class="col-lg-2">
-            3
-        </div>
-        <div class="col-lg-2">
-             of 3
-        </div>
-        <div class="col-lg-2">
-             of 3
-        </div>
-    </div>
-</div>
 
 
-<!--    images circle-->
-<div class="container-fluid mx-0 px-0 my-4">
-    <div class="row mb-4">
-        <div class="col-6">
-            <img class="images img-fluid rounded mx-auto d-block" src="img--welcome/pexels-fauxel.jpg" alt="img">
-        </div>
-        <div class="col-6">
-            <img class="images img-fluid rounded mx-auto d-block" src="img--welcome/0.jpeg" alt="img">
-        </div>
-        <div class="col-6">
-            <img class="images img-fluid rounded mx-auto d-block" src="img--welcome/11.jpeg" alt="img">
-        </div>
-        <div class="col-6">
-            <img class="images img-fluid rounded mx-auto d-block" src="img--welcome/github.png" alt="img">
-        </div>
-    </div>
-</div>
+        <!--big p tags-->
+        <section>
+            <div>
+                <h1 class="mt-4 text-center">Visual design and web development</h1>
+            </div>
+            <div>
+                <h3 class="mt-4 text-center">From park city, Utah</h3>
+            </div>
+        </section>
 
-<!--4 images-->
-<div class="container-fluid my-4">
-    <p class="text-center">selected work</p>
-    <div class="row col-12 mx-0 px-0 my-4">
-        <img class="col-12 images img-fluid rounded mx-auto d-block" src="img--welcome/github.png" alt="">
-        <div class="col-8">featured project</div>
-        <div class="col-4 d-flex">
-            <div class="col-3">1</div>
-
-            <div class="col-3">2</div>
-
-            <div class="col-3">3</div>
-
-            <div class="col-3">4</div>
-        </div>
-    </div>
-
-    <div class="row col-12 mx-0 px-0 my-4">
-        <img class="col-12 images img-fluid rounded mx-auto d-block" src="img--welcome/github.png" alt="">
-        <div class="col-8">featured project</div>
-        <div class="col-4 d-flex">
-            <div class="col-3">1</div>
-
-            <div class="col-3">2</div>
-
-            <div class="col-3">3</div>
-
-            <div class="col-3">4</div>
-        </div>
-    </div>
-
-    <div class="row col-12 mx-0 px-0 my-4">
-        <img class="col-12 images img-fluid rounded mx-auto d-block" src="img--welcome/github.png" alt="">
-        <div class="col-8">featured project</div>
-        <div class="col-4 d-flex">
-            <div class="col-3">1</div>
-
-            <div class="col-3">2</div>
-
-            <div class="col-3">3</div>
-
-            <div class="col-3">4</div>
-        </div>
-    </div>
-
-    <div class="row col-12 mx-0 px-0 my-4">
-        <img class="col-12 images img-fluid rounded mx-auto d-block" src="img--welcome/github.png" alt="">
-        <div class="col-8">featured project</div>
-        <div class="col-4 d-flex">
-            <div class="col-3">1</div>
-
-            <div class="col-3">2</div>
-
-            <div class="col-3">3</div>
-
-            <div class="col-3">4</div>
-        </div>
-    </div>
-</div>
-
-<!--the last-->
-<div class="row mx-1 container-fluid">
-    <div class="row my-4">
-        <div class="col-4">
-            <img class="images--section" src="img--welcome/github.png" alt="">
-        </div>
-        <div class="col-8">The admin bad and absolute positioning</div>
-    </div>
-
-    <div class="row my-4">
-        <div class="col-4">
-            <img class="images--section" src="img--welcome/github.png" alt="">
-        </div>
-        <div class="col-8">The admin bad and absolute positioning</div>
-    </div>
+        <!--big circles-->
+        <section class="row justify-content-center">
+            <div class="big-circle-body circle-border col-6 col-md-3 d-flex align-items-center justify-content-center"
+                 style="background-color: #E6563B">
+                <p class="text-center"><strong>DESIGN</strong></p>
+            </div>
+            <div class="big-circle-body circle-border col-6 col-md-3  d-flex align-items-center justify-content-center"
+                 style="background-color: #DEA03D">
+                <p class="text-center"><strong>DEVELOP</strong></p>
+            </div>
+            <div class="big-circle-body circle-border col-6 col-md-3 d-flex align-items-center justify-content-center"
+                 style="background-color: #7CB06C">
+                <p class="text-center"><strong>SUPPORT</strong></p>
+            </div>
+            <div class="big-circle-body circle-border col-6 col-md-3 d-flex align-items-center justify-content-center"
+                 style="background-color: #00ABA9">
+                <p class="text-center"><strong>HOST</strong></p>
+            </div>
 
 
-    <div class="row my-4">
-        <div class="col-4">
-            <img class="images--section" src="img--welcome/github.png" alt="">
-        </div>
-        <div class="col-8">The admin bad and absolute positioning</div>
-    </div>
-</div>
-
-<!--twitter-->
-<div class="container text-center">
-    <p><i class="fa-brands fa-twitter mr-2"></i> Last Tweet</p>
-    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Laboriosam, quasi!</p>
-</div>
+            <div class="line-small d-none d-sm-block d-md-none"></div>
 
 
-<script src="https://kit.fontawesome.com/09d59239c9.js" crossorigin="anonymous"></script>
+        </section>
+
+        <!--lower page p tag-->
+        <section class="row">
+            <div class="col-12 d-flex justify-content-center align-items-end row d-block d-sm-none text-center"
+                 style="height: 15em;">
+                <p class="m-0">SELECTED WORK</p>
+            </div>
+            <div class="col-12 d-flex justify-content-center align-items-end row  d-none d-sm-block d-md-none text-center"
+                 style="margin-top: 3%">
+                <p class="m-0">SELECTED WORK</p>
+            </div>
+            <!--          4 images-section-->
+
+
+            <section class="row ">
+                <!--                    apple-img on xm screen-->
+
+                <div class="d-block d-sm-none">
+                    <section>
+                        <!--apple ipad image-->
+                        <div class="col-12 d-flex justify-content-center align-items-center">
+                            <img class="apple-ipad" src="assets/images/apple-ipad.jpg">
+                        </div>
+
+                        <!--lower page shapes and p tag-->
+                        <section class="row d-flex justify-content-center">
+
+                            <!--lower page p tag-->
+                            <div class="col-4" style="width: 60%">
+                                <p style="width: 100%">FEATURED PROJECT</p>
+                            </div>
+
+                            <!--lower page shapes-->
+                            <div class="small-circle-body col-2"
+                                 style="background-color: #E6563B">
+                                <p class="text-center m-0 d-flex justify-content-center align-items-center"
+                                   style="font-size: 11px"><strong>D</strong></p>
+                            </div>
+                            <div class="small-circle-body col-2"
+                                 style="background-color: #DEA03D">
+                                <p class="text-center m-0 d-flex justify-content-center align-items-center"
+                                   style="font-size: 11px"><strong>D</strong></p>
+                            </div>
+                            <div class="small-circle-body col-2"
+                                 style="background-color: #7CB06C">
+                                <p class="text-center m-0 d-flex justify-content-center align-items-center"
+                                   style="font-size: 11px"><strong>S</strong></p>
+                            </div>
+                            <div class="small-circle-body col-2"
+                                 style="background-color: #00ABA9">
+                                <p class="text-center m-0 d-flex justify-content-center align-items-center"
+                                   style="font-size: 11px"><strong>H</strong></p>
+                            </div>
+                        </section>
+                    </section>
+                </div>
+
+
+
+                <!--                ends apple-img on xm    -->
+
+
+                <div class="d-none d-sm-block d-md-block col-sm-6">
+                    <section>
+
+                        <!--apple ipad image-->
+                        <div class="col-12 d-flex justify-content-center align-items-center">
+                            <img class="apple-ipad--sm" src="assets/images/apple-ipad.jpg">
+                        </div>
+
+                        <!--lower page shapes and p tag-->
+                        <section class="row d-flex justify-content-center">
+
+                            <!--lower page p tag-->
+                            <div class="col-4" style="width: 60%">
+                                <p style="width: 100%">FEATURED PROJECT</p>
+                            </div>
+
+                            <!--lower page shapes-->
+                            <div class="small-circle-body col-2"
+                                 style="background-color: #E6563B">
+                                <p class="text-center m-0 d-flex justify-content-center align-items-center"
+                                   style="font-size: 11px"><strong>D</strong></p>
+                            </div>
+                            <div class="small-circle-body col-2"
+                                 style="background-color: #DEA03D">
+                                <p class="text-center m-0 d-flex justify-content-center align-items-center"
+                                   style="font-size: 11px"><strong>D</strong></p>
+                            </div>
+                            <div class="small-circle-body col-2"
+                                 style="background-color: #7CB06C">
+                                <p class="text-center m-0 d-flex justify-content-center align-items-center"
+                                   style="font-size: 11px"><strong>S</strong></p>
+                            </div>
+                            <div class="small-circle-body col-2"
+                                 style="background-color: #00ABA9">
+                                <p class="text-center m-0 d-flex justify-content-center align-items-center"
+                                   style="font-size: 11px"><strong>H</strong></p>
+                            </div>
+                        </section>
+                    </section>
+                </div>
+
+
+                <!--                3 images on small-->
+                <div class="d-none d-sm-block d-md-block col-sm-6">
+                    <section>
+                        <!--apple ipad image-->
+                        <div class="col-12 d-flex justify-content-center align-items-center">
+                            <img class="apple-ipad--sm" src="assets/images/macbook.jpg">
+                        </div>
+
+                        <!--lower page shapes and p tag-->
+                        <section class="row d-flex justify-content-center">
+
+                            <!--lower page p tag-->
+                            <div class="col-4" style="width: 60%">
+                                <p style="width: 100%">FEATURED PROJECT</p>
+                            </div>
+
+                            <!--lower page shapes-->
+                            <div class="small-circle-body col-2"
+                                 style="background-color: #E6563B">
+                                <p class="text-center m-0 d-flex justify-content-center align-items-center"
+                                   style="font-size: 11px"><strong>D</strong></p>
+                            </div>
+                            <div class="small-circle-body col-2"
+                                 style="background-color: #DEA03D">
+                                <p class="text-center m-0 d-flex justify-content-center align-items-center"
+                                   style="font-size: 11px"><strong>D</strong></p>
+                            </div>
+                            <div class="small-circle-body col-2"
+                                 style="background-color: #7CB06C">
+                                <p class="text-center m-0 d-flex justify-content-center align-items-center"
+                                   style="font-size: 11px"><strong>S</strong></p>
+                            </div>
+                            <div class="small-circle-body col-2"
+                                 style="background-color: #00ABA9">
+                                <p class="text-center m-0 d-flex justify-content-center align-items-center"
+                                   style="font-size: 11px"><strong>H</strong></p>
+                            </div>
+                        </section>
+                    </section>
+                </div>
+            </section>
+
+
+            <!--            second section-->
+
+            <div class="d-none d-sm-block d-md-block col-sm-6">
+                <section>
+                    <!--apple ipad image-->
+                    <div class="col-12 d-flex justify-content-center align-items-center">
+                        <img class="apple-ipad--sm" src="assets/images/man.jpg">
+                    </div>
+
+                    <!--lower page shapes and p tag-->
+                    <section class="row d-flex justify-content-center">
+
+                        <!--lower page p tag-->
+                        <div class="col-4" style="width: 60%">
+                            <p style="width: 100%">FEATURED PROJECT</p>
+                        </div>
+
+                        <!--lower page shapes-->
+                        <div class="small-circle-body col-2"
+                             style="background-color: #E6563B">
+                            <p class="text-center m-0 d-flex justify-content-center align-items-center"
+                               style="font-size: 11px"><strong>D</strong></p>
+                        </div>
+                        <div class="small-circle-body col-2"
+                             style="background-color: #DEA03D">
+                            <p class="text-center m-0 d-flex justify-content-center align-items-center"
+                               style="font-size: 11px"><strong>D</strong></p>
+                        </div>
+                        <div class="small-circle-body col-2"
+                             style="background-color: #7CB06C">
+                            <p class="text-center m-0 d-flex justify-content-center align-items-center"
+                               style="font-size: 11px"><strong>S</strong></p>
+                        </div>
+                        <div class="small-circle-body col-2"
+                             style="background-color: #00ABA9">
+                            <p class="text-center m-0 d-flex justify-content-center align-items-center"
+                               style="font-size: 11px"><strong>H</strong></p>
+                        </div>
+                    </section>
+                </section>
+            </div>
+
+
+            <!--third image-->
+
+            <div class="d-none d-sm-block d-md-block col-sm-6">
+                <section>
+                    <!--apple ipad image-->
+                    <div class="col-12 d-flex justify-content-center align-items-center">
+                        <img class="apple-ipad--sm" src="assets/images/security.jpg">
+                    </div>
+
+                    <!--lower page shapes and p tag-->
+                    <section class="row d-flex justify-content-center">
+
+                        <!--lower page p tag-->
+                        <div class="col-4" style="width: 60%">
+                            <p style="width: 100%">FEATURED PROJECT</p>
+                        </div>
+
+                        <!--lower page shapes-->
+                        <div class="small-circle-body col-2"
+                             style="background-color: #E6563B">
+                            <p class="text-center m-0 d-flex justify-content-center align-items-center"
+                               style="font-size: 11px"><strong>D</strong></p>
+                        </div>
+                        <div class="small-circle-body col-2"
+                             style="background-color: #DEA03D">
+                            <p class="text-center m-0 d-flex justify-content-center align-items-center"
+                               style="font-size: 11px"><strong>D</strong></p>
+                        </div>
+                        <div class="small-circle-body col-2"
+                             style="background-color: #7CB06C">
+                            <p class="text-center m-0 d-flex justify-content-center align-items-center"
+                               style="font-size: 11px"><strong>S</strong></p>
+                        </div>
+                        <div class="small-circle-body col-2"
+                             style="background-color: #00ABA9">
+                            <p class="text-center m-0 d-flex justify-content-center align-items-center"
+                               style="font-size: 11px"><strong>H</strong></p>
+                        </div>
+                    </section>
+
+                </section>
+            </div>
+        </section>
+    </main>
+</section>
+<footer>
+
+</footer>
+
+
 <script src="https://kit.fontawesome.com/09d59239c9.js" crossorigin="anonymous"></script>
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"
         integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p"
         crossorigin="anonymous"></script>
-
 </body>
 </html>
