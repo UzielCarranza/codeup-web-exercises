@@ -32,11 +32,13 @@
     updateTimer();
     //here is my own code
     var activityNumber = 2;
-    var addButton = document.getElementById('addtime');
-    var tracklistTable = document.getElementById('tracklist');
+    var addButton = document.getElementById('addBomb');
+    console.log(addButton)
+    var trackmoreBombs = document.getElementById('message');
 
     addButton.onclick = function(){
-        tracklistTable.innerHTML += '<tr><td>' + activityNumber + '</td><td><label>Activity Log: </label><br><input type="text" name="actlog" ' + activityNumber + '" class="required"></td><td><label>Time: </label><br><input type="time" name="time" ' + activityNumber + ' class="required"></td></tr>';
+        trackmoreBombs.innerHTML += '<h4 id="message">This BOM will self destruct in <span id="timer">5</span> seconds...</h4>';
+
         activityNumber += 1;
     };
     //ends my code
