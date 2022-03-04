@@ -8,6 +8,7 @@
 
 <h2 id="message">This BOM will self destruct in <span id="timer">5</span> seconds...</h2>
 <button id="defuser">Defuse the BOM</button>
+<button id="addBomb">Add more Bombs!!!</button>
 
 <script>
 (function() {
@@ -29,6 +30,16 @@
     }
     let newDetonationTimer = setInterval(updateTimer, 1000);
     updateTimer();
+    //here is my own code
+    var activityNumber = 2;
+    var addButton = document.getElementById('addtime');
+    var tracklistTable = document.getElementById('tracklist');
+
+    addButton.onclick = function(){
+        tracklistTable.innerHTML += '<tr><td>' + activityNumber + '</td><td><label>Activity Log: </label><br><input type="text" name="actlog" ' + activityNumber + '" class="required"></td><td><label>Time: </label><br><input type="time" name="time" ' + activityNumber + ' class="required"></td></tr>';
+        activityNumber += 1;
+    };
+    //ends my code
 
     // TODO: When this function runs, it needs to
     // cancel the interval/timeout for updateTimer()
