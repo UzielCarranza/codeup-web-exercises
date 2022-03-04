@@ -14,6 +14,8 @@ let nameElement = document.createElement("p");
 nameElement.innerText = getGitHubInfo().name;
 nameElement.style["color"] = 'white';
 console.log(nameElement)
+nameElement.classList.add('col-1');
+nameElement.classList.add('align-self-end');
 
 // TODO: Add nameElement to the DOM - specifically in between the GitHub Logo and the ul on the navbar
 
@@ -21,23 +23,24 @@ console.log(nameElement)
 // document.insertAdjacentElement('beforebegin', nameElement)
 
 // nameElement.insertBefore(navContent, img)
+//
+// let parent1 = document.getElementById("navContent").parentNode;
+//
+// let childs = document.querySelector("ul")
+// console.log(childs)
+//
+// childs.setAttribute('id', "child12")
+// console.log(childs)
+//
+// nameElement.insertBefore('parent1', 'child12')
 
-let parent1 = document.getElementById("navContent").parentNode;
-
-let childs = document.querySelector("ul")
-console.log(childs)
-
-childs.setAttribute('id', "child12")
-console.log(childs)
-
-nameElement.insertBefore('parent1', 'child12')
-
-
+navContent.insertBefore(nameElement, navContent.children[1]);
 
 
 // PRETEND THIS IS AN API CALL ACROSS THE INTERWEBS
 function getGitHubInfo(){
     return {
-        name: "vegetasrevenge"
+        name: "vegetasrevenge",
+        details: "yeah"
     };
 }
