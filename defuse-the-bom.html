@@ -28,20 +28,19 @@
         }
         detonationTimer--;
     }
-    let newDetonationTimer = setInterval(updateTimer, 1000);
-    updateTimer();
+
+
     //here is my own code
-    var activityNumber = 2;
     var addButton = document.getElementById('addBomb');
-    console.log(addButton)
     var trackmoreBombs = document.getElementById('message');
 
     addButton.onclick = function(){
         trackmoreBombs.innerHTML += '<h4 id="message">This BOM will self destruct in <span id="timer">5</span> seconds...</h4>';
-
-        activityNumber += 1;
     };
     //ends my code
+
+    let newDetonationTimer = setInterval(updateTimer, 1000);
+    updateTimer();
 
     // TODO: When this function runs, it needs to
     // cancel the interval/timeout for updateTimer()
