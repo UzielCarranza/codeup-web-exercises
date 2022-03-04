@@ -1,23 +1,201 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<!--<!DOCTYPE html>-->
+<!--<html lang="en">-->
+<!--<head>-->
+<!--    <meta charset="UTF-8">-->
+<!--    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">-->
 
-    <title>Title</title>
+<!--    <title>Title</title>-->
 
-    <!-- bootstrap -->
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/css/bootstrap.min.css"
-          integrity="sha384-TX8t27EcRE3e/ihU7zmQxVncDAy5uIKz4rEkgIXeMed4M0jlfIDPvg6uqKI2xXr2" crossorigin="anonymous">
-   
-</head>
-<body>
-$END$
+<!--    &lt;!&ndash; bootstrap &ndash;&gt;-->
+<!--    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/css/bootstrap.min.css"-->
+<!--          integrity="sha384-TX8t27EcRE3e/ihU7zmQxVncDAy5uIKz4rEkgIXeMed4M0jlfIDPvg6uqKI2xXr2" crossorigin="anonymous">-->
+
+<!--</head>-->
+<!--<body>-->
+<!--<script>-->
+<!--'use strict';-->
+
+<!--// this code will produce a console log every second-->
+<!--// when count >= max, the interval is cancelled, and the logging will stop-->
+
+<!--var count = 0;-->
+<!--var max = 10;-->
+<!--var interval = 1000; // interval time in milliseconds-->
+
+<!--var intervalId = setInterval(function () {-->
+<!--if (count >= max) {-->
+<!--clearInterval(intervalId);-->
+<!--console.log('All done');-->
+<!--} else {-->
+<!--count++;-->
+<!--console.log('Repeating this line ' + count);-->
+<!--}-->
+<!--}, interval);-->
+
+<!--'use strict';-->
+
+<!--var delay = 5000; // delay time in milliseconds-->
+
+<!--var timeoutId = setTimeout(function () {-->
+<!--    alert('Here is a delayed hello!');-->
+<!--}, delay);-->
+
+<!--// to cancel the timeout, you can call-->
+<!--// clearTimeout(timeoutId);-->
+<!--// prior to the delay expiring-->
+<!--</script>-->
+<!--<script src="https://kit.fontawesome.com/09d59239c9.js" crossorigin="anonymous"></script>-->
+<!--<script src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.slim.min.js"-->
+<!--        integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"-->
+<!--        crossorigin="anonymous"></script>-->
+<!--<script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/js/bootstrap.bundle.min.js"-->
+<!--        integrity="sha384-fQybjgWLrvvRgtW6bFlB7jaZrFsaBXjsOMm/tB9LTS58ONXgqbR9W8oWht/amnpF"-->
+<!--        crossorigin="anonymous"></script>-->
+
+<!--</body>-->
+<!--</html>-->
+
+<!--<!DOCTYPE html>-->
+<!--<html>-->
+<!--<head>-->
+<!--    <title></title>-->
+<!--</head>-->
+<!--<body>-->
+<!--<button id="btn1">Click Me!</button>-->
+<!--<script>-->
+<!--    'use strict';-->
+
+<!--    // create a handler function-->
+<!--    var listener = function (event) {-->
+<!--        alert('You clicked the button!');-->
+<!--    }-->
+
+<!--    // register the listener to handle clicks on btn1-->
+<!--    document.getElementById('btn1').addEventListener('click', listener);-->
+
+<!--</script>-->
+<!--</body>-->
+<!--</html>-->
+
+<!--<!DOCTYPE html>-->
+<!--<html>-->
+<!--<head>-->
+<!--    <title></title>-->
+<!--</head>-->
+<!--<body>-->
+<!--<button id="btn1">Click Me!</button>-->
+<!--<button id="btn2">Remove Event Listener</button>-->
+
+<!--<button id="btnToClick">Click Me</button>-->
+<!--<script>-->
+<!--    'use strict';-->
+
+<!--    var listener = function (event) {-->
+<!--        alert('You clicked the button!');-->
+<!--    }-->
+
+    // add event listener to btn1
+<!--    var btn1 = document.getElementById('btn1');-->
+<!--    btn1.addEventListener('click', listener);-->
+
+<!--    var remover = function (event) {-->
+        // remove event listener from btn1
+<!--        btn1.removeEventListener('click', listener);-->
+<!--        console.log('Event listener removed.');-->
+<!--    }-->
+
+    // add event listener to btn2
+<!--    var btn2 = document.getElementById('btn2');-->
+<!--    btn2.addEventListener('click', remover);-->
 
 
-<script src="https://kit.fontawesome.com/09d59239c9.js" crossorigin="anonymous"></script>
-<script src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-fQybjgWLrvvRgtW6bFlB7jaZrFsaBXjsOMm/tB9LTS58ONXgqbR9W8oWht/amnpF" crossorigin="anonymous"></script>
+<!--    -->
+<!--        (function() {-->
+<!--        var btnToClick = document.getElementById('btnToClick');-->
 
-</body>
-</html>
+<!--        console.log(btnToClick); // prints <button id="btnToClick">Click Me</button>-->
+<!--    })();-->
+<!--</script>-->
+<!--</body>-->
+<!--</html>-->
+
+<h1>List One</h1>
+<ul>
+    <li class="odd list-one-item">List 1, Item 1</li>
+    <li class="even list-one-item">List 1, Item 2</li>
+</ul>
+<h1>List Two</h1>
+<ul>
+    <li class="odd list-two-item">List 2, Item 1</li>
+    <li class="even list-two-item">List 2, Item 2</li>
+</ul>
+
+<script>
+    "use strict";
+    (function() {
+        // Get all elements with class 'even'
+        var evenElements = document.getElementsByClassName('even');
+
+        // Print the first element
+        console.log(evenElements[0], "firts"); // Prints li.even.list-one-item
+
+        // Print all elements
+        for (var i = 0; i < evenElements.length; i++) {
+            console.log(evenElements[i], "all eleemnt");
+        }
+
+        // Prints:
+        // li.even.list-one-item
+        // li.even.list-two-item
+
+        var listItems = document.getElementsByTagName('li');
+
+        // Print the first list item
+        console.log(listItems[0]); // Prints li.odd.list-one-item
+
+        // Print all the list items
+        for (var i = 0; i < listItems.length; i++) {
+            console.log(listItems[i], "lisi items");
+        }
+
+        // Prints
+        // li.odd.list-one-item
+        // li.even.list-one-item
+        // li.odd.list-two-item
+        // li.even.list-two-item
+    })();
+</script>
+
+
+
+
+
+<!--DOM-->
+
+//settmeout
+
+
+//a callback code to execute when tghe timer goes off
+
+//alert the user of a thing
+
+//duration of the timer
+
+//2000ms (2 seconds)
+
+
+
+//function invocation: alert() <-- invoked, code is run when pointer reaches this
+
+//function definition: alert <-- symbol representing the actual code in the alert function
+
+//function definition: function() { //code goes here}
+
+//function definition: () => {//code goes here}
+
+
+
+
+
+
+

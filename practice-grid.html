@@ -1,350 +1,803 @@
-<!DOCTYPE html>
-<html lang="en">
+<!--<!DOCTYPE html>-->
+<!--<html lang="en">-->
+<!--<head>-->
+<!--    <meta charset="UTF-8">-->
+<!--    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">-->
+
+<!--    <title>CoolWebsite</title>-->
+
+
+<!--    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css"-->
+<!--          rel="stylesheet"-->
+<!--          integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3"-->
+<!--          crossorigin="anonymous">-->
+<!--    <link rel="stylesheet" href="css/practice.css">-->
+<!--</head>-->
+<!--<body>-->
+
+<!--&lt;!&ndash;main header&ndash;&gt;-->
+<!--<header>-->
+<!--    &lt;!&ndash;header image&ndash;&gt;-->
+<!--    <nav class="row d-block d-sm-none">-->
+<!--        <div style="background-image: linear-gradient(black, black, #283747)" class="col-md-8 small&#45;&#45;nav">-->
+<!--            <img class="img-fluid mx-auto d-block" src="assets/immortals.jpg"-->
+<!--                 alt="company logo">-->
+<!--        </div>-->
+<!--    </nav>-->
+
+<!--    &lt;!&ndash;nav&ndash;&gt;-->
+<!--    <nav class="container-fluid mx-0 px-0 d-block d-sm-none">-->
+<!--        <div class="row mx-0 px-0 d-flex justify-content-center">-->
+<!--            <div class="col-12 text-center mt-4 mb-2">-->
+<!--                <h1 style="color: #000000">Immortals Gaming&copy Website Creator</h1>-->
+<!--            </div>-->
+<!--            <div class="row mx-0 px-0 text-center d-flex justify-content-space-between" style="width: 90%">-->
+<!--                <div class="col-3 m-0.5" style="color: #641E16; border-right: 1px solid #000000">services</div>-->
+
+<!--                <div class="col-3 m-0.5" style="color: #641E16; border-right: 1px solid #000000">work</div>-->
+
+<!--                <div class="col-3 m-0.5" style="color: #641E16; border-right: 1px solid #000000">blog</div>-->
+
+<!--                <div class="col-3 m-0.5" style="color: #641E16">contact</div>-->
+<!--            </div>-->
+<!--        </div>-->
+<!--    </nav>-->
+
+
+<!--    &lt;!&ndash;small screens&ndash;&gt;-->
+<!--    <nav class="nav&#45;&#45;small d-none d-sm-block d-md-none">-->
+<!--        <ul class="row justify-content-center text-center align-items-center">-->
+<!--            <li class="row-m col-md-4" style="color: #B2BABB">services</li>-->
+
+<!--            <li class="row-m col-md-2" style="color: #B2BABB">work</li>-->
+
+<!--            <li class="row-m col-md-5"><img class="img-small" src="assets/immortals.jpg" alt="company logo">-->
+<!--            </li>-->
+
+<!--            <li class="row-m col-md-2" style="color: #B2BABB">blog</li>-->
+
+<!--            <li class="row-m col-md-2" style="color: #B2BABB">contact</li>-->
+<!--        </ul>-->
+<!--    </nav>-->
+
+<!--    &lt;!&ndash;    medium nav&ndash;&gt;-->
+<!--    <nav class="nav&#45;&#45;medium d-none d-md-block d-lg-block">-->
+<!--        <ul class="row text-center align-items-center">-->
+
+<!--            <li class="row-m col-md-6 m-0 p-0"><img class="img-small" src="assets/immortals.jpg" alt="company logo">-->
+<!--            </li>-->
+
+
+<!--            <li class="row-m col-md-1 m-0 p-0">Codeup Design</li>-->
+
+<!--            <li class="row-m col-md-2" style="width: 9em;"></li>-->
+<!--            <li class="row-m col-md-2" style="color: #B2BABB; width: 6em;">services</li>-->
+
+<!--            <li class="row-m col-md-2" style="color: #B2BABB; width: 6em;">work</li>-->
+
+<!--            <li class="row-m col-md-2" style="color: #B2BABB; width: 6em;">blog</li>-->
+
+<!--            <li class="row-m col-md-2" style="color: #B2BABB; width: 6em;">contact</li>-->
+<!--        </ul>-->
+<!--    </nav>-->
+<!--</header>-->
+
+<!--&lt;!&ndash;main body&ndash;&gt;-->
+<!--<main class="m-0 p-0 row">-->
+
+<!--    <section class="row justify-content-center m-0 p-0">-->
+
+<!--        <div class="d-none d-sm-block d-md-none text-center" style="font-size: 35px">-->
+<!--            <p>Immortals Gaming&copy Website Creator</p>-->
+<!--        </div>-->
+
+
+<!--        &lt;!&ndash;big p tags&ndash;&gt;-->
+<!--        <section>-->
+<!--            <div>-->
+<!--                <h1 class="mt-4 text-center" style="color: #641E16"><strong>WEB 8 IMPLEMENTATION</strong></h1>-->
+<!--            </div>-->
+<!--            <div>-->
+<!--                <h3 class="mt-4 text-center" style="color: #641E16">Full Body Hologram Chatrooms</h3>-->
+<!--            </div>-->
+<!--        </section>-->
+
+<!--        &lt;!&ndash;big circles&ndash;&gt;-->
+<!--        <section class="row justify-content-center ">-->
+<!--            <div class="big-circle-body circle-border col-sm-12 col-md-3 d-flex align-items-center justify-content-center"-->
+<!--                 style="background-color: #E6563B">-->
+<!--                <p class="text-center"><strong>DESIGN</strong></p>-->
+<!--            </div>-->
+<!--            <div class="big-circle-body circle-border  col-sm-6 col-md-3  d-flex align-items-center justify-content-center"-->
+<!--                 style="background-color: #DEA03D">-->
+<!--                <p class="text-center"><strong>DEVELOP</strong></p>-->
+<!--            </div>-->
+<!--            <div class="big-circle-body circle-border col-sm-6 col-md-3 d-flex align-items-center justify-content-center"-->
+<!--                 style="background-color: #7CB06C">-->
+<!--                <p class="text-center"><strong>SUPPORT</strong></p>-->
+<!--            </div>-->
+<!--            <div class="big-circle-body circle-border col-sm-6 col-md-3 d-flex align-items-center justify-content-center"-->
+<!--                 style="background-color: #00ABA9">-->
+<!--                <p class="text-center"><strong>HOST</strong></p>-->
+<!--            </div>-->
+<!--        </section>-->
+
+<!--        &lt;!&ndash;horizontal line&ndash;&gt;-->
+<!--        <div class="d-flex justify-content-center">-->
+<!--            <div class="line-small d-none d-sm-block d-md-none"></div>-->
+<!--        </div>-->
+<!--    </section>-->
+
+<!--    &lt;!&ndash;lower page p tag&ndash;&gt;-->
+<!--    <div class="col-md-6 m-0 p-0">-->
+<!--        <div class="col-12 d-flex justify-content-center align-items-end row d-block d-sm-none text-center"-->
+<!--             style="height: 15em;">-->
+<!--            <p class="m-0">SELECTED WORK</p>-->
+<!--        </div>-->
+<!--        <div class="col-12 d-flex justify-content-center align-items-end row  d-none d-sm-block d-md-none text-center"-->
+<!--             style="margin-top: 3%">-->
+<!--            <p class="m-0">SELECTED WORK</p>-->
+<!--        </div>-->
+<!--        &lt;!&ndash;          4 images-section&ndash;&gt;-->
+
+
+<!--        &lt;!&ndash;                    apple-img on xm screen&ndash;&gt;-->
+
+<!--        <div class="d-block d-sm-none ">-->
+<!--            <section class="m-0 p-0">-->
+<!--                &lt;!&ndash;apple ipad image&ndash;&gt;-->
+<!--                <div class="col-12 d-flex justify-content-center align-items-center">-->
+<!--                    <img class="apple-ipad" src="assets/images/dying-light.jpeg">-->
+<!--                </div>-->
+
+<!--                &lt;!&ndash;lower page shapes and p tag&ndash;&gt;-->
+<!--                <section class="row d-flex justify-content-center m-0 p-0">-->
+
+<!--                    &lt;!&ndash;lower page p tag&ndash;&gt;-->
+<!--                    <div class="col-sm-2 m-0 p-0" style="width: 60%">-->
+<!--                        <p style="width: 90%">FEATURED PROJECT</p>-->
+<!--                    </div>-->
+
+<!--                    &lt;!&ndash;lower page shapes&ndash;&gt;-->
+<!--                    <div class="small-circle-body col-2"-->
+<!--                         style="background-color: #E6563B">-->
+<!--                        <p class="text-center m-0 p-0 d-flex justify-content-center align-items-center"-->
+<!--                           style="font-size: 11px"><strong>D</strong></p>-->
+<!--                    </div>-->
+<!--                    <div class="small-circle-body col-2"-->
+<!--                         style="background-color: #DEA03D">-->
+<!--                        <p class="text-center m-0 d-flex justify-content-center align-items-center"-->
+<!--                           style="font-size: 11px"><strong>D</strong></p>-->
+<!--                    </div>-->
+<!--                    <div class="small-circle-body col-2"-->
+<!--                         style="background-color: #7CB06C">-->
+<!--                        <p class="text-center m-0 d-flex justify-content-center align-items-center"-->
+<!--                           style="font-size: 11px"><strong>S</strong></p>-->
+<!--                    </div>-->
+<!--                    <div class="small-circle-body col-2"-->
+<!--                         style="background-color: #00ABA9">-->
+<!--                        <p class="text-center m-0 d-flex justify-content-center align-items-center"-->
+<!--                           style="font-size: 11px"><strong>H</strong></p>-->
+<!--                    </div>-->
+<!--                </section>-->
+<!--            </section>-->
+<!--        </div>-->
+
+
+<!--        &lt;!&ndash;                ends apple-img on xm    &ndash;&gt;-->
+
+
+<!--        &lt;!&ndash;        all images&ndash;&gt;-->
+<!--        <div id="all-images" class="col-md-12  d-none d-sm-block d-md-none">-->
+<!--            &lt;!&ndash;            1st 2 img md-section&ndash;&gt;-->
+<!--            <section class="row  m-0 p-0 col-md-12">-->
+
+<!--                <section class="d-none d-sm-block d-md-block col-sm-6 col-md-6 m-0 p-0">-->
+<!--                    <div>-->
+
+<!--                        &lt;!&ndash;apple ipad image&ndash;&gt;-->
+<!--                        <div class="col-md-12 col-sm-12 d-flex justify-content-center align-items-center">-->
+<!--                            <img class="apple-ipad&#45;&#45;sm" src="assets/images/dying-light.jpeg" style="width: 90%;">-->
+<!--                        </div>-->
+
+<!--                        &lt;!&ndash;lower page shapes and p tag&ndash;&gt;-->
+<!--                        <section class="row d-flex justify-content-center">-->
+
+<!--                            &lt;!&ndash;lower page p tag&ndash;&gt;-->
+<!--                            <div class="col-4" style="width: 60%">-->
+<!--                                <p style="width: 100%">FEATURED PROJECT</p>-->
+<!--                            </div>-->
+
+<!--                            &lt;!&ndash;lower page shapes&ndash;&gt;-->
+<!--                            <div class="small-circle-body col-2"-->
+<!--                                 style="background-color: #E6563B">-->
+<!--                                <p class="text-center m-0 d-flex justify-content-center align-items-center"-->
+<!--                                   style="font-size: 11px"><strong>D</strong></p>-->
+<!--                            </div>-->
+<!--                            <div class="small-circle-body col-2"-->
+<!--                                 style="background-color: #DEA03D">-->
+<!--                                <p class="text-center m-0 d-flex justify-content-center align-items-center"-->
+<!--                                   style="font-size: 11px"><strong>D</strong></p>-->
+<!--                            </div>-->
+<!--                            <div class="small-circle-body col-2"-->
+<!--                                 style="background-color: #7CB06C">-->
+<!--                                <p class="text-center m-0 d-flex justify-content-center align-items-center"-->
+<!--                                   style="font-size: 11px"><strong>S</strong></p>-->
+<!--                            </div>-->
+<!--                            <div class="small-circle-body col-2"-->
+<!--                                 style="background-color: #00ABA9">-->
+<!--                                <p class="text-center m-0 d-flex justify-content-center align-items-center"-->
+<!--                                   style="font-size: 11px"><strong>H</strong></p>-->
+<!--                            </div>-->
+<!--                        </section>-->
+<!--                    </div>-->
+<!--                </section>-->
+
+
+<!--                &lt;!&ndash;                second image on md&ndash;&gt;-->
+<!--                <div class="d-none d-sm-block d-md-block col-sm-6 col-md-6  m-0 p-0">-->
+<!--                    <section>-->
+<!--                        &lt;!&ndash;apple ipad image&ndash;&gt;-->
+<!--                        <div class="col-md-12 d-flex justify-content-center align-items-center">-->
+<!--                            <img class="apple-ipad&#45;&#45;sm" src="assets/images/lich-king.png" style="width: 80%;">-->
+<!--                        </div>-->
+
+<!--                        &lt;!&ndash;lower page shapes and p tag&ndash;&gt;-->
+<!--                        <section class="row d-flex justify-content-center">-->
+
+<!--                            &lt;!&ndash;lower page p tag&ndash;&gt;-->
+<!--                            <div class="col-4" style="width: 60%">-->
+<!--                                <p style="width: 100%">FEATURED PROJECT</p>-->
+<!--                            </div>-->
+
+<!--                            &lt;!&ndash;lower page shapes&ndash;&gt;-->
+<!--                            <div class="small-circle-body col-2"-->
+<!--                                 style="background-color: #E6563B">-->
+<!--                                <p class="text-center m-0 d-flex justify-content-center align-items-center"-->
+<!--                                   style="font-size: 11px"><strong>D</strong></p>-->
+<!--                            </div>-->
+<!--                            <div class="small-circle-body col-2"-->
+<!--                                 style="background-color: #DEA03D">-->
+<!--                                <p class="text-center m-0 d-flex justify-content-center align-items-center"-->
+<!--                                   style="font-size: 11px"><strong>D</strong></p>-->
+<!--                            </div>-->
+<!--                            <div class="small-circle-body col-2"-->
+<!--                                 style="background-color: #7CB06C">-->
+<!--                                <p class="text-center m-0 d-flex justify-content-center align-items-center"-->
+<!--                                   style="font-size: 11px"><strong>S</strong></p>-->
+<!--                            </div>-->
+<!--                            <div class="small-circle-body col-2"-->
+<!--                                 style="background-color: #00ABA9">-->
+<!--                                <p class="text-center m-0 d-flex justify-content-center align-items-center"-->
+<!--                                   style="font-size: 11px"><strong>H</strong></p>-->
+<!--                            </div>-->
+<!--                        </section>-->
+<!--                    </section>-->
+<!--                </div>-->
+<!--            </section>-->
+
+
+<!--            &lt;!&ndash;            second section&ndash;&gt;-->
+<!--            &lt;!&ndash;            1st 2 img on md&ndash;&gt;-->
+<!--            <section class="row  m-0 p-0 col-md-12">-->
+
+<!--                <section class="d-none d-sm-block d-md-block col-sm-6 col-md-6 m-0 p-0">-->
+<!--                    <div>-->
+
+<!--                        &lt;!&ndash;apple ipad image&ndash;&gt;-->
+<!--                        <div class="col-md-12 d-flex justify-content-center align-items-center">-->
+<!--                            <img class="apple-ipad&#45;&#45;sm" src="assets/images/dying-light.jpeg" style="width: 90%;">-->
+<!--                        </div>-->
+
+<!--                        &lt;!&ndash;lower page shapes and p tag&ndash;&gt;-->
+<!--                        <section class="row d-flex justify-content-center">-->
+
+<!--                            &lt;!&ndash;lower page p tag&ndash;&gt;-->
+<!--                            <div class="col-4" style="width: 60%">-->
+<!--                                <p style="width: 100%">FEATURED PROJECT</p>-->
+<!--                            </div>-->
+
+<!--                            &lt;!&ndash;lower page shapes&ndash;&gt;-->
+<!--                            <div class="small-circle-body col-2"-->
+<!--                                 style="background-color: #E6563B">-->
+<!--                                <p class="text-center m-0 d-flex justify-content-center align-items-center"-->
+<!--                                   style="font-size: 11px"><strong>D</strong></p>-->
+<!--                            </div>-->
+<!--                            <div class="small-circle-body col-2"-->
+<!--                                 style="background-color: #DEA03D">-->
+<!--                                <p class="text-center m-0 d-flex justify-content-center align-items-center"-->
+<!--                                   style="font-size: 11px"><strong>D</strong></p>-->
+<!--                            </div>-->
+<!--                            <div class="small-circle-body col-2"-->
+<!--                                 style="background-color: #7CB06C">-->
+<!--                                <p class="text-center m-0 d-flex justify-content-center align-items-center"-->
+<!--                                   style="font-size: 11px"><strong>S</strong></p>-->
+<!--                            </div>-->
+<!--                            <div class="small-circle-body col-2"-->
+<!--                                 style="background-color: #00ABA9">-->
+<!--                                <p class="text-center m-0 d-flex justify-content-center align-items-center"-->
+<!--                                   style="font-size: 11px"><strong>H</strong></p>-->
+<!--                            </div>-->
+<!--                        </section>-->
+<!--                    </div>-->
+<!--                </section>-->
+
+
+<!--                &lt;!&ndash;                2nd image on medium&ndash;&gt;-->
+<!--                <div class="d-none d-sm-block d-md-block col-sm-6 col-md-6  m-0 p-0">-->
+<!--                    <section>-->
+<!--                        &lt;!&ndash;apple ipad image&ndash;&gt;-->
+<!--                        <div class="col-md-12 d-flex justify-content-center align-items-center">-->
+<!--                            <img class="apple-ipad&#45;&#45;sm" src="assets/images/lich-king.png" tyle="width: 100%;">-->
+<!--                        </div>-->
+
+<!--                        &lt;!&ndash;lower page shapes and p tag&ndash;&gt;-->
+<!--                        <section class="row d-flex justify-content-center">-->
+
+<!--                            &lt;!&ndash;lower page p tag&ndash;&gt;-->
+<!--                            <div class="col-4" style="width: 60%">-->
+<!--                                <p style="width: 100%">FEATURED PROJECT</p>-->
+<!--                            </div>-->
+
+<!--                            &lt;!&ndash;lower page shapes&ndash;&gt;-->
+<!--                            <div class="small-circle-body col-2"-->
+<!--                                 style="background-color: #E6563B">-->
+<!--                                <p class="text-center m-0 d-flex justify-content-center align-items-center"-->
+<!--                                   style="font-size: 11px"><strong>D</strong></p>-->
+<!--                            </div>-->
+<!--                            <div class="small-circle-body col-2"-->
+<!--                                 style="background-color: #DEA03D">-->
+<!--                                <p class="text-center m-0 d-flex justify-content-center align-items-center"-->
+<!--                                   style="font-size: 11px"><strong>D</strong></p>-->
+<!--                            </div>-->
+<!--                            <div class="small-circle-body col-2"-->
+<!--                                 style="background-color: #7CB06C">-->
+<!--                                <p class="text-center m-0 d-flex justify-content-center align-items-center"-->
+<!--                                   style="font-size: 11px"><strong>S</strong></p>-->
+<!--                            </div>-->
+<!--                            <div class="small-circle-body col-2"-->
+<!--                                 style="background-color: #00ABA9">-->
+<!--                                <p class="text-center m-0 d-flex justify-content-center align-items-center"-->
+<!--                                   style="font-size: 11px"><strong>H</strong></p>-->
+<!--                            </div>-->
+<!--                        </section>-->
+<!--                    </section>-->
+<!--                </div>-->
+<!--            </section>-->
+<!--        </div>-->
+<!--    </div>-->
+<!--</main>-->
+<!--<div class="d-flex justify-content-center d-flex" style="width: 100%;">-->
+<!--    <section id="the&#45;&#45;last" class="d-none d-md-block d-lg-block flex-nowrap" style="width: 100%;">-->
+<!--        <div id="al-images" class="col-md-4">-->
+<!--            &lt;!&ndash;            1st 2 img md-section&ndash;&gt;-->
+<!--            <section class="row  m-0 p-0 col-md-12">-->
+
+<!--                <section class="d-none d-sm-block d-md-block col-sm-6 col-md-6 m-0 p-0">-->
+<!--                    <div>-->
+
+<!--                        &lt;!&ndash;apple ipad image&ndash;&gt;-->
+<!--                        <div class="col-md-12 col-sm-12 d-flex justify-content-center align-items-center">-->
+<!--                            <img class="apple-ipad&#45;&#45;sm" src="assets/images/dying-light.jpeg" style="width: 90%;">-->
+<!--                        </div>-->
+
+<!--                        &lt;!&ndash;lower page shapes and p tag&ndash;&gt;-->
+<!--                        <section class="row d-flex justify-content-center">-->
+
+<!--                            &lt;!&ndash;lower page p tag&ndash;&gt;-->
+<!--                            <div class="col-4" style="width: 60%">-->
+<!--                                <p style="width: 100%">FEATURED PROJECT</p>-->
+<!--                            </div>-->
+
+<!--                            &lt;!&ndash;lower page shapes&ndash;&gt;-->
+<!--                            <div class="small-circle-body col-2"-->
+<!--                                 style="background-color: #E6563B">-->
+<!--                                <p class="text-center m-0 d-flex justify-content-center align-items-center"-->
+<!--                                   style="font-size: 11px"><strong>D</strong></p>-->
+<!--                            </div>-->
+<!--                            <div class="small-circle-body col-2"-->
+<!--                                 style="background-color: #DEA03D">-->
+<!--                                <p class="text-center m-0 d-flex justify-content-center align-items-center"-->
+<!--                                   style="font-size: 11px"><strong>D</strong></p>-->
+<!--                            </div>-->
+<!--                            <div class="small-circle-body col-2"-->
+<!--                                 style="background-color: #7CB06C">-->
+<!--                                <p class="text-center m-0 d-flex justify-content-center align-items-center"-->
+<!--                                   style="font-size: 11px"><strong>S</strong></p>-->
+<!--                            </div>-->
+<!--                            <div class="small-circle-body col-2"-->
+<!--                                 style="background-color: #00ABA9">-->
+<!--                                <p class="text-center m-0 d-flex justify-content-center align-items-center"-->
+<!--                                   style="font-size: 11px"><strong>H</strong></p>-->
+<!--                            </div>-->
+<!--                        </section>-->
+<!--                    </div>-->
+<!--                </section>-->
+
+
+<!--                &lt;!&ndash;                second image on md&ndash;&gt;-->
+<!--                <div class="d-none d-sm-block d-md-block col-sm-6 col-md-6  m-0 p-0">-->
+<!--                    <section>-->
+<!--                        &lt;!&ndash;apple ipad image&ndash;&gt;-->
+<!--                        <div class="col-md-12 d-flex justify-content-center align-items-center">-->
+<!--                            <img class="apple-ipad&#45;&#45;sm" src="assets/images/lich-king.png" style="width: 80%;">-->
+<!--                        </div>-->
+
+<!--                        &lt;!&ndash;lower page shapes and p tag&ndash;&gt;-->
+<!--                        <section class="row d-flex justify-content-center">-->
+
+<!--                            &lt;!&ndash;lower page p tag&ndash;&gt;-->
+<!--                            <div class="col-4" style="width: 60%">-->
+<!--                                <p style="width: 100%">FEATURED PROJECT</p>-->
+<!--                            </div>-->
+
+<!--                            &lt;!&ndash;lower page shapes&ndash;&gt;-->
+<!--                            <div class="small-circle-body col-2"-->
+<!--                                 style="background-color: #E6563B">-->
+<!--                                <p class="text-center m-0 d-flex justify-content-center align-items-center"-->
+<!--                                   style="font-size: 11px"><strong>D</strong></p>-->
+<!--                            </div>-->
+<!--                            <div class="small-circle-body col-2"-->
+<!--                                 style="background-color: #DEA03D">-->
+<!--                                <p class="text-center m-0 d-flex justify-content-center align-items-center"-->
+<!--                                   style="font-size: 11px"><strong>D</strong></p>-->
+<!--                            </div>-->
+<!--                            <div class="small-circle-body col-2"-->
+<!--                                 style="background-color: #7CB06C">-->
+<!--                                <p class="text-center m-0 d-flex justify-content-center align-items-center"-->
+<!--                                   style="font-size: 11px"><strong>S</strong></p>-->
+<!--                            </div>-->
+<!--                            <div class="small-circle-body col-2"-->
+<!--                                 style="background-color: #00ABA9">-->
+<!--                                <p class="text-center m-0 d-flex justify-content-center align-items-center"-->
+<!--                                   style="font-size: 11px"><strong>H</strong></p>-->
+<!--                            </div>-->
+<!--                        </section>-->
+<!--                    </section>-->
+<!--                </div>-->
+<!--            </section>-->
+
+
+<!--            &lt;!&ndash;            second section&ndash;&gt;-->
+<!--            &lt;!&ndash;            1st 2 img on md&ndash;&gt;-->
+<!--            <section class="row  m-0 p-0 col-md-12">-->
+
+<!--                <section class="d-none d-sm-none d-md-block col-md-6 m-0 p-0">-->
+<!--                    <div>-->
+
+<!--                        &lt;!&ndash;apple ipad image&ndash;&gt;-->
+<!--                        <div class="col-md-12 d-flex justify-content-center align-items-center">-->
+<!--                            <img class="apple-ipad&#45;&#45;sm" src="assets/images/dying-light.jpeg" style="width: 90%;">-->
+<!--                        </div>-->
+
+<!--                        &lt;!&ndash;lower page shapes and p tag&ndash;&gt;-->
+<!--                        <section class="row d-flex justify-content-center">-->
+
+<!--                            &lt;!&ndash;lower page p tag&ndash;&gt;-->
+<!--                            <div class="col-4" style="width: 60%">-->
+<!--                                <p style="width: 100%">FEATURED PROJECT</p>-->
+<!--                            </div>-->
+
+<!--                            &lt;!&ndash;lower page shapes&ndash;&gt;-->
+<!--                            <div class="small-circle-body col-2"-->
+<!--                                 style="background-color: #E6563B">-->
+<!--                                <p class="text-center m-0 d-flex justify-content-center align-items-center"-->
+<!--                                   style="font-size: 11px"><strong>D</strong></p>-->
+<!--                            </div>-->
+<!--                            <div class="small-circle-body col-2"-->
+<!--                                 style="background-color: #DEA03D">-->
+<!--                                <p class="text-center m-0 d-flex justify-content-center align-items-center"-->
+<!--                                   style="font-size: 11px"><strong>D</strong></p>-->
+<!--                            </div>-->
+<!--                            <div class="small-circle-body col-2"-->
+<!--                                 style="background-color: #7CB06C">-->
+<!--                                <p class="text-center m-0 d-flex justify-content-center align-items-center"-->
+<!--                                   style="font-size: 11px"><strong>S</strong></p>-->
+<!--                            </div>-->
+<!--                            <div class="small-circle-body col-2"-->
+<!--                                 style="background-color: #00ABA9">-->
+<!--                                <p class="text-center m-0 d-flex justify-content-center align-items-center"-->
+<!--                                   style="font-size: 11px"><strong>H</strong></p>-->
+<!--                            </div>-->
+<!--                        </section>-->
+<!--                    </div>-->
+<!--                </section>-->
+
+
+<!--                &lt;!&ndash;                2nd image on medium&ndash;&gt;-->
+<!--                <div class="d-none d-sm-block d-md-block col-md-6  m-0 p-0">-->
+<!--                    <section>-->
+<!--                        &lt;!&ndash;apple ipad image&ndash;&gt;-->
+<!--                        <div class="col-md-12 d-flex justify-content-center align-items-center">-->
+<!--                            <img class="apple-ipad&#45;&#45;sm" src="assets/images/lich-king.png" style="width: 90%;">-->
+<!--                        </div>-->
+
+<!--                        &lt;!&ndash;lower page shapes and p tag&ndash;&gt;-->
+<!--                        <section class="row d-flex justify-content-center">-->
+
+<!--                            &lt;!&ndash;lower page p tag&ndash;&gt;-->
+<!--                            <div class="col-4" style="width: 60%">-->
+<!--                                <p style="width: 100%">FEATURED PROJECT</p>-->
+<!--                            </div>-->
+
+<!--                            &lt;!&ndash;lower page shapes&ndash;&gt;-->
+<!--                            <div class="small-circle-body col-2"-->
+<!--                                 style="background-color: #E6563B">-->
+<!--                                <p class="text-center m-0 d-flex justify-content-center align-items-center"-->
+<!--                                   style="font-size: 11px"><strong>D</strong></p>-->
+<!--                            </div>-->
+<!--                            <div class="small-circle-body col-2"-->
+<!--                                 style="background-color: #DEA03D">-->
+<!--                                <p class="text-center m-0 d-flex justify-content-center align-items-center"-->
+<!--                                   style="font-size: 11px"><strong>D</strong></p>-->
+<!--                            </div>-->
+<!--                            <div class="small-circle-body col-2"-->
+<!--                                 style="background-color: #7CB06C">-->
+<!--                                <p class="text-center m-0 d-flex justify-content-center align-items-center"-->
+<!--                                   style="font-size: 11px"><strong>S</strong></p>-->
+<!--                            </div>-->
+<!--                            <div class="small-circle-body col-2"-->
+<!--                                 style="background-color: #00ABA9">-->
+<!--                                <p class="text-center m-0 d-flex justify-content-center align-items-center"-->
+<!--                                   style="font-size: 11px"><strong>H</strong></p>-->
+<!--                            </div>-->
+<!--                        </section>-->
+<!--                    </section>-->
+<!--                </div>-->
+<!--            </section>-->
+<!--        </div>-->
+
+<!--        <div class="little-images col-md-6 offset-md-5" >-->
+<!--            <p>The last</p>-->
+<!--            <div id="one&#45;&#45;image">-->
+<!--                <div class="col-md-8 m-0 p-0 d-flex align-items-center">-->
+<!--                    <div clas="col-md-2" style="width: 20%;"><img class="col-md-6" src="img&#45;&#45;welcome/github.png"-->
+<!--                                                                  alt=""-->
+<!--                                                                  style="width: 100%;"></div>-->
+<!--                    <div clas="col-md-6">THE ADMIN BAR AND ABSOLUTE POSITIONING</div>-->
+<!--                </div>-->
+<!--            </div>-->
+<!--            <div id="second&#45;&#45;image">-->
+<!--                <div class="col-md-8 m-0 p-0 d-flex align-items-center">-->
+<!--                    <div clas="col-md-2" style="width: 20%;"><img class="col-md-6" src="assets/images/apple-ipad.jpg"-->
+<!--                                                                  alt=""-->
+<!--                                                                  style="width: 100%;"></div>-->
+<!--                    <div clas="col-md-6">THE ADMIN BAR AND ABSOLUTE POSITIONING</div>-->
+<!--                </div>-->
+<!--            </div>-->
+<!--            <div id="third&#45;&#45;image">-->
+<!--                <div class="col-md-8 m-0 p-0 d-flex align-items-center">-->
+<!--                    <div clas="col-md-2" style="width: 20%;"><img class="col-md-6" src="assets/images/apple-ipad.jpg"-->
+<!--                                                                  alt=""-->
+<!--                                                                  style="width: 100%;"></div>-->
+<!--                    <div clas="col-md-6">THE ADMIN BAR AND ABSOLUTE POSITIONING</div>-->
+<!--                </div>-->
+<!--            </div>-->
+
+<!--            <div class="row d-none d-md-block d-lg-block" style="width: 100%">-->
+<!--                <div class="row align-items-center justify-content-start col-md-6">-->
+<!--                    <i class="fa-brands fa-twitter text-primary col-md-2"></i>-->
+<!--                    <p class="col-md-6">LAST TWEET</p>-->
+<!--                </div>-->
+<!--                <div class="row">-->
+<!--                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit.-->
+<!--                        Culpa dolor ea earum eligendi hic in iusto, nemo neque numquam praesentium provident,-->
+<!--                        quos, soluta tempora vero voluptatem.-->
+<!--                        Iste molestias odit quibusdam!</p>-->
+<!--                </div>-->
+
+<!--            </div>-->
+<!--        </div>-->
+<!--    </section>-->
+
+<!--</div>-->
+
+
+<!--<script src="https://kit.fontawesome.com/09d59239c9.js" crossorigin="anonymous"></script>-->
+<!--<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"-->
+<!--        integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p"-->
+<!--        crossorigin="anonymous"></script>-->
+<!--</body>-->
+<!--</html>-->
+<!doctype html>
+
+<html lang="en" xmlns:mso="urn:schemas-microsoft-com:office:office" xmlns:msdt="uuid:C2F41010-65B3-11d1-A29F-00AA00C14882">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta charset="utf-8">
+    <title>Uziel Carranza Charro - ePortfolio</title>
 
-    <title>CoolWebsite</title>
-
-
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css"
-          rel="stylesheet"
-          integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3"
-          crossorigin="anonymous">
-    <link rel="stylesheet" href="css/practice.css">
+    <!--[if gte mso 9]><xml>
+    <mso:CustomDocumentProperties>
+        <mso:Category0 msdt:dt="string">***Choose***</mso:Category0>
+    </mso:CustomDocumentProperties>
+</xml><![endif]-->
 </head>
+
 <body>
 
-<!--main header-->
 <header>
-    <!--header image-->
-    <nav class="row d-block d-sm-none">
-        <div class="col-md-8 small--nav">
-            <img class="img-fluid rounded mx-auto d-block" src="assets/logo.png" alt="company logo">
-        </div>
-    </nav>
-
-    <!--nav-->
-    <nav class="container-fluid mx-0 px-0 d-block d-sm-none">
-        <div class="row mx-0 px-0">
-            <div class="col-12 text-center mt-4 mb-2">codeUp design</div>
-            <div class="row mx-0 px-0 text-center">
-                <div class="col-3">services</div>
-
-                <div class="col-3">work</div>
-
-                <div class="col-3">blog</div>
-
-                <div class="col-3">contact</div>
-            </div>
-        </div>
-    </nav>
-
-
-    <!--small screens-->
-    <nav class="nav--small d-none d-sm-block d-md-none">
-        <ul class="row justify-content-center text-center align-items-center">
-            <li class="row-m col-md-4">services</li>
-
-            <li class="row-m col-md-2">work</li>
-
-            <li class="row-m col-md-5"><img class="img-small" src="assets/logo.png" alt=""></li>
-
-            <li class="row-m col-md-2">contact</li>
-
-            <li class="row-m col-md-2">contact</li>
-        </ul>
-    </nav>
+    <h1>Lorem ipsum dolor sit amet consectetuer adipiscing
+        elit</h1>
 
 </header>
 
-<!--main body-->
-<section class="row justify-content-center">
-    <main>
+<nav>
+    <p>
+        <a href="#"></a> &#124;
+        <a href="#"></a>
+    </p>
+</nav>
+
+<main>
+    <h2>Aenean commodo ligula eget dolor aenean massa</h2>
+
+    <p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Donec quam felis, ultricies nec, pellentesque eu, pretium quis, sem. Nulla consequat massa quis enim. Donec pede justo, fringilla vel, aliquet nec, vulputate eget, arcu. In enim justo, rhoncus ut, imperdiet a, venenatis vitae, justo. Nullam dictum felis eu pede mollis pretium. Integer tincidunt. Cras dapibus. Vivamus elementum semper nisi. Aenean vulputate eleifend tellus. Aenean leo ligula, porttitor eu, consequat vitae, eleifend ac, enim. Aliquam lorem ante, dapibus in, viverra quis, feugiat a, tellus. Phasellus viverra nulla ut metus varius laoreet. Quisque rutrum. Aenean imperdiet. Etiam ultricies nisi vel augue. Curabitur ullamcorper ultricies nisi. Nam eget dui. Etiam rhoncus. Maecenas tempus, tellus eget condimentum rhoncus, sem quam semper libero, sit amet adipiscing sem neque sed ipsum. Nam quam nunc, blandit vel, luctus pulvinar, hendrerit id, lorem. Maecenas nec odio et ante tincidunt tempus. Donec vitae sapien ut libero venenatis faucibus. Nullam quis ante. Etiam sit amet orci eget eros faucibus tincidunt. Duis leo. Sed fringilla mauris sit amet nibh. Donec sodales sagittis magna. Sed consequat, leo eget bibendum sodales, augue velit cursus nunc,
+    </p>
 
 
-        <div class="d-none d-sm-block d-md-none text-center" style="font-size: 35px">
-            <p>Codeup design</p>
-        </div>
+    <h3>Cum sociis natoque penatibus et magnis dis
+        parturient montes nascetur ridiculus mus</h3>
+
+    <ul>
+        <li id="highlight">Lorem ipsum dolor sit amet consectetuer.</li>
+        <li>Aenean commodo ligula eget dolor.</li>
+        <li>Aenean massa cum sociis natoque penatibus.</li>
+    </ul>
 
 
-        <!--big p tags-->
-        <section>
-            <div>
-                <h1 class="mt-4 text-center">Visual design and web development</h1>
-            </div>
-            <div>
-                <h3 class="mt-4 text-center">From park city, Utah</h3>
-            </div>
-        </section>
-
-        <!--big circles-->
-        <section class="row justify-content-center">
-            <div class="big-circle-body circle-border col-6 col-md-3 d-flex align-items-center justify-content-center"
-                 style="background-color: #E6563B">
-                <p class="text-center"><strong>DESIGN</strong></p>
-            </div>
-            <div class="big-circle-body circle-border col-6 col-md-3  d-flex align-items-center justify-content-center"
-                 style="background-color: #DEA03D">
-                <p class="text-center"><strong>DEVELOP</strong></p>
-            </div>
-            <div class="big-circle-body circle-border col-6 col-md-3 d-flex align-items-center justify-content-center"
-                 style="background-color: #7CB06C">
-                <p class="text-center"><strong>SUPPORT</strong></p>
-            </div>
-            <div class="big-circle-body circle-border col-6 col-md-3 d-flex align-items-center justify-content-center"
-                 style="background-color: #00ABA9">
-                <p class="text-center"><strong>HOST</strong></p>
-            </div>
+    <p>Lorem ipsum dolor sit amet, consectetuer adipiscing
+        elit. Aenean commodo ligula eget dolor. Aenean massa
+        <strong>strong</strong>. Cum sociis natoque penatibus
+        et magnis dis parturient montes, nascetur ridiculus
+        mus. Donec quam felis, ultricies nec, pellentesque
+        eu, pretium quis, sem. Nulla consequat massa quis
+        enim. Donec pede justo, fringilla vel, aliquet nec,
+        vulputate eget, arcu. In enim justo, rhoncus ut,
+        imperdiet a, venenatis vitae, justo. Nullam dictum
+        felis eu pede <a class="external ext" href="#">link</a>
+        mollis pretium. Integer tincidunt. Cras dapibus.
+        Vivamus elementum semper nisi. Aenean vulputate
+        eleifend tellus. Aenean leo ligula, porttitor eu,
+        consequat vitae, eleifend ac, enim. Aliquam lorem ante,
+        dapibus in, viverra quis, feugiat a, tellus. Phasellus
+        viverra nulla ut metus varius laoreet. Quisque rutrum.
+        Aenean imperdiet. Etiam ultricies nisi vel augue.
+        Curabitur ullamcorper ultricies nisi.</p>
+    <br>
 
 
-            <div class="line-small d-none d-sm-block d-md-none"></div>
+    <h4>Add Content to a table dynamically</h4>
+    <form action="#" method="get" name="mainForm" id="mainForm">
+        <fieldset>
+            <legend>Input Activity Logs</legend>
+            <table id="tracklist">
+                <tr>
+                    <th colspan="3">Track List: </th>
+                </tr>
+                <tr>
+                    <td>1</td>
+                    <td><label>Activity Log: </label><br><input type="text" name="actlog1" class="required"></td>
+                    <td><label>Time: </label><br><input type="time" name="time1" class="required"></td>
+                </tr>
+            </table>
+            <input type="submit">
+        </fieldset>
+    </form>
+    <br>
+    <button id="add_activity">Add Activity</button>
+</main>
 
-
-        </section>
-
-        <!--lower page p tag-->
-        <section class="row">
-            <div class="col-12 d-flex justify-content-center align-items-end row d-block d-sm-none text-center"
-                 style="height: 15em;">
-                <p class="m-0">SELECTED WORK</p>
-            </div>
-            <div class="col-12 d-flex justify-content-center align-items-end row  d-none d-sm-block d-md-none text-center"
-                 style="margin-top: 3%">
-                <p class="m-0">SELECTED WORK</p>
-            </div>
-            <!--          4 images-section-->
-
-
-            <section class="row ">
-                <!--                    apple-img on xm screen-->
-
-                <div class="d-block d-sm-none">
-                    <section>
-                        <!--apple ipad image-->
-                        <div class="col-12 d-flex justify-content-center align-items-center">
-                            <img class="apple-ipad" src="assets/images/apple-ipad.jpg">
-                        </div>
-
-                        <!--lower page shapes and p tag-->
-                        <section class="row d-flex justify-content-center">
-
-                            <!--lower page p tag-->
-                            <div class="col-4" style="width: 60%">
-                                <p style="width: 100%">FEATURED PROJECT</p>
-                            </div>
-
-                            <!--lower page shapes-->
-                            <div class="small-circle-body col-2"
-                                 style="background-color: #E6563B">
-                                <p class="text-center m-0 d-flex justify-content-center align-items-center"
-                                   style="font-size: 11px"><strong>D</strong></p>
-                            </div>
-                            <div class="small-circle-body col-2"
-                                 style="background-color: #DEA03D">
-                                <p class="text-center m-0 d-flex justify-content-center align-items-center"
-                                   style="font-size: 11px"><strong>D</strong></p>
-                            </div>
-                            <div class="small-circle-body col-2"
-                                 style="background-color: #7CB06C">
-                                <p class="text-center m-0 d-flex justify-content-center align-items-center"
-                                   style="font-size: 11px"><strong>S</strong></p>
-                            </div>
-                            <div class="small-circle-body col-2"
-                                 style="background-color: #00ABA9">
-                                <p class="text-center m-0 d-flex justify-content-center align-items-center"
-                                   style="font-size: 11px"><strong>H</strong></p>
-                            </div>
-                        </section>
-                    </section>
-                </div>
-
-
-
-                <!--                ends apple-img on xm    -->
-
-
-                <div class="d-none d-sm-block d-md-block col-sm-6">
-                    <section>
-
-                        <!--apple ipad image-->
-                        <div class="col-12 d-flex justify-content-center align-items-center">
-                            <img class="apple-ipad--sm" src="assets/images/apple-ipad.jpg">
-                        </div>
-
-                        <!--lower page shapes and p tag-->
-                        <section class="row d-flex justify-content-center">
-
-                            <!--lower page p tag-->
-                            <div class="col-4" style="width: 60%">
-                                <p style="width: 100%">FEATURED PROJECT</p>
-                            </div>
-
-                            <!--lower page shapes-->
-                            <div class="small-circle-body col-2"
-                                 style="background-color: #E6563B">
-                                <p class="text-center m-0 d-flex justify-content-center align-items-center"
-                                   style="font-size: 11px"><strong>D</strong></p>
-                            </div>
-                            <div class="small-circle-body col-2"
-                                 style="background-color: #DEA03D">
-                                <p class="text-center m-0 d-flex justify-content-center align-items-center"
-                                   style="font-size: 11px"><strong>D</strong></p>
-                            </div>
-                            <div class="small-circle-body col-2"
-                                 style="background-color: #7CB06C">
-                                <p class="text-center m-0 d-flex justify-content-center align-items-center"
-                                   style="font-size: 11px"><strong>S</strong></p>
-                            </div>
-                            <div class="small-circle-body col-2"
-                                 style="background-color: #00ABA9">
-                                <p class="text-center m-0 d-flex justify-content-center align-items-center"
-                                   style="font-size: 11px"><strong>H</strong></p>
-                            </div>
-                        </section>
-                    </section>
-                </div>
-
-
-                <!--                3 images on small-->
-                <div class="d-none d-sm-block d-md-block col-sm-6">
-                    <section>
-                        <!--apple ipad image-->
-                        <div class="col-12 d-flex justify-content-center align-items-center">
-                            <img class="apple-ipad--sm" src="assets/images/macbook.jpg">
-                        </div>
-
-                        <!--lower page shapes and p tag-->
-                        <section class="row d-flex justify-content-center">
-
-                            <!--lower page p tag-->
-                            <div class="col-4" style="width: 60%">
-                                <p style="width: 100%">FEATURED PROJECT</p>
-                            </div>
-
-                            <!--lower page shapes-->
-                            <div class="small-circle-body col-2"
-                                 style="background-color: #E6563B">
-                                <p class="text-center m-0 d-flex justify-content-center align-items-center"
-                                   style="font-size: 11px"><strong>D</strong></p>
-                            </div>
-                            <div class="small-circle-body col-2"
-                                 style="background-color: #DEA03D">
-                                <p class="text-center m-0 d-flex justify-content-center align-items-center"
-                                   style="font-size: 11px"><strong>D</strong></p>
-                            </div>
-                            <div class="small-circle-body col-2"
-                                 style="background-color: #7CB06C">
-                                <p class="text-center m-0 d-flex justify-content-center align-items-center"
-                                   style="font-size: 11px"><strong>S</strong></p>
-                            </div>
-                            <div class="small-circle-body col-2"
-                                 style="background-color: #00ABA9">
-                                <p class="text-center m-0 d-flex justify-content-center align-items-center"
-                                   style="font-size: 11px"><strong>H</strong></p>
-                            </div>
-                        </section>
-                    </section>
-                </div>
-            </section>
-
-
-            <!--            second section-->
-
-            <div class="d-none d-sm-block d-md-block col-sm-6">
-                <section>
-                    <!--apple ipad image-->
-                    <div class="col-12 d-flex justify-content-center align-items-center">
-                        <img class="apple-ipad--sm" src="assets/images/man.jpg">
-                    </div>
-
-                    <!--lower page shapes and p tag-->
-                    <section class="row d-flex justify-content-center">
-
-                        <!--lower page p tag-->
-                        <div class="col-4" style="width: 60%">
-                            <p style="width: 100%">FEATURED PROJECT</p>
-                        </div>
-
-                        <!--lower page shapes-->
-                        <div class="small-circle-body col-2"
-                             style="background-color: #E6563B">
-                            <p class="text-center m-0 d-flex justify-content-center align-items-center"
-                               style="font-size: 11px"><strong>D</strong></p>
-                        </div>
-                        <div class="small-circle-body col-2"
-                             style="background-color: #DEA03D">
-                            <p class="text-center m-0 d-flex justify-content-center align-items-center"
-                               style="font-size: 11px"><strong>D</strong></p>
-                        </div>
-                        <div class="small-circle-body col-2"
-                             style="background-color: #7CB06C">
-                            <p class="text-center m-0 d-flex justify-content-center align-items-center"
-                               style="font-size: 11px"><strong>S</strong></p>
-                        </div>
-                        <div class="small-circle-body col-2"
-                             style="background-color: #00ABA9">
-                            <p class="text-center m-0 d-flex justify-content-center align-items-center"
-                               style="font-size: 11px"><strong>H</strong></p>
-                        </div>
-                    </section>
-                </section>
-            </div>
-
-
-            <!--third image-->
-
-            <div class="d-none d-sm-block d-md-block col-sm-6">
-                <section>
-                    <!--apple ipad image-->
-                    <div class="col-12 d-flex justify-content-center align-items-center">
-                        <img class="apple-ipad--sm" src="assets/images/security.jpg">
-                    </div>
-
-                    <!--lower page shapes and p tag-->
-                    <section class="row d-flex justify-content-center">
-
-                        <!--lower page p tag-->
-                        <div class="col-4" style="width: 60%">
-                            <p style="width: 100%">FEATURED PROJECT</p>
-                        </div>
-
-                        <!--lower page shapes-->
-                        <div class="small-circle-body col-2"
-                             style="background-color: #E6563B">
-                            <p class="text-center m-0 d-flex justify-content-center align-items-center"
-                               style="font-size: 11px"><strong>D</strong></p>
-                        </div>
-                        <div class="small-circle-body col-2"
-                             style="background-color: #DEA03D">
-                            <p class="text-center m-0 d-flex justify-content-center align-items-center"
-                               style="font-size: 11px"><strong>D</strong></p>
-                        </div>
-                        <div class="small-circle-body col-2"
-                             style="background-color: #7CB06C">
-                            <p class="text-center m-0 d-flex justify-content-center align-items-center"
-                               style="font-size: 11px"><strong>S</strong></p>
-                        </div>
-                        <div class="small-circle-body col-2"
-                             style="background-color: #00ABA9">
-                            <p class="text-center m-0 d-flex justify-content-center align-items-center"
-                               style="font-size: 11px"><strong>H</strong></p>
-                        </div>
-                    </section>
-
-                </section>
-            </div>
-        </section>
-    </main>
-</section>
 <footer>
-
+    <p>&#169; 2022 Uziel Carranza Charro</p>
+    <button type="button" onClick="alert('Welcome to my page!')" >Alert Message</button>
 </footer>
 
 
-<script src="https://kit.fontawesome.com/09d59239c9.js" crossorigin="anonymous"></script>
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"
-        integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p"
-        crossorigin="anonymous"></script>
+<script>
+
+
+    //part 1
+    //console.dir(document);
+    //console.log(document.URL);
+
+
+    var el1 = document.querySelector("h1");
+    //console.log(el1);
+
+    //console.log(el1.innerHTML);
+
+
+    //part2
+    //updating web page content
+    el1.innerHTML = "My JavaScript";
+    console.log(el1.innerHTML);
+
+    //apply formatting to the h1 element
+    el1.style.color = '#800000';
+    el1.style.background = '#ddd';
+
+    //dynamically change page content
+
+    var el2 = document.querySelector('#highlight');
+    el2.innerHTML = "My highlighted <br> list item";
+    el2.style.background = '#ffff00';
+
+    var activityNumber = 2;
+    var addButton = document.getElementById('add_activity');
+    var tracklistTable = document.getElementById('tracklist');
+
+    addButton.onclick = function(){
+        tracklistTable.innerHTML += '<tr><td>' + activityNumber + '</td><td><label>Activity Log: <label><br><input type="text" name="actlog" ' + activityNumber + '" class="required"></td><td><label>Time: <label><br><input type="time" name="time" ' + activityNumber + 'class="required"></td></tr>';
+        activityNumber += 1;
+    };
+
+
+
+</script>
+
 </body>
 </html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
