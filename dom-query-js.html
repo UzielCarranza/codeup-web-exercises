@@ -43,13 +43,13 @@
         subHeader.style.color = "blue";
 
         // TODO: Uncomment the next line and get all list items
-        // var listItems = document.getElementsByTagName("li");
-        // console.log(listItems.length)
-        // console.log(listItems, "the list items")
-        const listItems = () => {
+        // let newIdLi = document.getElementsByTagName("li").setAttribute("id", "new-id")
+        // console.log(newIdLi)
+        let listItems = () => {
             const ul = document.querySelectorAll('ul li');
             let theInnerText;
             for (let i = 0; i <= ul.length - 1; i++) {
+                let newId = ul[i].setAttribute("id","new-id")
                   theInnerText = ul[i].innerHTML;
                 console.log(theInnerText);
             }
@@ -57,6 +57,18 @@
         console.log(listItems())
 
         // TODO: Set text color on every other list item to grey
+        // let allLis = document.getElementById("new-id");
+        // console.log(allLis)
+        let changeColorLis = () => {
+            const ul = document.querySelectorAll('ul li');
+            let theInnerText;
+            for (let i = 0; i <= ul.length - 1; i++) {
+                let newId = ul[i].style.color = "grey"
+                theInnerText = ul[i].innerHTML;
+                console.log(theInnerText);
+            }
+        }
+        console.log(changeColorLis())
         // TODO: Set text color of li with dbid = 1 to blue
 
         // TODO: Uncomment the next line and get all elements with class name sub-paragraph
