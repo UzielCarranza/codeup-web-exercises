@@ -32,7 +32,7 @@ var toggleHighlight = function(){
     if (hasClass){
         getClass.classList.remove('highlight')
     } else {
-        getClass.classList.add('highlight')
+        getClass.classList.add('some')
     }
 }
 toggleHighlight(); //uncomment me to test
@@ -43,9 +43,12 @@ toggleHighlight(); //uncomment me to test
 Write a function which returns all text content of the introduction paragraph
 */
 var getText = function(){
+    let getContent = document.querySelector('p').innerText;
+    // console.log(getContent);
+    return getContent;
 
 }
-// getText(); //uncomment me to test
+getText(); //uncomment me to test
 
 
 /*
@@ -53,18 +56,28 @@ Write a function which returns the number of charachters in the introduction
 paragraph
 */
 var getNumChars = function(){
-
+    let counter = 0;
+    let getContent = document.querySelector('p').innerText;
+    // console.log(getContent);
+    for(var i =0; i <= getContent.length; i++){
+        counter = getContent.length;
+        console.log(counter)
+    }
 }
-// getNumChars(); //uncomment me to test
+ getNumChars(); //uncomment me to test
 
 
 /*
 Write a function which returns the number of words in the introduction paragraph
 */
 var getNumWords = function(){
+    let getContent = document.querySelector('p').innerText;
+    let counter = getContent.split(" ").length;
 
+    console.log(counter)
+    return counter;
 }
-// getNumWords(); //uncomment me to test
+ getNumWords(); //uncomment me to test
 
 
 /*
