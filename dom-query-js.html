@@ -63,16 +63,35 @@
             const ul = document.querySelectorAll('ul li');
             let theInnerText;
             for (let i = 0; i <= ul.length - 1; i++) {
-                let newId = ul[i].style.color = "grey"
+                let newId = ul[i].style.color = "grey "
                 theInnerText = ul[i].innerHTML;
                 console.log(theInnerText);
             }
         }
         console.log(changeColorLis())
+        // let dataId = () => {
+        //     // Get the main heading h1 by id
+        //     let listItems = document.getElementsByTagName('li');
+        //
+        //     for (var i = 0; i < listItems.length; i++) {
+        //         var dbId = listItems[i].style.color = "blue";
+        //         console.log(dbId);
+        //     }
+        // }
+        // console.log(dataId())
+
         // TODO: Set text color of li with dbid = 1 to blue
+        // let gettingDb = document.getElementById('new-id')
+        // gettingDb.dataset.dbid = "1", {
+        //     color : "blue",
+        // }
+        //
+        // console.log(gettingDb, "ad");
+
 
         // TODO: Uncomment the next line and get all elements with class name sub-paragraph
-        // var subParagraphs = ;
+        var subParagraphs = document.getElementsByClassName("sub-paragraph");
+        console.log(subParagraphs);
 
         // TODO: Change the text in the first sub paragraph to "Mission Accomplished!"
     })();
