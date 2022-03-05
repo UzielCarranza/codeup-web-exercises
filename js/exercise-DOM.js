@@ -26,9 +26,16 @@ Write a function which, if the introduction paragraph has the class "highlight",
 it will be removed; otherwise the class "highlight" is added.
 */
 var toggleHighlight = function(){
-
+    let getClass = document.querySelector('p');
+    let hasClass = getClass.classList.contains('highlight');
+    console.log(hasClass, "yes")
+    if (hasClass){
+        getClass.classList.remove('highlight')
+    } else {
+        getClass.classList.add('highlight')
+    }
 }
-// toggleHighlight(); //uncomment me to test
+toggleHighlight(); //uncomment me to test
 
 
 
