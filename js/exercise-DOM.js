@@ -5,18 +5,20 @@
 Write a function which adds a class "highlight" to the introduction paragraph
 */
 var highlightText = function(){
-
+let pTag = document.querySelector("p");
+    let addingClasses = pTag.classList.add("highlight")
 }
-// highlightText(); //uncomment me to test
+console.log(highlightText()); //uncomment me to test
 
 /*
 Write a function which removes the class "highlight" from the introduction
 paragraph
 */
 var unHighlightText = function(){
-
+    let findP = document.querySelector("p");
+    let removingClases = findP.classList.remove("highlight")
 }
-// unHighlightText(); //uncomment me to test
+unHighlightText(); //uncomment me to test
 
 
 /*
