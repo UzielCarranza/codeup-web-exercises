@@ -31,6 +31,8 @@
     culpa qui officia deserunt mollit anim id est laborum.
 </p>
 
+<button id="sub-paragraph--btn">Click Me to change the sub paragraph text</button>
+
 <script>
     (function() {
         "use strict";
@@ -141,12 +143,21 @@
         // console.log(gettingDb, "ad");
 
 
+        //5th
+
         // TODO: Uncomment the next line and get all elements with class name sub-paragraph
         var subParagraphs = document.querySelector("sub-paragraph");
 
 
         // TODO: Change the text in the first sub paragraph to "Mission Accomplished!"
-        console.log(document.getElementsByTagName("p")[0].innerHTML = "mission accomplished!")
+        let changingParaText = document.getElementsByTagName("p")[0].innerHTML = "mission accomplished!"
+
+        //add event listener 5th
+        var listenerbtn6 = function (event) {
+            document.getElementsByTagName("p")[0].innerHTML = "next mission!"
+        }
+        // register the listener to handle clicks on listenerbtn3
+        document.getElementById('sub-paragraph--btn').addEventListener('click', listenerbtn6);
 
 
     })();
