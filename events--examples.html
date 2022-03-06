@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <title>Title</title>
+
+</head>
+<body>
+<button id="btn1">Click Me!</button>
+<script>
+    'use strict';
+
+    // create a handler function
+    var listener = function (event) {
+        alert('You clicked the button!');
+    }
+
+    // register the listener to handle clicks on btn1
+    document.getElementById('btn1').addEventListener('click', listener);
+
+</script>
+
+</body>
+</html>
