@@ -33,10 +33,15 @@
     <li data-dbid="5">Item 5</li>
 </ul>
 
-<button id="ul-btn">Click Me to change the li's color text</button>
+
+<button id="ul-btn">Click Me to change all of the li's color text and position</button>
+
+<button id="ul-btn--para-function">Click Me to change every other li color</button>
+
+<button id="ul-data">Click Me to change a specific li's color text using data-dbid</button>
 <h2 id="sub-header">Hello Again.</h2>
 
-<button id="btn-subheader">Click Me to change subheader!</button>
+<button id="btn-subheader">Click Me to change subheader's color!</button>
 <p class="sub-paragraph">
     Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do
     eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim
@@ -125,19 +130,23 @@
         let listItems2 = document.querySelectorAll('li')
 
         // TODO: Set text color on every other list item to grey
-        // let allLis = document.getElementById("new-id");
-        // console.log(allLis)
-        let changeColorLis = () => {
+
+        //change all
+        let changeColorLisAll = () => {
             const ul = document.querySelectorAll('ul li');
             let theInnerText;
             for (let i = 0; i <= ul.length - 1; i++) {
-                let newId = ul[i].style.color = "grey "
+                let newId = ul[i].style.color = "green"
                 theInnerText = ul[i].innerHTML;
                 console.log(theInnerText);
             }
         }
-        console.log(changeColorLis())
+        console.log(changeColorLisAll())
+
+
         //change every other
+
+        document.getElementById('ul-btn--para-function').addEventListener('click',
         function everyOther(){
             for (var i = 0; i < listItems2.length; i++){
                 if (i % 2 === 0){
@@ -145,8 +154,7 @@
                 }
             }
         }
-        everyOther()
-
+    )
 
         //add event listener 3rd
         var listenerbtn4 = function (event) {
@@ -174,13 +182,28 @@
         // }
         function everyOtherDbid(){
         for (var i = 0; i < listItems2.length; i++){
-            if (listItems2[i].getAttribute("data-dbid") ==1){
+            if (listItems2[i].getAttribute("data-dbid") == 1){
                     listItems2[i].style.color = "blue"
             }
         }
     }
+
         everyOtherDbid()
 
+        //button
+        //get eleemt
+        // let listItems2 = document.querySelectorAll('li')
+
+        // add event listener
+        let listenerForliDataIds = function (event){
+            for (var i = 0; i < listItems2.length; i++){
+                if (listItems2[i].getAttribute("data-dbid") == 3){
+                    listItems2[i].style.color = "yellow"
+                }
+            }
+        }
+        //register the listener to handle clicks on listenerForSubheader
+        document.getElementById('ul-data').addEventListener('click', listenerForliDataIds)
 
 
 
