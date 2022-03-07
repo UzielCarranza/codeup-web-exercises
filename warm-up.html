@@ -3,9 +3,62 @@
 <head>
     <meta charset="UTF-8">
     <title>Title</title>
-  <script src="js/warm-up.js"></script>
+    <script src="js/warm-up.js"></script>
 </head>
 <body>
+<ul id="pets">
+</ul>
+
+
+<script>
+    // let allPets = ["doggy", "doggy2", "doggy3", "doggy4"];
+    //
+    //
+    //
+    // // let getsId = document.getElementById("pets");
+    // // console.log(getsId);
+    // // let newIdn = document.createElement("li");
+    // function function1(arr) {
+    //     var ul = document.getElementById("pets");
+    //     // li.appendChild(document.createTextNode(allPets));
+    //     // ul.appendChild(li);
+    //     for (var i = 0; i <= arr; i++) {
+    //         arr = addLis(allPets)
+    //     }
+    // }
+    //
+    // function addLis(dogs) {
+    //     var html = '<div class="coffee">';
+    //     html += "<li>" + allPets[0] + "li";
+    //
+    //     html += "<li>" + allPets[1] + "li"
+    //
+    //     html += "<li>" + allPets[2] + "li"
+    //
+    //     html += "<li>" + allPets[3] + "li"
+    //
+    //     return html;
+    // }
+    //
+    // function1(allPets)
+
+    //walkthrough
+
+    let allPets = ["doggy", "doggy2", "doggy3", "doggy4"];
+    let petList = document.getElementById(('pets'))
+
+
+    function addPetsUl(allPets) {
+        for (let i = 0; i < allPets.length; i++) {
+            let li = document.createElement('li');
+
+            li.innerText = allPets[i];
+            petList.appendChild(li);
+        }
+    }
+    addPetsUl(allPets);
+
+</script>
 
 </body>
 </html>
