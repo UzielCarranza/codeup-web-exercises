@@ -271,7 +271,7 @@ Warmup: Create a function which returns true if the given argument is a number, 
 //     ex:
 
 
-var bugs = ["mosquito", "ant", "scorpion", "ant", "ant", "mosquito", "typo", "reference error", "type error"];
+// var bugs = ["mosquito", "ant", "scorpion", "ant", "ant", "mosquito", "typo", "reference error", "type error"];
 
 // should print
 // [
@@ -283,20 +283,20 @@ var bugs = ["mosquito", "ant", "scorpion", "ant", "ant", "mosquito", "typo", "re
 //     'type error'
 // ]
 
-
-function removeAll(array, value){
-    let newArr = [];
-
-    for (var i = 0; i < array.length; i++){
-        if (value === array[i]){
-            continue;
-
-        }
-        newArr.push(array[i]);
-    }
-
-    return newArr;
-}
+//
+// function removeAll(array, value){
+//     let newArr = [];
+//
+//     for (var i = 0; i < array.length; i++){
+//         if (value === array[i]){
+//             continue;
+//
+//         }
+//         newArr.push(array[i]);
+//     }
+//
+//     return newArr;
+// }
 
 
 //
@@ -309,12 +309,12 @@ function removeAll(array, value){
 //     });
 //     return newArr
 // }
+//
+// console.log(removeAll(bugs, "mosquito"))
+//
+//
+// console.log("hello")
 
-console.log(removeAll(bugs, "mosquito"))
-
-
-console.log("hello")
-
-
+console.log("starts new warm up mon, march 7")
 
 
