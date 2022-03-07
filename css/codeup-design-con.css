@@ -1,0 +1,51 @@
+/*small nav for phones*/
+
+*{
+    /*outline: 1px solid black;*/
+    margin: 0;
+    padding: 0;
+
+    box-sizing: border-box;
+
+}
+ul{
+    list-style: none;
+}
+
+/*small phones only*/
+@media only screen and (max-width: 600px) {
+    #small-view {
+        background-color: black;
+        margin-top: 3em;
+        position: relative;
+        height: 2em;
+    }
+
+    #image-logo {
+        position: absolute;
+        margin-top: -1em;
+        margin-left: 6.5em;
+    }
+
+    .nav--small {
+        margin-top: 2em;
+        margin-left: 0.5em;
+    }
+
+    ul {
+        margin: 0;
+        padding: 0;
+    }
+}
+
+/* Small devices (portrait tablets and large phones, 600px and up) */
+/*@media only screen and (min-width: 600px) {...}*/
+
+/* Medium devices (landscape tablets, 768px and up) */
+/*@media only screen and (min-width: 768px) {...}*/
+
+/* Large devices (laptops/desktops, 992px and up) */
+/*@media only screen and (min-width: 992px) {...}*/
+
+/* Extra large devices (large laptops and desktops, 1200px and up) */
+/*@media only screen and (min-width: 1200px) {...}*/
