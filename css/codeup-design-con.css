@@ -12,6 +12,24 @@ ul{
     list-style: none;
 }
 
+/*
+circles section
+*/
+.big-circle-body {
+    height: 100px;
+    width: 100px;
+    background-color: red;
+    border-radius: 50%;
+    color: #fff;
+    margin: 5px;
+}
+.circle-border {
+    border-radius: 100%;
+    border: 4px solid #FFF;
+}
+
+
+
 /*small phones only*/
 @media only screen and (max-width: 600px) {
     #small-view {
@@ -36,11 +54,15 @@ ul{
         margin: 0;
         padding: 0;
     }
+    #circles-section{
+        margin-top: 2em;
+    }
+
+    #main--section{
+        margin-top: 60%;
+    }
 }
 
-#main--section{
-    margin-top: 60%;
-}
 
 /* Small devices (portrait tablets and large phones, 600px and up) */
 /*@media only screen and (min-width: 600px) {...}*/
