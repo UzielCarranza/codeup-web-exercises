@@ -1,7 +1,7 @@
 /*small nav for phones*/
 
 *{
-    /*outline: 1px solid black;*/
+    outline: 1px solid black;
     margin: 0;
     padding: 0;
 
@@ -112,7 +112,14 @@ inside images
     .second--img{
         margin-top: 2em;
     }
+    #the--last{
+        margin-top: 5em;
+    }
 
+}
+
+.small--img-text{
+    display: flex;
 }
 
 
