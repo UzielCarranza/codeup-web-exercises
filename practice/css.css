@@ -1,0 +1,179 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+h1{
+    width: auto;
+}
+
+.linked--uziel{
+    text-align: center;
+    text-decoration: none;
+}
+a{
+    text-decoration: none;
+    color: black;
+}
+
+.word{
+    color: #FF4136;
+}
+.send--comments{
+    margin-left: 16em;
+}
+div#main{
+    width: 830px;
+    height: 650px;
+    margin: 0 auto;
+    font-family: Arial, Verdana, sans-serif;
+}
+
+div#form_sample{
+    text-align: center;
+    border: 1px solid #ccc;
+    width: 300px;
+    padding: 0 50px 15px;
+    margin-top: 20px;
+    box-shadow: 0 0 15px;
+    border-radius: 6px;
+    float: left;
+}
+
+#main h2{
+    margin-top: 40px;
+}
+
+hr{
+    margin-top: -5px;
+}
+
+label{
+    float: left;
+    font-size: 16px;
+}
+
+input[type=text]{
+    width: 100%;
+    margin-top: 10px;
+    height: 35px;
+    margin-bottom: 25px;
+    padding: 10px;
+    border: 3px solid #FF4136;
+}
+
+input[type="email"]{
+    width: 100%;
+    margin-top: 10px;
+    height: 35px;
+    margin-bottom: 25px;
+    padding: 15px;
+    border: 4px dotted #FF4136;
+}
+
+textarea{
+    width: 100%;
+    border:3px solid #FF4136;
+    padding: 10px;
+    margin-bottom: 25px;
+    margin-top: 10px;
+    height: 100px;
+    resize: none;
+}
+
+input[type=submit]{
+    width: 100%;
+    padding: 10px 45px;
+    background-color: #FF4136;
+    border: none;
+    color: #fff;
+    font-size: 18px;
+    font-weight: 700;
+    cursor: pointer;
+    font-family: Arial, Verdana,sans-serif;
+}
+
+footer {
+    clear: both;
+}
+
+
+/*
+toggle fa
+*/
+
+.fa-adjust {
+    font-size: 20px;
+}
+
+
+.link__hover-effect:after {
+    content: "";
+    position: absolute;
+    bottom: -3px;
+    height: 3px;
+    width: 0;
+    right: 0;
+    transition: all 300ms ease;
+}
+.click{
+    cursor: pointer;
+    transition: all 300ms ease;
+}
+.click:hover {
+    transform: scale(1.1);
+}
+
+.click:active {
+    transform: scale(0.8);
+}
+
+/*
+dark-theme
+*/
+
+.dark-theme h2{
+    background-color: black;
+    color: #DDDDDD;
+}
+.dark-theme form{
+    color: #DDDDDD;
+}
+.dark-theme main{
+    background-color: black;
+}
+
+.dark-theme .linked--uziel{
+    background-color: black;
+    margin: 0;
+    padding: 5px;
+    color: #DDDDDD;
+}
+.dark-theme .fa-adjust{
+    padding: 2px;
+}
+
+.dark-theme nav{
+    background-color: black;
+}
+.dark-theme a{
+    color: #DDDDDD;
+}
+.dark-theme h1{
+    margin: 0;
+    padding: 5px;
+}
+.dark-theme footer{
+  background-color: black;
+    color: #DDDDDD;
+    margin: 0;
+    padding: 10px;
+}
+
+
+.dark-theme .word{
+    color: #FFFF00;
+}
+
+
