@@ -1,16 +1,16 @@
 $(document).ready(function() {
-    alert( 'The DOM has finished loading!' );
+    // alert( 'The DOM has finished loading!' );
 });
 
 //Use jQuery to select an element by the id. Alert the contents of the element.
 let contents = $('#codeup').html();
-alert(contents);
+// alert(contents);
 console.log(contents);
 //
 
 //Update the jQuery code to select and alert a different id.
 let contents2 = $('#ul').html()
-alert(contents2, "content of a different ID");
+// alert(contents2, "content of a different ID");
 console.log(contents2);
 //
 
@@ -23,6 +23,13 @@ console.log(contents2);
 //I added an ID to a different element, used the code above to alert the content but instead I got
 //the same content as of the first element with the ID.
 
+
+
+
+//classes
+// Using jQuery, create a border around all elements with the class codeup that is 1 pixel wide and red.
+
+$('.codeup').css('outline', '3px solid red');
 
 
 $('.important').css('background-color', 'yellow');
