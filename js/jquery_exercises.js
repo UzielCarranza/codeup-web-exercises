@@ -2,7 +2,7 @@
     // alert( 'The DOM has finished loading!' );
 // });
 
-
+//
 // $('body').append(getTemplate("username"))
 //
 // function getTemplate(){
@@ -13,7 +13,7 @@
 //
 //     </div
 //     `
-// }
+//}
 
 
 //Use jQuery to select an element by the id. Alert the contents of the element.
@@ -63,6 +63,7 @@
 // $("h1").removeClass(["codeup"]);
 
 
+
 // Give another element an id of codeup. Does this element get a border now?
 // $('li').attr("id","newId");
 
@@ -75,20 +76,20 @@
 // Remove your custom jQuery code from previous exercises.
 // Using jQuery, set the font-size of all li elements to 20px.
 
-$('li').css("font-size", "20px");
-
-
-// Craft selectors that highlight all the h1, p, and li elements.
-$("h1").css('background-color', 'yellow');
-
-$("p").css('background-color', 'yellow');
-
-$("li").css('background-color', 'yellow');
-
-// Create a jQuery statement to alert the contents of your h1 element(s).
-let contentsh1 = $('h1').html()
- alert(contentsh1);
-console.log(contentsh1);
+// $('li').css("font-size", "20px");
+//
+//
+// // Craft selectors that highlight all the h1, p, and li elements.
+// $("h1").css('background-color', 'yellow');
+//
+// $("p").css('background-color', 'yellow');
+//
+// $("li").css('background-color', 'yellow');
+//
+// // Create a jQuery statement to alert the contents of your h1 element(s).
+// let contentsh1 = $('h1').html()
+//  alert(contentsh1);
+// console.log(contentsh1);
 
 
 //
@@ -99,3 +100,36 @@ console.log(contentsh1);
 // Combine your selectors that highlight all the h1, p, and li elements.
 
 // $('h1, p, li').css('background-color', 'yellow');
+
+
+
+//mouse events
+
+$('h1').click(function() {
+ $(this).css('background-color', "#7FFFD4")
+});
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
