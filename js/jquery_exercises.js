@@ -109,7 +109,9 @@ $('h1').click(function() {
  $(this).css('background-color', "#7FFFD4")
 });
 
-
+$('p').dblclick(function(e) {
+ $(this).css('font-size', "18px")
+});
 
 
 
