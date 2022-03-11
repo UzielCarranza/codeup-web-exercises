@@ -15,6 +15,8 @@ console.log(contents2);
 //
 
 
+
+
 // Use the same id on 2 elements. How does this change the jQuery selection?
 // let contents3 = $('#ul').html()
 // alert(contents3, "content of a different ID");
@@ -27,11 +29,56 @@ console.log(contents2);
 
 
 //classes
+
+//Update your code so that at least 3 different elements have the same class named codeup.
+// $("h1").addClass('codeup')
+//
+// $("p").addClass('codeup')
+//
+// $("div").addClass('codeup')
+
+$('h1, p, div').attr("class","codeup");
+
+
+
 // Using jQuery, create a border around all elements with the class codeup that is 1 pixel wide and red.
 
-$('.codeup').css('outline', '3px solid red');
+$('.codeup').css('border', '2px solid red');
+
+// Remove the class from one of the elements. Refresh and test that the border has been removed.
+// $("h1").removeClass(["codeup"]);
+
+$("h1").removeClass('codeup');
+
+// Give another element an id of codeup. Does this element get a border now?
+$('li').attr("id","newId");
+
+//it didnt get the styling
 
 
-$('.important').css('background-color', 'yellow');
 
-$('p').css('font-size', '40px');
+
+//element selector
+// Remove your custom jQuery code from previous exercises.
+// Using jQuery, set the font-size of all li elements to 20px.
+
+$('li').css("font-size", "20px")
+
+
+// Craft selectors that highlight all the h1, p, and li elements.
+
+
+// Create a jQuery statement to alert the contents of your h1 element(s).
+let contentsh1 = $('h1').html()
+ alert(contentsh1);
+console.log(contentsh1);
+
+
+//
+// $('p').css('font-size', '40px');
+
+
+//multiple selector
+// Combine your selectors that highlight all the h1, p, and li elements.
+
+$('h1, p, li').css('background-color', 'yellow');
