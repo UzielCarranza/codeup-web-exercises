@@ -7,5 +7,12 @@
 //    $('main div:nth-child(3').html(content);
 // });
 
+//
+// const hoverIn = () => {
+//     $(this).css('background-color', "black");
+// }
 
 
+$('.card').hover(function(){
+    $(this).css('background-color', "grey")
+})
