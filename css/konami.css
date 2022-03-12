@@ -20,3 +20,17 @@
 .dark-theme details{
     color: white;
 }
+
+.fa-adjust:hover {
+    transform: scale(1.1);
+    cursor: pointer;
+}
+
+.fa-adjust:active {
+    transform: scale(0.8);
+}
+
+details, #add{
+    cursor: pointer;
+}
+
