@@ -12,9 +12,28 @@
 //     $(this).css('background-color', "black");
 // }
 
-let colorBGCard = $('.card').css('background-color')
+
+
+// let colorBGCard = $('.card').css('background-color')
+// $('.card').hover(function(){
+//     $(this).css('background-color', "grey")
+// }, function(){
+//     $(this).css('background-color', colorBGCard)
+// })
+
+
+
+
+let originalColor;
+
+//1. Select element(s) and add event listener
+
 $('.card').hover(function(){
-    $(this).css('background-color', "grey")
+    $(this).toggleClass('bg-dark')
+    //2. apply classes-styles to hovered-in element
+    $(this).toggleClass('text-light')
 }, function(){
-    $(this).css('background-color', colorBGCard)
+
+    $(this).toggleClass('bg-dark')
+    $(this).toggleClass('text-light')
 })
