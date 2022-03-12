@@ -12,7 +12,9 @@
 //     $(this).css('background-color', "black");
 // }
 
-
+let colorBGCard = $('.card').css('background-color')
 $('.card').hover(function(){
     $(this).css('background-color', "grey")
+}, function(){
+    $(this).css('background-color', colorBGCard)
 })
