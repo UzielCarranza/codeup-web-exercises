@@ -48,6 +48,7 @@ let toggleContrast = () =>{
     if (contrastToggle){
         document.body.classList += " dark-theme"
     }
+
     else {
         document.body.classList.remove("dark-theme")
     }
@@ -68,6 +69,16 @@ $(document).ready(function () {
                 toggleContrast()
                 $('details').remove();
                 $('#video').append(imageAdd)
+                // if ($('body').css('background-color', 'black')){
+                //     toggleContrast();
+                //     $('h1').css("color", "#fff")
+                // }
+                if ($('h1').css('color', '#fff')){
+                    $('body').css("background-color", "#000")
+                }
+                 else if ($('body').css("background-color", "#fff")){
+                    $('h1').css("color", "#000")
+                }
             }
         }
     });

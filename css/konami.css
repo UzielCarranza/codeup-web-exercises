@@ -9,6 +9,7 @@
 }
 .dark-theme main{
     background-color: black;
+    color: #fff;
 }
 .dark-theme #video{
     background-color: black;
