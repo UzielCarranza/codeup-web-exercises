@@ -1,7 +1,8 @@
 const imageAdd = () => {
     return `
+    <h1 width="50%" style="margin-top:3em; margin-left: 25% ">Enjoy!!!</h1>
 <div style="width:100%;height:0;padding-bottom:75%;position:relative;">
-    <iframe src="https://giphy.com/embed/LjULRGiyt1KpO" width="50%" height="50%" style="position:absolute; margin-top:4em; margin-left: 25%"
+    <iframe src="https://giphy.com/embed/LjULRGiyt1KpO" width="100%" height="50%" style="position:absolute; margin-top:1em; margin-left: 0%"
             frameBorder="0" className="giphy-embed" allowFullScreen></iframe>
 </div>
     `;
