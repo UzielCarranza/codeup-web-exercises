@@ -6,13 +6,39 @@
             integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
 
     <script src="https://kit.fontawesome.com/09d59239c9.js" crossorigin="anonymous"></script>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        .dark-theme h1{
+            background-color: black;
+            color: #DDDDDD;
+        }
+        .dark-theme main{
+            background-color: black;
+        }
+        .dark-theme #video{
+            background-color: black;
+        }
+        .dark-theme footer{
+            background-color: black;
+        }
+        .dark-theme details{
+            color: white;
+        }
+
+
+    </style>
 
 </head>
 <body>
-<h1 style="width: 20%; margin-left: 45%">Konami Code</h1>
+<main style="height: 100vh">
+<h1 style="width: 20%; margin-left: 45%">Konami Code <i onclick="toggleContrast()" class="fas fa-adjust link__hover-effect" aria-hidden="true"></i></h1>
 <button id="add" style="width: 20%; margin-left: 40%">Get me some cheat codes!</button>
 <div id="video"></div>
 <script src="js/konami.js"></script>
-
+</main>
 </body>
 </html>

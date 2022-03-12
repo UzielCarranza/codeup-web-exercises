@@ -5,6 +5,13 @@ const imageAdd = () => {
     <iframe src="https://giphy.com/embed/LjULRGiyt1KpO" width="100%" height="50%" style="position:absolute; margin-top:1em; margin-left: 0%"
             frameBorder="0" className="giphy-embed" allowFullScreen></iframe>
 </div>
+<span>
+
+<audio controls autoplay>
+  <source src="sound/arcade_introduc.mp3" type="audio/ogg">
+Your browser does not support the audio element.
+</audio>
+</span>
     `;
 };
 
@@ -19,6 +26,7 @@ $(document).ready(function () {
         if (key === keyPressed){
             userPosition++;
             if (userPosition === konamiCode.length){
+                $('body').css('background-color', "#000")
                 $('#video').append(imageAdd)
             }
         }
@@ -40,12 +48,26 @@ const addSection = () => {
 $('#add').click(function() {
 
     $('body').append(addSection);
-    $('details').css('text-align', "center")
+    $('details').css({'text-align': 'center', 'margin-top': '-40%'})
     $('summary').css('font-size', "2em")
     $('.fa-solid').css('font-size', "2em")
     $('p').css('font-size', "4em")
 });
 
 
+
+//toggle
+
+let contrastToggle = false;
+
+function toggleContrast(){
+    contrastToggle = !contrastToggle;
+    if (contrastToggle){
+        document.body.classList += " dark-theme"
+    }
+    else {
+        document.body.classList.remove("dark-theme")
+    }
+}
 
 
