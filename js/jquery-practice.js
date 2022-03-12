@@ -1,20 +1,11 @@
-// $("col-4").hover(function (){
-//     $(this).attr('card')
-// })
-//
-// let text = $('.col-4').html()
-// console.log(text);
-//
-// $('.col-4').hover(function (){
-//     $(this).attr(text)
-    //
-    // $('.col-4').html(text)
-// })
 
-// $('.col-4').html(text)
+//1. select the elements to apply listener
+// $('main div:first-child').hover(function (){
+//     //2. get the content from the hovered element
+//    let content =  $(this).html();
+//    //3. set the content pf a different element
+//    $('main div:nth-child(3').html(content);
+// });
 
 
-$('main div:first-child').hover(function (){
-   let content =  $(this).html();
-    console.log(content)
-});
+
