@@ -28,15 +28,15 @@
 
 //1. Select element(s) and add event listener
 
-// $('.card').hover(function(){
-//     $(this).toggleClass('bg-dark')
-//     //2. apply classes-styles to hovered-in element
-//     $(this).toggleClass('text-light')
-// }, function(){
-//
-//     $(this).toggleClass('bg-dark')
-//     $(this).toggleClass('text-light')
-// })
+$('.card').hover(function(){
+    $(this).toggleClass('bg-dark')
+    //2. apply classes-styles to hovered-in element
+    $(this).toggleClass('text-light')
+}, function(){
+
+    $(this).toggleClass('bg-dark')
+    $(this).toggleClass('text-light')
+})
 
 //
 // $('#user-input').keyup(function(){

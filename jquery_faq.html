@@ -14,13 +14,15 @@
         .output {
             font: 1rem 'Fira Sans', sans-serif;
         }
-        p{
+
+        p {
             margin-left: 30%;
 
             font-weight: bold;
             padding: 10px;
             width: 30%;
         }
+
         dt {
             font-weight: bold;
             margin-left: 20%;
@@ -43,9 +45,12 @@
             margin-bottom: 1em;
 
         }
-        .invisible{
-            display: none;
+
+        .invisible {
+            /*visibility: hidden;*/
+            background-color: yellow;
         }
+
     </style>
 </head>
 <body>
@@ -85,7 +90,25 @@
 </dl>
 
 
-<script src="https://code.jquery.com/jquery-2.2.4.min.js" integrity="sha256-BbhdlvQf/xTY9gja0Dq3HiwQF8LaCRTXxZKRutelT44=" crossorigin="anonymous"></script>
+<script src="https://code.jquery.com/jquery-2.2.4.min.js"
+        integrity="sha256-BbhdlvQf/xTY9gja0Dq3HiwQF8LaCRTXxZKRutelT44=" crossorigin="anonymous"></script>
+<script>
+    // 1. Select element(s) and add event listener
+
+    $('dd').hover(function (event) {
+        $(this).toggleClass('invisible');
+    }), function (event) {
+        $(this).toggleClass('invisible');
+    };
+    //bonus
+    $(document).ready(function () {
+        $('dt').click(function (event) {
+            event.preventDefault();
+            $('dd').toggleClass('invisible');
+        });
+    });
+
+</script>
 
 
 </body>
