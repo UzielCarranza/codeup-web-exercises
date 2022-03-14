@@ -47,8 +47,8 @@
         }
 
         .invisible {
-            /*visibility: hidden;*/
-            background-color: yellow;
+            visibility: hidden;
+            /*background-color: yellow;*/
         }
 
     </style>
@@ -95,16 +95,16 @@
 <script>
     // 1. Select element(s) and add event listener
 
-    $('dd').hover(function (event) {
-        $(this).toggleClass('invisible');
-    }), function (event) {
-        $(this).toggleClass('invisible');
+    $('dd').hover(function () {
+        $(this).removeClass('invisible');
+    }), function () {
+        $(this).addClass('invisible');
     };
     //bonus
     $(document).ready(function () {
         $('dt').click(function (event) {
             event.preventDefault();
-            $('dd').toggleClass('invisible');
+            $(this).css('background-color', "yellow")
         });
     });
 
