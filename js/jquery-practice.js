@@ -39,9 +39,9 @@ $('.card').hover(function(){
 })
 
 //
-$('#user-input').keyup(function(){
-    let content = $(this).val();
-    console.log(content)
-    $('#user-output').text(content);
-})
+// $('#user-input').keyup(function(){
+//     let content = $(this).val();
+//     console.log(content)
+//     $('#user-output').text(content);
+// })
 
