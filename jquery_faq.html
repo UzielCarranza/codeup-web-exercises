@@ -147,12 +147,11 @@
 <div style="background-color: #2E4053">
     <h1>Jquery Traversing</h1>
 <div class="mainDiv">
-    <div><img class="images" src="assets/logo.png" alt=""><p class="p-img"><button id="traverBtn1" >btn1</button></p></div>
+    <div id="traverDiv1"><img class="images" src="assets/logo.png" alt=""><p class="p-img"><button id="traverBtn1" >btn1</button></p></div>
 
-    <div><img class="images" src="assets/images/apple-ipad.jpg" alt=""><p class="p-img"><button id="traverBtn2">btn2</button></p></div>
-    <div><img class="images" src="assets/images/google-search.jpg" alt=""><p class="p-img"><button id="traverBtn3">btn3</button></p></div>
+    <div id="traverDiv2"><img class="images" src="assets/images/apple-ipad.jpg" alt=""><p class="p-img"><button id="traverBtn2">btn2</button></p></div>
+    <div id="traverDiv3"><img class="images" src="assets/images/google-search.jpg" alt=""><p class="p-img"><button id="traverBtn3">btn3</button></p></div>
 </div>
-    <button>traverse!</button>
 </div>
 
 
@@ -211,7 +210,18 @@
 
 
 
+//bonus
 
+    $('#traverBtn1').click(function (){
+        $('#traverDiv1').remove().insertAfter($("#traverDiv3"))
+    })
+    $('#traverBtn2').click(function (){
+        $('#traverDiv2').remove().insertAfter($("#traverDiv3"))
+    })
+
+    $('#traverBtn3').click(function (){
+        $('#traverDiv3').remove().insertAfter($("#traverDiv1"))
+    })
 
 
 </script>
