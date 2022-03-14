@@ -118,7 +118,7 @@
     <li>Davis Mountains</li>
 </ul>
 
-<buttom data-dbid="addColor">add color </buttom>
+<button id="addColor">add color </button>
 
 
 <script src="https://code.jquery.com/jquery-2.2.4.min.js"
@@ -142,6 +142,20 @@
             $(this).css('background-color', "yellow")
         });
     });
+
+
+    <!--traversing exercises-->
+
+
+    $('#addColor').click(function (){
+        // $('li').last().css('background-color', '#FF0');
+
+        $('ul').each(function(index) {
+                $('li:last-child').css('background-color', '#FF0');
+        });
+    })
+
+
 
 </script>
 
