@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <title>Title</title>
+
+
+</head>
+<body>
+
+<div id="weather"></div>
+
+<div id="cost-living">
+</div>
+
+<section id="section"></section>
+
+
+<script src="js/keys.js"></script>
+
+<script src="https://code.jquery.com/jquery-2.2.4.min.js"
+        integrity="sha256-BbhdlvQf/xTY9gja0Dq3HiwQF8LaCRTXxZKRutelT44=" crossorigin="anonymous"></script>
+<script>
+
+    //do fetch stuff
+
+    //make request
+    // let lat = 33.44;
+    // let lan = 94.04;
+    // let units = "Imperial"
+
+    // fetch("https://api.openweathermap.org/data/2.5/onecall?lat=" + lat + "&lon=" + lan + "&units=" + units + "&appid=" + OWM_KEY)
+    //after response
+    //     .then(response => response.json())
+    //
+    //     .then(data => {
+    //         console.log(data.daily)
+    //         let html = "";
+    //         html += '<ul>'
+    //         for (let i = 0; i < 5; i++){
+    //             let dailyTemp = data.daily[i].temp.day;
+    //             html += '<li>' + dailyTemp + '</li>' ;
+    //         }
+    //         html += '</ul>'
+    //         $('#weather').html(html)
+    //
+    //     });
+
+    // https://api.openweathermap.org/data/2.5/onecall?lat=33.44&lon=-94.04&exclude=hourly,daily&appid={API key}
+
+    // fetch("https://cost-of-living-and-prices.p.rapidapi.com/cities", {
+    //     "method": "GET",
+    //     "headers": {
+    //         "x-rapidapi-host": "cost-of-living-and-prices.p.rapidapi.com",
+    //         "x-rapidapi-key": + COL_P_KEY
+    //     }
+    // })
+    //     .then(response => {
+    //         console.log(response);
+    //     })
+    //     .catch(err => {
+    //         console.error(err);
+    //     });
+
+
+    fetch("https://cost-of-living-and-prices.p.rapidapi.com/cities", {
+        "method": "GET",
+        "headers": {
+            "x-rapidapi-host": "cost-of-living-and-prices.p.rapidapi.com",
+            "x-rapidapi-key": COL_P_KEY
+        }
+    })
+        .then(response => response.json()
+        )
+        .then(data => {
+            console.log(data.cities)
+
+            let html = "";
+            html += '<h1>'
+            let cities = data.cities[0].city_name;
+            html += cities;
+            html += '</h1>'
+            $('#cost-living').html(html)
+/// li portion
+            let location = ""
+            let ulHtml = "";
+            ulHtml += '<ul>'
+            let countryName = data.cities[0].country_name
+            let countryLng = data.cities[0].lng
+            let countryLat = data.cities[0].lat
+            ulHtml = '<li>' + "country: " + countryName + '</li>' +
+                '<li>' + "location: " + countryLng + countryLat + '</li>'
+            ulHtml += '</ul>'
+            $('#section').html(ulHtml)
+
+            for (let i = 5; i < data.cities.length; i++){
+                console.log(data.cities[i].city_name)
+            }
+        })
+
+
+</script>
+</body>
+</html>
