@@ -203,14 +203,23 @@
         });
     })
 
+    //
+    $('h3').click(function(){
+        $(this).next().children().css({'font-weight': 'bold'})
+    })
+
 
     //fifth exercise
 
+    // $('li').click(function(){
+    //     $('ul').each(function(index) {
+    //         $('li:first-child').css('color','blue');
+    //     });
+    // })
     $('li').click(function(){
-        $('ul').each(function(index) {
-            $('li:first-child').css('color','blue');
-        });
+            $(this).parent().children().first().css('color','blue');
     })
+
 
 
 
