@@ -83,6 +83,31 @@
     //do fetch stuff
 
 
+    // fetch("https://api.openweathermap.org/data/2.5/onecall?lat=" + 41.03 +  "&lon=" + -87.23 + "&units=" + "Imperial" + "&appid=" + OWM_KEY)
+    //     // after response
+    //     .then(response => response.json())
+    //
+    //     .then(data => {
+    //         console.log(data.daily)
+    //         let html = "";
+    //
+    //         let counter = 0;
+    //         html += '<ul>'
+    //         for (let i = 0; i < 5; i++) {
+    //             // let days = ['monday', 'tuesday', 'wednesday', 'thrusday', 'friday', 'saturday', 'sunday']
+    //            let  days = data.daily[i];
+    //             console.log(days, "days")
+    //             counter++
+    //
+    //             let dailyTemp = data.daily[i].temp.day;
+    //             html += '<li>' + counter + ' day will be like: ' + dailyTemp + '</li>';
+    //         }
+    //         html += '</ul>'
+    //         $('#weather').html(html)
+    //
+    //
+    //     });
+
     let units = "Imperial"
     //get location
     let button = document.getElementById("get-location");
@@ -110,10 +135,13 @@
                 .then(data => {
                     console.log(data)
                     let html = "";
+
+                    let counter = 0;
                     html += '<ul>'
                     for (let i = 0; i < 5; i++) {
                         let dailyTemp = data.daily[i].temp.day;
-                        html += '<li>' + dailyTemp + '</li>';
+                        counter++
+                        html += '<li>' + counter + 'day will be like: ' + dailyTemp + '</li>';
                     }
                     html += '</ul>'
                     $('#weather').html(html)
@@ -176,7 +204,7 @@
                     if (sectionDivCities.toLowerCase().startsWith(userInput)) {
                         newCitiesArray.push(sectionDivCities)
                         for (let i in newCitiesArray) {
-                            var appendThis = "<li>" + 'the city of: ' + '<strong>' + newCitiesArray[i] + '</strong>' + ' is located in  the country of: ' + sectionsDivsCountryes + "</li>"
+                            var appendThis = "<li>" + 'the city : ' + '<strong>' + newCitiesArray[i] + '</strong>' + ' is located in  the country of: ' + sectionsDivsCountryes + "</li>"
                             $('.addMe').html(appendThis)
                         }
 
