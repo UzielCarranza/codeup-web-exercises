@@ -7,17 +7,31 @@
     <title>Title</title>
     <style>
 
-        body{
-            margin: 2em;
+        body {
+            background-color: rgb(255, 250, 240);
         }
-        .country--selection{
-            margin: 2em;
+
+        .country--selection {
+            margin: 0;
         }
-        #cost-living{
+
+        #cost-living {
             margin-bottom: 2em;
         }
-        #section{
+
+        #section {
             margin-bottom: 4em;
+        }
+
+        #container {
+            display: flex;
+            flex-direction: column;
+            justify-content: space-evenly;
+        }
+
+        .sho--info {
+            width: 50%;
+            margin: auto;
         }
     </style>
 
@@ -25,22 +39,41 @@
 </head>
 <body>
 
+
+<!--from weather exercise-->
+<h1>5 Day weather</h1>
 <div id="weather"></div>
-
-<div id="cost-living">
-</div>
-
-<section id="section"></section>
-<div class="section"></div>
-
-<label for="search">Look for cities: </label>
-<input id="search" type="text" placeholder="type here...">
-<button class="btn">search</button>
-<div class="country--selection">
-    <ul class="addMe"></ul>
+<div>
+    <p>
+        Your location is <span id="latitude">0.00</span>°
+        latitude by <span id="longitude">0.00</span>° longitude.
+    </p>
+    <button id="get-location">
+        Get My Location
+    </button>
 </div>
 
 
+<section id="container">
+    <div id="cost-living"></div>
+    <section id="section"></section>
+
+    <!--    look for cities-->
+    <div class="sho--info">
+
+        <h1>What country is your city from</h1>
+        <label for="search">Look for cities: </label>
+        <input id="search" type="text" placeholder="type here...">
+        <div class="country--selection">
+            <ul class="addMe"></ul>
+        </div>
+    </div>
+
+</section>
+
+<section id="show-country--cities">
+
+</section>
 <script src="js/keys.js"></script>
 
 <script src="https://code.jquery.com/jquery-2.2.4.min.js"
@@ -49,27 +82,50 @@
 
     //do fetch stuff
 
-    //make request
-    // let lat = 33.44;
-    // let lan = 94.04;
-    // let units = "Imperial"
 
-    // fetch("https://api.openweathermap.org/data/2.5/onecall?lat=" + lat + "&lon=" + lan + "&units=" + units + "&appid=" + OWM_KEY)
-    //after response
-    //     .then(response => response.json())
-    //
-    //     .then(data => {
-    //         console.log(data.daily)
-    //         let html = "";
-    //         html += '<ul>'
-    //         for (let i = 0; i < 5; i++){
-    //             let dailyTemp = data.daily[i].temp.day;
-    //             html += '<li>' + dailyTemp + '</li>' ;
-    //         }
-    //         html += '</ul>'
-    //         $('#weather').html(html)
-    //
-    //     });
+    let units = "Imperial"
+    //get location
+    let button = document.getElementById("get-location");
+    let latText = document.getElementById("latitude");
+    let longText = document.getElementById("longitude");
+
+    button.addEventListener("click", function () {
+        navigator.geolocation.getCurrentPosition(function (position) {
+            let lat = position.coords.latitude;
+            let long = position.coords.longitude;
+
+            latText.innerText = lat.toFixed(2);
+            longText.innerText = long.toFixed(2);
+            userLon = parseFloat(longText.innerText)
+            userLat = parseFloat(latText.innerText)
+            console.log(userLon, "user long")
+            console.log(userLat, "user lat")
+
+
+
+            fetch("https://api.openweathermap.org/data/2.5/onecall?lat=" + userLat + "&lon=" + userLon + "&units=" + units + "&appid=" + OWM_KEY)
+                // after response
+                .then(response => response.json())
+
+                .then(data => {
+                    console.log(data)
+                    let html = "";
+                    html += '<ul>'
+                    for (let i = 0; i < 5; i++) {
+                        let dailyTemp = data.daily[i].temp.day;
+                        html += '<li>' + dailyTemp + '</li>';
+                    }
+                    html += '</ul>'
+                    $('#weather').html(html)
+
+
+                });
+        });
+    });
+
+
+    //ends get location
+
 
     // https://api.openweathermap.org/data/2.5/onecall?lat=33.44&lon=-94.04&exclude=hourly,daily&appid={API key}
 
@@ -91,7 +147,7 @@
             html += cities;
             html += '</h1>'
             $('#cost-living').html(html)
-/// li portion
+/// 1st section portion
             let location = ""
             let ulHtml = "";
             ulHtml += '<ul>'
@@ -103,33 +159,33 @@
             ulHtml += '</ul>'
             $('#section').html(ulHtml)
 
+            //search cities
             $('#search').keyup(function (e) {
 
                 e.preventDefault()
                 let userInput = $('#search').val();
 
-                    //
-                    let sectionDiv = '';
-                    let sectionDivCities;
-                    let sectionsDivsCountryes;
-                    for (let i = 0; i < 8000; i++) {
-                        sectionDivCities = data.cities[i].city_name;
-                        sectionsDivsCountryes = data.cities[i].country_name
-                        let newCitiesArray = [];
-                        if (sectionDivCities.toLowerCase().startsWith(userInput)) {
-                            newCitiesArray.push(sectionDivCities)
-                            for (let i in newCitiesArray) {
-                                var appendThis = "<li>" + 'the city of: ' + '<strong>' + newCitiesArray[i] + '</strong>' + ' is located in  the country of: ' + sectionsDivsCountryes + "</li>"
-                                $('.addMe').html(appendThis)
-                            }
-
+                //
+                let sectionDiv = '';
+                let sectionDivCities;
+                let sectionsDivsCountryes;
+                for (let i = 0; i < 8000; i++) {
+                    sectionDivCities = data.cities[i].city_name;
+                    sectionsDivsCountryes = data.cities[i].country_name
+                    let newCitiesArray = [];
+                    if (sectionDivCities.toLowerCase().startsWith(userInput)) {
+                        newCitiesArray.push(sectionDivCities)
+                        for (let i in newCitiesArray) {
+                            var appendThis = "<li>" + 'the city of: ' + '<strong>' + newCitiesArray[i] + '</strong>' + ' is located in  the country of: ' + sectionsDivsCountryes + "</li>"
+                            $('.addMe').html(appendThis)
                         }
+
                     }
-            })
+                }
+            }) //search cities ends
+
+
         })
-
-
-
 
 
 </script>
