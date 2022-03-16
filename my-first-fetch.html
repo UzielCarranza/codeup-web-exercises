@@ -42,7 +42,7 @@
 
 <!--from weather exercise-->
 <h1>5 Day weather</h1>
-<div id="icon"><img id="wicon" src="" alt="Weather icon"></div>
+<!--<div id="icon"><img class="wicon" src="" alt="Weather icon"></div>-->
 <div id="weather"></div>
 <div>
     <p>
@@ -71,7 +71,6 @@
     </div>
 
 </section>
-
 <section id="show-country--cities">
 
 </section>
@@ -84,6 +83,7 @@
     //do fetch stuff
 
 
+    //get it right away, no click
     // fetch("https://api.openweathermap.org/data/2.5/onecall?lat=" + 41.03 +  "&lon=" + -87.23 + "&units=" + "Imperial" + "&appid=" + OWM_KEY)
     //     // after response
     //     .then(response => response.json())
@@ -93,6 +93,7 @@
     //         let html = "";
     //         let counter = 0;
     //         var iconcode;
+    //         console.log(iconurl)
     //         html += '<ul>'
     //         for (let i = 0; i < 5; i++) {
     //             // let days = ['monday', 'tuesday', 'wednesday', 'thrusday', 'friday', 'saturday', 'sunday']
@@ -102,7 +103,12 @@
     //             iconcode = data.daily[i].weather[0].icon
     //             console.log(iconcode)
     //             let dailyTemp = data.daily[i].temp.day;
-    //             html += '<li>' + counter + ' day will be like: ' + dailyTemp + ' this is icon CODE: ' + iconcode +'</li>';
+    //
+    //             var iconurl =  "http://openweathermap.org/img/wn/"+iconcode +"@2x.png";
+    //
+    //             $('.wicon').attr('src', iconurl);
+    //             html += '<li>' + counter + ' day will be like: ' + dailyTemp + ' this is icon CODE: ' + iconcode  +
+    //                 '<img href="#" class=wicon src="http://openweathermap.org/img/wn/'+iconcode+'@2x.png ">' + '</img>'  + '</li> ';
     //         }
     //         html += '</ul>'
     //         $('#weather').html(html)
@@ -136,14 +142,24 @@
                 .then(data => {
                     console.log(data)
                     let html = "";
-                    let iconcode;
                     let counter = 0;
+                    var iconcode;
+                    console.log(iconurl)
                     html += '<ul>'
                     for (let i = 0; i < 5; i++) {
-                        let dailyTemp = data.daily[i].temp.day;
+                        // let days = ['monday', 'tuesday', 'wednesday', 'thrusday', 'friday', 'saturday', 'sunday']
+                        let  days = data.daily[i];
+                        // console.log(days, "days")
                         counter++
                         iconcode = data.daily[i].weather[0].icon
-                        html +='<li>' + counter + ' day will be like: ' + dailyTemp + ' this is icon CODE: ' + iconcode +'</li>';
+                        console.log(iconcode)
+                        let dailyTemp = data.daily[i].temp.day;
+
+                        var iconurl =  "http://openweathermap.org/img/wn/"+iconcode +"@2x.png";
+
+                        $('.wicon').attr('src', iconurl);
+                        html += '<li>' + counter + ' day will be like: ' + dailyTemp + ' this is icon CODE: ' + iconcode  +
+                            '<img href="#" class=wicon src="http://openweathermap.org/img/wn/'+iconcode+'@2x.png ">' + '</img>'  + '</li> ';
                     }
                     html += '</ul>'
                     $('#weather').html(html)
