@@ -1,0 +1,41 @@
+
+*{
+    outline: 1px solid blue;
+}
+body {
+    background-color: rgb(220, 220, 240);
+}
+
+.country--selection {
+    margin: 0;
+}
+
+#cost-living {
+    margin-bottom: 2em;
+}
+
+#section {
+    margin-bottom: 4em;
+}
+
+#container {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+}
+
+.sho--info {
+    width: 50%;
+    margin: auto;
+
+}
+
+/*#weather {*/
+/*    display: flex;*/
+/*    flex-direction: column;*/
+/*    justify-content: space-evenly;*/
+/*    border: 1px solid red;*/
+/*}*/
+li{
+    width: 40%;
+}
