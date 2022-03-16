@@ -42,6 +42,7 @@
 
 <!--from weather exercise-->
 <h1>5 Day weather</h1>
+<div id="icon"><img id="wicon" src="" alt="Weather icon"></div>
 <div id="weather"></div>
 <div>
     <p>
@@ -83,30 +84,30 @@
     //do fetch stuff
 
 
-    // fetch("https://api.openweathermap.org/data/2.5/onecall?lat=" + 41.03 +  "&lon=" + -87.23 + "&units=" + "Imperial" + "&appid=" + OWM_KEY)
-    //     // after response
-    //     .then(response => response.json())
-    //
-    //     .then(data => {
-    //         console.log(data.daily)
-    //         let html = "";
-    //
-    //         let counter = 0;
-    //         html += '<ul>'
-    //         for (let i = 0; i < 5; i++) {
-    //             // let days = ['monday', 'tuesday', 'wednesday', 'thrusday', 'friday', 'saturday', 'sunday']
-    //            let  days = data.daily[i];
-    //             console.log(days, "days")
-    //             counter++
-    //
-    //             let dailyTemp = data.daily[i].temp.day;
-    //             html += '<li>' + counter + ' day will be like: ' + dailyTemp + '</li>';
-    //         }
-    //         html += '</ul>'
-    //         $('#weather').html(html)
-    //
-    //
-    //     });
+    fetch("https://api.openweathermap.org/data/2.5/onecall?lat=" + 41.03 +  "&lon=" + -87.23 + "&units=" + "Imperial" + "&appid=" + OWM_KEY)
+        // after response
+        .then(response => response.json())
+
+        .then(data => {
+            console.log(data.daily[0].weather[0].icon)
+            let html = "";
+            let counter = 0;
+            var iconcode;
+            html += '<ul>'
+            for (let i = 0; i < 5; i++) {
+                // let days = ['monday', 'tuesday', 'wednesday', 'thrusday', 'friday', 'saturday', 'sunday']
+               let  days = data.daily[i];
+                // console.log(days, "days")
+                counter++
+                iconcode = data.daily[i].weather[0].icon
+                console.log(iconcode)
+                let dailyTemp = data.daily[i].temp.day;
+                html += '<li>' + counter + ' day will be like: ' + dailyTemp + ' this is icon CODE: ' + iconcode +'</li>';
+            }
+            html += '</ul>'
+            $('#weather').html(html)
+
+        });
 
     let units = "Imperial"
     //get location
