@@ -5,6 +5,21 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
     <title>Title</title>
+    <style>
+
+        body{
+            margin: 2em;
+        }
+        .country--selection{
+            margin: 2em;
+        }
+        #cost-living{
+            margin-bottom: 2em;
+        }
+        #section{
+            margin-bottom: 4em;
+        }
+    </style>
 
 
 </head>
@@ -88,29 +103,10 @@
             ulHtml += '</ul>'
             $('#section').html(ulHtml)
 
-            //div section
-            //ul
-            // let sectionDiv = '';
-            // let sectionDivCities;
-            // let sectionsDivsCountryes;
-            // sectionDiv += '<ul>'
-            // for (let i = 990; i < 1000; i++){
-            //
-            //     sectionDivCities = data.cities[i].city_name;
-            //     sectionsDivsCountryes = data.cities[i].country_name
-            //     sectionDiv += '<li>' + 'the city of: ' + sectionDivCities  + ' is located in  the country of: ' + sectionsDivsCountryes + '</li>'
-            // }
-            // sectionDiv += '</ul>'
-            // $('.section').html(sectionDiv)
-
-
-
             $('#search').keyup(function (e) {
 
                 e.preventDefault()
                 let userInput = $('#search').val();
-                console.log(userInput)
-                let $foo = $(this);
 
                     //
                     let sectionDiv = '';
@@ -127,20 +123,9 @@
                                 $('.addMe').html(appendThis)
                             }
 
-                            // console.log(sectionDivCities)
-
-                            // $('.section').html('<ul>' + '<li>' + 'the city of: '+ sectionDivCities + ' is located in  the country of: ' + sectionsDivsCountryes + '</li>' + '</ul>')
-                            // $('.section').html('<ul>' + '<li>' + 'the city of: '+ sectionDivCities + ' is located in  the country of: ' + sectionsDivsCountryes + '</li>' + '</ul>')
-                            // $(newCitiesArray).each(function( index ) {
-                            //     $('.section').html('<ul>' + '<li>' + 'the city of: '+ sectionDivCities + ' is located in  the country of: ' + sectionsDivsCountryes + '</li>' + '</ul>')
-                            //
-                            //     console.log(newCitiesArray[index])
-                            // });
-
                         }
                     }
             })
-            // console.log(data.cities[i].country_name === 'Israel')
         })
 
 
