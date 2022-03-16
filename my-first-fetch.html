@@ -16,6 +16,14 @@
 </div>
 
 <section id="section"></section>
+<div class="section"></div>
+
+<label for="search">Look for cities: </label>
+<input id="search" type="text" placeholder="type here...">
+<button class="btn">search</button>
+<div class="country--selection">
+    <ul class="addMe"></ul>
+</div>
 
 
 <script src="js/keys.js"></script>
@@ -50,21 +58,6 @@
 
     // https://api.openweathermap.org/data/2.5/onecall?lat=33.44&lon=-94.04&exclude=hourly,daily&appid={API key}
 
-    // fetch("https://cost-of-living-and-prices.p.rapidapi.com/cities", {
-    //     "method": "GET",
-    //     "headers": {
-    //         "x-rapidapi-host": "cost-of-living-and-prices.p.rapidapi.com",
-    //         "x-rapidapi-key": + COL_P_KEY
-    //     }
-    // })
-    //     .then(response => {
-    //         console.log(response);
-    //     })
-    //     .catch(err => {
-    //         console.error(err);
-    //     });
-
-
     fetch("https://cost-of-living-and-prices.p.rapidapi.com/cities", {
         "method": "GET",
         "headers": {
@@ -75,7 +68,7 @@
         .then(response => response.json()
         )
         .then(data => {
-            console.log(data.cities)
+            // console.log(data.cities[0])
 
             let html = "";
             html += '<h1>'
@@ -95,9 +88,59 @@
             ulHtml += '</ul>'
             $('#section').html(ulHtml)
 
-            for (let i = 5; i < data.cities.length; i++){
-                console.log(data.cities[i].city_name)
-            }
+            //div section
+            //ul
+            // let sectionDiv = '';
+            // let sectionDivCities;
+            // let sectionsDivsCountryes;
+            // sectionDiv += '<ul>'
+            // for (let i = 990; i < 1000; i++){
+            //
+            //     sectionDivCities = data.cities[i].city_name;
+            //     sectionsDivsCountryes = data.cities[i].country_name
+            //     sectionDiv += '<li>' + 'the city of: ' + sectionDivCities  + ' is located in  the country of: ' + sectionsDivsCountryes + '</li>'
+            // }
+            // sectionDiv += '</ul>'
+            // $('.section').html(sectionDiv)
+
+
+
+            $('#search').keyup(function (e) {
+
+                e.preventDefault()
+                let userInput = $('#search').val();
+                console.log(userInput)
+                let $foo = $(this);
+
+                    //
+                    let sectionDiv = '';
+                    let sectionDivCities;
+                    let sectionsDivsCountryes;
+                    for (let i = 0; i < 8000; i++) {
+                        sectionDivCities = data.cities[i].city_name;
+                        sectionsDivsCountryes = data.cities[i].country_name
+                        let newCitiesArray = [];
+                        if (sectionDivCities.toLowerCase().startsWith(userInput)) {
+                            newCitiesArray.push(sectionDivCities)
+                            for (let i in newCitiesArray) {
+                                var appendThis = "<li>" + 'the city of: ' + '<strong>' + newCitiesArray[i] + '</strong>' + ' is located in  the country of: ' + sectionsDivsCountryes + "</li>"
+                                $('.addMe').html(appendThis)
+                            }
+
+                            // console.log(sectionDivCities)
+
+                            // $('.section').html('<ul>' + '<li>' + 'the city of: '+ sectionDivCities + ' is located in  the country of: ' + sectionsDivsCountryes + '</li>' + '</ul>')
+                            // $('.section').html('<ul>' + '<li>' + 'the city of: '+ sectionDivCities + ' is located in  the country of: ' + sectionsDivsCountryes + '</li>' + '</ul>')
+                            // $(newCitiesArray).each(function( index ) {
+                            //     $('.section').html('<ul>' + '<li>' + 'the city of: '+ sectionDivCities + ' is located in  the country of: ' + sectionsDivsCountryes + '</li>' + '</ul>')
+                            //
+                            //     console.log(newCitiesArray[index])
+                            // });
+
+                        }
+                    }
+            })
+            // console.log(data.cities[i].country_name === 'Israel')
         })
 
 
