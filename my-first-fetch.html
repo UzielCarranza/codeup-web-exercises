@@ -8,7 +8,7 @@
     <style>
 
         body {
-            background-color: rgb(255, 250, 240);
+            background-color: rgb(220, 220, 240);
         }
 
         .country--selection {
@@ -32,6 +32,11 @@
         .sho--info {
             width: 50%;
             margin: auto;
+        }
+        #weather{
+            display: flex;
+            flex-direction: column;
+            justify-content: space-evenly;
         }
     </style>
 
@@ -84,36 +89,36 @@
 
 
     //get it right away, no click
-    // fetch("https://api.openweathermap.org/data/2.5/onecall?lat=" + 41.03 +  "&lon=" + -87.23 + "&units=" + "Imperial" + "&appid=" + OWM_KEY)
-    //     // after response
-    //     .then(response => response.json())
-    //
-    //     .then(data => {
-    //         console.log(data.daily[0].weather[0].icon)
-    //         let html = "";
-    //         let counter = 0;
-    //         var iconcode;
-    //         console.log(iconurl)
-    //         html += '<ul>'
-    //         for (let i = 0; i < 5; i++) {
-    //             // let days = ['monday', 'tuesday', 'wednesday', 'thrusday', 'friday', 'saturday', 'sunday']
-    //            let  days = data.daily[i];
-    //             // console.log(days, "days")
-    //             counter++
-    //             iconcode = data.daily[i].weather[0].icon
-    //             console.log(iconcode)
-    //             let dailyTemp = data.daily[i].temp.day;
-    //
-    //             var iconurl =  "http://openweathermap.org/img/wn/"+iconcode +"@2x.png";
-    //
-    //             $('.wicon').attr('src', iconurl);
-    //             html += '<li>' + counter + ' day will be like: ' + dailyTemp + ' this is icon CODE: ' + iconcode  +
-    //                 '<img href="#" class=wicon src="http://openweathermap.org/img/wn/'+iconcode+'@2x.png ">' + '</img>'  + '</li> ';
-    //         }
-    //         html += '</ul>'
-    //         $('#weather').html(html)
-    //
-    //     });
+    fetch("https://api.openweathermap.org/data/2.5/onecall?lat=" + 41.03 +  "&lon=" + -87.23 + "&units=" + "Imperial" + "&appid=" + OWM_KEY)
+        // after response
+        .then(response => response.json())
+
+        .then(data => {
+            console.log(data.daily[0].weather[0].icon)
+            let html = "";
+            let counter = 0;
+            var iconcode;
+            console.log(iconurl)
+            html += '<ul>'
+            for (let i = 0; i < 5; i++) {
+                // let days = ['monday', 'tuesday', 'wednesday', 'thrusday', 'friday', 'saturday', 'sunday']
+               let  days = data.daily[i];
+                // console.log(days, "days")
+                counter++
+                iconcode = data.daily[i].weather[0].icon
+                console.log(iconcode)
+                let dailyTemp = data.daily[i].temp.day;
+
+                var iconurl =  "http://openweathermap.org/img/wn/"+iconcode +"@2x.png";
+
+                $('.wicon').attr('src', iconurl);
+                html += '<li>' + counter + ' day will be like: ' + dailyTemp + ' this is icon CODE: ' + iconcode  +
+                    '<img href="#" class=wicon src="http://openweathermap.org/img/wn/'+iconcode+'@2x.png ">' + '</img>'  + '</li> ';
+            }
+            html += '</ul>'
+            $('#weather').html(html)
+
+        });
 
     let units = "Imperial"
     //get location
