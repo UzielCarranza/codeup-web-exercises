@@ -27,7 +27,7 @@ var longText = document.getElementById("longitude");
 
 //7 day forecast function
 function fiveDayForecast(data) {
-    console.log(data.daily[0])
+    console.log(data.current)
     let html = "";
     let counter = 0;
     var iconcode;
@@ -38,6 +38,11 @@ function fiveDayForecast(data) {
     let humidity;
     let windSpeed;
     let pressure;
+    let tempNight;
+    let dt;
+    let date;
+    let allDates;
+
     html += '<ul class="ul-7days">'
     //iterate
     for (let i = 0; i < 5; i++) {
@@ -50,12 +55,19 @@ function fiveDayForecast(data) {
         humidity = data.daily[i].humidity;
         windSpeed = data.daily[i].wind_speed;
         pressure = data.daily[i].pressure;
+        tempNight = data.daily[i].temp.night;
+        dt = data.daily[i].dt
+        date = new Date(dt*1000)
+        allDates = date.toDateString()
+        // console.log(data.daily[i].dt)
 
 
         var iconurl = "http://openweathermap.org/img/wn/" + iconcode + "@2x.png";
 
         $('.wicon').attr('src', iconurl);
-        html += `<li class="weather-days">${counter}day ${dailyTemp}${'&#8457'}
+        html += `<li class="weather-days">
+        <p>${allDates}</p>
+        <p> day ${dailyTemp}${'&#8457'}/ night ${tempNight}${'&#8457'}</p>
             <img href="#" class="wicon" src="http://openweathermap.org/img/wn/${iconcode}@2x.png"></img>
              <p>${currentMain}</p>
             <p>Description: ${currentDescription}</p>
