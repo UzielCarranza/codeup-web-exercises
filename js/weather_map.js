@@ -1,13 +1,15 @@
 $('#navbar-location').click(function (e) {
     e.preventDefault()
 })
-
-
 var units = 'Imperial'
+
+
+
+
 //get location 5 days
 let button = document.getElementById("get-location");
 let latText = document.getElementById("latitude");
-var longText = document.getElementById("longitude");
+let longText = document.getElementById("longitude");
 
 button.addEventListener("click", function () {
     navigator.geolocation.getCurrentPosition(function (position) {
@@ -21,8 +23,7 @@ button.addEventListener("click", function () {
         console.log(userLon, "user long")
         console.log(userLat, "user lat")
 
-
-        fetch("https://api.openweathermap.org/data/2.5/onecall?lat=" + 88.02 + "&lon=" + -88.12 + "&units=" + units + "&appid=" + OWM_KEY)
+        fetch(`https://api.openweathermap.org/data/2.5/onecall?lat=${userLat}&lon=${userLon}&units=${units}&appid=${OWM_KEY}`)
             // after response
             .then(response => response.json())
 
@@ -61,10 +62,9 @@ function fiveDayForecast(data) {
         windSpeed = data.daily[i].wind_speed;
         pressure = data.daily[i].pressure;
         tempNight = data.daily[i].temp.night;
-        dt = data.daily[i].dt
-        date = new Date(dt * 1000)
-        allDates = date.toDateString()
-        // console.log(data.daily[i].dt)
+        dt = data.daily[i].dt;
+        date = new Date(dt * 1000);
+        allDates = date.toDateString();
 
 
         html += `
@@ -77,9 +77,8 @@ function fiveDayForecast(data) {
             <p>Humidity: ${humidity}</p>
             <p>Wind: ${windSpeed}</p>
             <p>Pressure: ${pressure}</p>
-            </li> `;
+            </li> `
     }
-
     html += '</ul>'
     $('#weather').html(html)
 
@@ -100,7 +99,10 @@ btn2.addEventListener("click", function () {
         userLatOne = parseFloat(latText)
         console.log(userLonOne, "user long")
         console.log(userLatOne, "user lat")
-fetch("https://api.openweathermap.org/data/2.5/onecall?lat=" + 88.12 + "&lon=" + -82.21 + "&units=" + units + "&appid=" + OWM_KEY)
+
+        // var url = "https://api.openweathermap.org/data/2.5/weather?q="+cityName+"&appid=1b81668fc60a1d1905a3e5a311d45414";
+
+        fetch(`https://api.openweathermap.org/data/2.5/onecall?lat=${userLatOne}&lon=${userLonOne}&units=${units}&appid=${OWM_KEY}`)
     // after response
     .then(response => response.json())
     .then(data => sanitizeData(data))
@@ -152,3 +154,29 @@ function oneDayForecast(forecast) {
       </div>`
     );
 };
+
+
+//
+// //userInput
+// let btn3 = document.getElementById('')
+// //get location one day
+// btn2.addEventListener("click", function () {
+//     navigator.geolocation.getCurrentPosition(function (position) {
+//         let lat = position.coords.latitude;
+//         let long = position.coords.longitude;
+//
+//         latText = lat.toFixed(2);
+//         longText = long.toFixed(2);
+//         userLonOne = parseFloat(longText)
+//         userLatOne = parseFloat(latText)
+//         console.log(userLonOne, "user long")
+//         console.log(userLatOne, "user lat")
+//
+//         fetch(`https://api.openweathermap.org/data/2.5/onecall?${cityName}&units=${units}&appid=${OWM_KEY}`)
+//             // after response
+//             .then(response => response.json())
+//             .then(data => sanitizeData(data))
+//             .then(data => oneDayForecast(data))
+//     });
+// });
+//
