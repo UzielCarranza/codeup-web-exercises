@@ -1,10 +1,10 @@
-$('#navbar-location').click(function (e){
+$('#navbar-location').click(function (e) {
     e.preventDefault()
 })
 
 
 var units = 'Imperial'
-//get location 7 days
+//get location 5 days
 let button = document.getElementById("get-location");
 let latText = document.getElementById("latitude");
 var longText = document.getElementById("longitude");
@@ -22,7 +22,7 @@ button.addEventListener("click", function () {
         console.log(userLat, "user lat")
 
 
-        fetch("https://api.openweathermap.org/data/2.5/onecall?lat=" + 41.03 + "&lon=" + -85.12 + "&units=" + units + "&appid=" + OWM_KEY)
+        fetch("https://api.openweathermap.org/data/2.5/onecall?lat=" + userLat + "&lon=" + userLon + "&units=" + units + "&appid=" + OWM_KEY)
             // after response
             .then(response => response.json())
 
@@ -62,7 +62,7 @@ function fiveDayForecast(data) {
         pressure = data.daily[i].pressure;
         tempNight = data.daily[i].temp.night;
         dt = data.daily[i].dt
-        date = new Date(dt*1000)
+        date = new Date(dt * 1000)
         allDates = date.toDateString()
         // console.log(data.daily[i].dt)
 
@@ -86,17 +86,63 @@ function fiveDayForecast(data) {
 }
 
 
+//1 day forecast
+let btn2 = document.getElementById('get-location-oneday')
+//get location one day
+// btn2.addEventListener("click", function () {
+//     navigator.geolocation.getCurrentPosition(function (position) {
+//         let lat = position.coords.latitude;
+//         let long = position.coords.longitude;
+//
+//         latText = lat.toFixed(2);
+//         longText = long.toFixed(2);
+//         userLonOne = parseFloat(longText)
+//         userLatOne = parseFloat(latText)
+//         console.log(userLonOne, "user long")
+//         console.log(userLatOne, "user lat")
+fetch("https://api.openweathermap.org/data/2.5/onecall?lat=" + 88.12 + "&lon=" + -87.13 + "&units=" + units + "&appid=" + OWM_KEY)
+    // after response
+    .then(response => response.json())
+    .then(data => sanitizeData(data))
+    .then(data => oneDayForecast(data))
+//     });
+// });
 
-// function sanitizeData(data){
-//
-//
-//     return {
-//         manDescription: data.current.weather[0].main,
-//         currentDayDescription: data.current.weather[0].description,
-//         currentDayIcon: data.current.weather[0].icon,
-//         userLan: data.lat,
-//         userLon: data.lon,
-//         currentTemp: data.current.temp
-//     }
-//
-// }
+function sanitizeData(data) {
+    console.log(data.current)
+
+    return {
+        manDescription: data.current.weather[0].main,
+        currentDayDescription: data.current.weather[0].description,
+        currentDayIcon: data.current.weather[0].icon,
+        userLan: data.lat,
+        userLon: data.lon,
+        currentTemp: data.current.temp,
+        dt: data.current.dt,
+    }
+
+}
+
+function oneDayForecast(forecast) {
+
+
+    let date = new Date(`${forecast.dt}` * 1000);
+    let allDates = date.toDateString();
+    $('#weather').html(
+        `
+      <div class="card mt-4">
+          <h3 class="ml-4">` + allDates + `</h3> 
+        <div class="card">
+          <img src="http://openweathermap.org/img/wn/${forecast.currentDayIcon}@2x.png" alt="image">
+          <p>${forecast.currentDayDescription}</p> 
+          <p>The current temperature is: ${forecast.currentTemp}${'&#8457'}</p>
+           <p>currentMain</p>
+            <p>Description:currentDescription</p>
+            <p>Humidity:humidity</p>
+            <p>Wind:windSpeed</p>
+            <p>Pressure:pressure</p>
+        </div>
+        </div>
+      </div>`
+    );
+};
