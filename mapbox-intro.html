@@ -19,18 +19,29 @@
 <h1>My First Mapbox Map!</h1>
 
 <!-- The HTML element that serves as the Mapbox container -->
-<div id='map'></div>
-
+<div id="map"></div>
+<button id="go">go to codeup</button>
 <!-- Mapbox JS -->
 <script src='js/keys.js'></script>
+
+
+<!-- jQuery -->
+<script src="https://code.jquery.com/jquery-2.2.4.min.js"
+        integrity="sha256-BbhdlvQf/xTY9gja0Dq3HiwQF8LaCRTXxZKRutelT44=" crossorigin="anonymous"></script>
+
+
+<!--mapbox-->
 <script src='https://api.tiles.mapbox.com/mapbox-gl-js/v0.53.0/mapbox-gl.js'></script>
+
+<!--geocoder-->
+<script src="js/geocoder-utils.js"></script>
 
 <!-- Custom JS -->
 <script>
 
     let startLan = 29.4252;
 
-    let startLon = -98.4916
+    let startLon = -98.4916;
 
     let map = initMap(startLon, startLan);
 
@@ -42,7 +53,7 @@
 
     function initMap(lon, lat) {
         mapboxgl.accessToken = MAP_KEY;
-        map = new mapboxgl.Map({
+        return new mapboxgl.Map({
             container: 'map',
             style: 'mapbox://styles/mapbox/streets-v9',
             zoom: 10,
@@ -56,7 +67,6 @@
         return new mapboxgl.Marker()
             .setLngLat([lon, lat])
             .addTo(map)
-            .setHtml("<p>some</p>")
     }
 
     //
@@ -64,12 +74,23 @@
     // map.secCenter([lat, lon])
 
 
-    function createPopup() {
+    function createPopup(lon, lat) {
         return new mapboxgl.Popup()
             .setLngLat([lon, lat])
 
+            .setHTML("<p>Codeup Rocks!</p>")
+
     }
-    
+
+    $('#go').click(function () {
+
+
+        geocode("600 Navarro St #350, San Antonio, TX 78205", MAP_KEY).then(function (result) {
+            console.log(result);
+            map.setCenter(result);
+            map.setZoom(20);
+        });
+    })
 
 </script>
 </body>
