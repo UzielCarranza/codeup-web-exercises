@@ -4,17 +4,17 @@ let button = document.getElementById("get-location");
 let latText = document.getElementById("latitude");
 var longText = document.getElementById("longitude");
 
-// button.addEventListener("click", function () {
-//     navigator.geolocation.getCurrentPosition(function (position) {
-//         let lat = position.coords.latitude;
-//         let long = position.coords.longitude;
-//
-//         latText.innerText = lat.toFixed(2);
-//         longText.innerText = long.toFixed(2);
-//         userLon = parseFloat(longText.innerText)
-//         userLat = parseFloat(latText.innerText)
-//         console.log(userLon, "user long")
-//         console.log(userLat, "user lat")
+button.addEventListener("click", function () {
+    navigator.geolocation.getCurrentPosition(function (position) {
+        let lat = position.coords.latitude;
+        let long = position.coords.longitude;
+
+        latText = lat.toFixed(2);
+        longText = long.toFixed(2);
+        userLon = parseFloat(longText)
+        userLat = parseFloat(latText)
+        console.log(userLon, "user long")
+        console.log(userLat, "user lat")
 
 
         fetch("https://api.openweathermap.org/data/2.5/onecall?lat=" + 41.03 + "&lon=" + -85.12 + "&units=" + units + "&appid=" + OWM_KEY)
@@ -22,8 +22,8 @@ var longText = document.getElementById("longitude");
             .then(response => response.json())
 
             .then(data => fiveDayForecast(data))
-    // });
-
+    });
+})
 
 //7 day forecast function
 function fiveDayForecast(data) {
