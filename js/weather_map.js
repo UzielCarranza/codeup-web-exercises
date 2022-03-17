@@ -89,27 +89,26 @@ function fiveDayForecast(data) {
 //1 day forecast
 let btn2 = document.getElementById('get-location-oneday')
 //get location one day
-// btn2.addEventListener("click", function () {
-//     navigator.geolocation.getCurrentPosition(function (position) {
-//         let lat = position.coords.latitude;
-//         let long = position.coords.longitude;
-//
-//         latText = lat.toFixed(2);
-//         longText = long.toFixed(2);
-//         userLonOne = parseFloat(longText)
-//         userLatOne = parseFloat(latText)
-//         console.log(userLonOne, "user long")
-//         console.log(userLatOne, "user lat")
+btn2.addEventListener("click", function () {
+    navigator.geolocation.getCurrentPosition(function (position) {
+        let lat = position.coords.latitude;
+        let long = position.coords.longitude;
+
+        latText = lat.toFixed(2);
+        longText = long.toFixed(2);
+        userLonOne = parseFloat(longText)
+        userLatOne = parseFloat(latText)
+        console.log(userLonOne, "user long")
+        console.log(userLatOne, "user lat")
 fetch("https://api.openweathermap.org/data/2.5/onecall?lat=" + 88.12 + "&lon=" + -87.13 + "&units=" + units + "&appid=" + OWM_KEY)
     // after response
     .then(response => response.json())
     .then(data => sanitizeData(data))
     .then(data => oneDayForecast(data))
-//     });
-// });
+    });
+});
 
 function sanitizeData(data) {
-    console.log(data.current)
 
     return {
         manDescription: data.current.weather[0].main,
@@ -119,10 +118,16 @@ function sanitizeData(data) {
         userLon: data.lon,
         currentTemp: data.current.temp,
         dt: data.current.dt,
+        wind: data.current.wind_speed,
+        humidity: data.current.humidity,
+        pressure: data.current.pressure,
+        currentMain: data.current.weather[0].main,
+        feelsLike: data.current.feels_like,
     }
 
 }
 
+//language: HTML
 function oneDayForecast(forecast) {
 
 
@@ -134,13 +139,14 @@ function oneDayForecast(forecast) {
           <h3 class="ml-4">` + allDates + `</h3> 
         <div class="card">
           <img src="http://openweathermap.org/img/wn/${forecast.currentDayIcon}@2x.png" alt="image">
-          <p>${forecast.currentDayDescription}</p> 
-          <p>The current temperature is: ${forecast.currentTemp}${'&#8457'}</p>
-           <p>currentMain</p>
-            <p>Description:currentDescription</p>
-            <p>Humidity:humidity</p>
-            <p>Wind:windSpeed</p>
-            <p>Pressure:pressure</p>
+         
+           <p>${forecast.currentMain}</p>
+            <p>Temperature: ${forecast.currentTemp}${'&#8457'}</p>        
+            <p>Feels like: ${forecast.feelsLike}${'&#8457'}</p>
+               <p>description: ${forecast.currentDayDescription}</p> 
+            <p>Humidity: ${forecast.humidity}</p>
+            <p>Wind speed: ${forecast.wind}</p>
+            <p>Pressure: ${forecast.pressure}</p>
         </div>
         </div>
       </div>`
