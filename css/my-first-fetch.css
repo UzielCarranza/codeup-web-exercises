@@ -1,7 +1,5 @@
 
-*{
-    outline: 1px solid blue;
-}
+
 body {
     background-color: rgb(220, 220, 240);
 }
@@ -27,15 +25,40 @@ body {
 .sho--info {
     width: 50%;
     margin: auto;
-
+    padding: 2em;
 }
 
-/*#weather {*/
-/*    display: flex;*/
-/*    flex-direction: column;*/
-/*    justify-content: space-evenly;*/
-/*    border: 1px solid red;*/
-/*}*/
-li{
+#one-day--forecast{
+    margin: auto;
+    width: 50%;
+    background-color: rgb(0,139,139);
+    color: #fff;
+}
+
+
+.px-2{
+    width: 30%;
+    margin: auto;
+    padding: 10px;
+}
+
+.card{
+    width: 60%;
+    margin: auto;
+}
+.current{
+    margin-bottom: 2%;
+    padding: 2em;
+}
+.img-current{
     width: 40%;
+    margin-left: 5em;
+
+}
+.description{
+    text-align: center;
+}
+
+#weather{
+    margin-bottom: 5em;
 }

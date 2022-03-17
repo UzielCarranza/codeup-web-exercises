@@ -1,96 +1,123 @@
-//do fetch stuff
+//
+// fetch("https://api.openweathermap.org/data/2.5/onecall?lat=" + userLatOne + "&lon=" + userLonOne + "&units=" + "Imperial" + "&appid=" + OWM_KEY)
+//     // after response
+//     .then(response => response.json())
+//     .then(data => sanitizeData(data))
+// .then(data => oneDayForecast(data));
+//
 
 
-//get it right away, no click
-fetch("https://api.openweathermap.org/data/2.5/onecall?lat=" + 41.03 + "&lon=" + -87.23 + "&units=" + "Imperial" + "&appid=" + OWM_KEY)
-    // after response
-    .then(response => response.json())
+//one day forecast
+let btn2 = document.getElementById('get-one--day')
+//get location one day
+    btn2.addEventListener("click", function () {
+        navigator.geolocation.getCurrentPosition(function (position) {
+            let lat = position.coords.latitude;
+            let long = position.coords.longitude;
 
-    .then(data => {
-        console.log(data.daily[0].weather[0].icon)
-        let html = "";
-        let counter = 0;
-        var iconcode;
-        console.log(iconurl)
-        html += '<ul>'
-        for (let i = 0; i < 5; i++) {
-            // let days = ['monday', 'tuesday', 'wednesday', 'thrusday', 'friday', 'saturday', 'sunday']
-            let days = data.daily[i];
-            // console.log(days, "days")
-            counter++
-            iconcode = data.daily[i].weather[0].icon
-            console.log(iconcode)
-            let dailyTemp = data.daily[i].temp.day;
+            latText.innerText = lat.toFixed(2);
+            longText.innerText = long.toFixed(2);
+            userLonOne = parseFloat(longText.innerText)
+            userLatOne = parseFloat(latText.innerText)
+            console.log(userLonOne, "user long")
+            console.log(userLatOne, "user lat")
+    fetch("https://api.openweathermap.org/data/2.5/onecall?lat=" + userLatOne + "&lon=" + userLonOne + "&units=" + units + "&appid=" + OWM_KEY)
+        // after response
+        .then(response => response.json())
+        .then(data => sanitizeData(data))
+        .then(data => oneDayForecast(data))
+        });
+    });
+//sanitize data
+function sanitizeData(data){
 
-            var iconurl = "http://openweathermap.org/img/wn/" + iconcode + "@2x.png";
 
-            $('.wicon').attr('src', iconurl);
-            html += '<li>' + counter + ' day will be like: ' + dailyTemp + ' this is icon CODE: ' + iconcode +
-                '<img href="#" class=wicon src="http://openweathermap.org/img/wn/' + iconcode + '@2x.png ">' + '</img>' + '</li> ';
-        }
-        html += '</ul>'
-        $('#weather').html(html)
+    return {
+        manDescription: data.current.weather[0].main,
+        currentDayDescription: data.current.weather[0].description,
+        currentDayIcon: data.current.weather[0].icon,
+        userLan: data.lat,
+        userLon: data.lon,
+        currentTemp: data.current.temp
+    }
 
+}
+//one day forecast function
+function oneDayForecast(forecast) {
+    $('#one-day--forecast').html(
+        `
+      <div class="card mt-4">
+        <div class="px-2">
+          <h3>Today's forecast:</h3> 
+        </div>
+        <div class="card">
+          <p class="description">${forecast.currentDayDescription}</p>
+          
+          <img class="img-current" src="http://openweathermap.org/img/wn/${forecast.currentDayIcon}@2x.png" alt="image">
+          
+          <p class="current">The current temperature is: ${forecast.currentTemp}</p>
+        </div>
+        </div>
+      </div>`
+    );
+};
+
+
+
+
+    var units = "Imperial"
+//get location 7 days
+    let button = document.getElementById("get-location");
+    let latText = document.getElementById("latitude");
+    var longText = document.getElementById("longitude");
+
+    button.addEventListener("click", function () {
+        navigator.geolocation.getCurrentPosition(function (position) {
+            let lat = position.coords.latitude;
+            let long = position.coords.longitude;
+
+            latText.innerText = lat.toFixed(2);
+            longText.innerText = long.toFixed(2);
+            userLon = parseFloat(longText.innerText)
+            userLat = parseFloat(latText.innerText)
+            console.log(userLon, "user long")
+            console.log(userLat, "user lat")
+
+
+            fetch("https://api.openweathermap.org/data/2.5/onecall?lat=" + userLat + "&lon=" + userLon + "&units=" + units + "&appid=" + OWM_KEY)
+                // after response
+                .then(response => response.json())
+
+                .then(data => fiveDayForecast(data))
+        });
     });
 
-let units = "Imperial"
-//get location
-let button = document.getElementById("get-location");
-let latText = document.getElementById("latitude");
-let longText = document.getElementById("longitude");
+//5day forecast function
+function fiveDayForecast(data) {
+    let html = "";
+    let counter = 0;
+    var iconcode;
+    html += '<ul>'
+    for (let i = 0; i < 7; i++) {
+        // let days = ['monday', 'tuesday', 'wednesday', 'thrusday', 'friday', 'saturday', 'sunday']
+        let days = data.daily[i];
+        // console.log(days, "days")
+        counter++
+        iconcode = data.daily[i].weather[0].icon;
+        let dailyTemp = data.daily[i].temp.day;
 
-button.addEventListener("click", function () {
-    navigator.geolocation.getCurrentPosition(function (position) {
-        let lat = position.coords.latitude;
-        let long = position.coords.longitude;
+        var iconurl = "http://openweathermap.org/img/wn/" + iconcode + "@2x.png";
 
-        latText.innerText = lat.toFixed(2);
-        longText.innerText = long.toFixed(2);
-        userLon = parseFloat(longText.innerText)
-        userLat = parseFloat(latText.innerText)
-        console.log(userLon, "user long")
-        console.log(userLat, "user lat")
+        $('.wicon').attr('src', iconurl);
+        html += '<li>' + counter + ' day will be like: ' + dailyTemp + ' this is icon CODE: ' + iconcode +
+            '<img href="#" class=wicon src="http://openweathermap.org/img/wn/' + iconcode + '@2x.png ">' + '</img>' + '</li> ';
+    }
+    html += '</ul>'
+    $('#weather').html(html)
 
+}
 
-        fetch("https://api.openweathermap.org/data/2.5/onecall?lat=" + userLat + "&lon=" + userLon + "&units=" + units + "&appid=" + OWM_KEY)
-            // after response
-            .then(response => response.json())
-
-            .then(data => {
-                console.log(data)
-                let html = "";
-                let counter = 0;
-                var iconcode;
-                console.log(iconurl)
-                html += '<ul>'
-                for (let i = 0; i < 7; i++) {
-                    // let days = ['monday', 'tuesday', 'wednesday', 'thrusday', 'friday', 'saturday', 'sunday']
-                    let days = data.daily[i];
-                    // console.log(days, "days")
-                    counter++
-                    iconcode = data.daily[i].weather[0].icon
-                    console.log(iconcode)
-                    let dailyTemp = data.daily[i].temp.day;
-
-                    var iconurl = "http://openweathermap.org/img/wn/" + iconcode + "@2x.png";
-
-                    $('.wicon').attr('src', iconurl);
-                    html += '<li>' + counter + ' day will be like: ' + dailyTemp + ' this is icon CODE: ' + iconcode +
-                        '<img href="#" class=wicon src="http://openweathermap.org/img/wn/' + iconcode + '@2x.png ">' + '</img>' + '</li> ';
-                }
-                html += '</ul>'
-                $('#weather').html(html)
-
-
-            });
-    });
-});
-
-
-//ends get location
-
-
-// https://api.openweathermap.org/data/2.5/onecall?lat=33.44&lon=-94.04&exclude=hourly,daily&appid={API key}
+//cities
 
 fetch("https://cost-of-living-and-prices.p.rapidapi.com/cities", {
     "method": "GET",
