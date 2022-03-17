@@ -7,6 +7,8 @@
 //
 
 
+//global variable for units
+var units = "Imperial"
 //one day forecast
 let btn2 = document.getElementById('get-one--day')
 //get location one day
@@ -62,16 +64,12 @@ function oneDayForecast(forecast) {
     );
 };
 
-
-
-
-    var units = "Imperial"
 //get location 7 days
     let button = document.getElementById("get-location");
     let latText = document.getElementById("latitude");
     var longText = document.getElementById("longitude");
 
-    button.addEventListener("click", function () {
+    // button.addEventListener("click", function () {
         navigator.geolocation.getCurrentPosition(function (position) {
             let lat = position.coords.latitude;
             let long = position.coords.longitude;
@@ -90,14 +88,14 @@ function oneDayForecast(forecast) {
 
                 .then(data => fiveDayForecast(data))
         });
-    });
+    // });
 
-//5day forecast function
+//7 day forecast function
 function fiveDayForecast(data) {
     let html = "";
     let counter = 0;
     var iconcode;
-    html += '<ul>'
+    html += '<ul class="ul-7days">'
     for (let i = 0; i < 7; i++) {
         // let days = ['monday', 'tuesday', 'wednesday', 'thrusday', 'friday', 'saturday', 'sunday']
         let days = data.daily[i];
@@ -109,7 +107,7 @@ function fiveDayForecast(data) {
         var iconurl = "http://openweathermap.org/img/wn/" + iconcode + "@2x.png";
 
         $('.wicon').attr('src', iconurl);
-        html += '<li>' + counter + ' day will be like: ' + dailyTemp + ' this is icon CODE: ' + iconcode +
+        html += '<li class="weather-days">' + counter + ' day will be like: ' + dailyTemp +
             '<img href="#" class=wicon src="http://openweathermap.org/img/wn/' + iconcode + '@2x.png ">' + '</img>' + '</li> ';
     }
     html += '</ul>'
