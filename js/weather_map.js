@@ -1,3 +1,8 @@
+$('#navbar-location').click(function (e){
+    e.preventDefault()
+})
+
+
 var units = 'Imperial'
 //get location 7 days
 let button = document.getElementById("get-location");
@@ -43,7 +48,7 @@ function fiveDayForecast(data) {
     let date;
     let allDates;
 
-    html += '<ul class="ul-7days">'
+    html += '<ul class="card">'
     //iterate
     for (let i = 0; i < 5; i++) {
         counter++
@@ -62,13 +67,11 @@ function fiveDayForecast(data) {
         // console.log(data.daily[i].dt)
 
 
-        var iconurl = "http://openweathermap.org/img/wn/" + iconcode + "@2x.png";
-
-        $('.wicon').attr('src', iconurl);
-        html += `<li class="weather-days">
+        html += `
+        <li class="card-body my-0 py-0">
         <p>${allDates}</p>
         <p> day ${dailyTemp}${'&#8457'}/ night ${tempNight}${'&#8457'}</p>
-            <img href="#" class="wicon" src="http://openweathermap.org/img/wn/${iconcode}@2x.png"></img>
+            <img href="#" class="card-img-top" src="http://openweathermap.org/img/wn/${iconcode}@2x.png"></img>
              <p>${currentMain}</p>
             <p>Description: ${currentDescription}</p>
             <p>Humidity: ${humidity}</p>
