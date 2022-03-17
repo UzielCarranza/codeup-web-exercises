@@ -1,7 +1,7 @@
 
-    let startLan = 29.4252;
-
-    let startLon = -98.4916;
+    let startLan = 90 //= 41.117622667840116;
+    // 41.117622667840116, -85.14417894635905
+    let startLon = -89// = -85.14417894635905;
 
     let map = initMap(startLon, startLan);
 
@@ -16,11 +16,16 @@
     return new mapboxgl.Map({
     container: 'map',
     style: 'mapbox://styles/mapbox/streets-v9',
-    zoom: 10,
+    zoom: 5,
     center: [lon, lat]
 });
     // map.center(-82.01, 90.21)
 }
+
+
+    map.setZoom(15)
+    // map.secCenter([lat, lon])
+
 
 
     function createMarker(lon, lat) {
@@ -29,9 +34,6 @@
     .addTo(map)
 }
 
-    //
-    // map.setZoom(5)
-    // map.secCenter([lat, lon])
 
 
     function createPopup(lon, lat) {
@@ -43,11 +45,11 @@
 }
 
     $('#go').click(function () {
-
-
-    geocode("600 Navarro St #350, San Antonio, TX 78205", MAP_KEY).then(function (result) {
+    geocode("315 W Coliseum Blvd, Fort Wayne, IN 46805", MAP_KEY).then(function (result) {
         console.log(result);
         map.setCenter(result);
-        map.setZoom(20);
+        map.setZoom(15);
+        marker.setPopup()
     });
+
 })
