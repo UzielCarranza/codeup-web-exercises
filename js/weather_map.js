@@ -22,7 +22,7 @@ button.addEventListener("click", function () {
         console.log(userLat, "user lat")
 
 
-        fetch("https://api.openweathermap.org/data/2.5/onecall?lat=" + userLat + "&lon=" + userLon + "&units=" + units + "&appid=" + OWM_KEY)
+        fetch("https://api.openweathermap.org/data/2.5/onecall?lat=" + 88.02 + "&lon=" + -88.12 + "&units=" + units + "&appid=" + OWM_KEY)
             // after response
             .then(response => response.json())
 
@@ -68,9 +68,9 @@ function fiveDayForecast(data) {
 
 
         html += `
-        <li class="card-body my-0 py-0">
+        <li class="card-body my-0 py-0 px-0 m-4">
         <p>${allDates}</p>
-        <p> day ${dailyTemp}${'&#8457'}/ night ${tempNight}${'&#8457'}</p>
+        <p> day ${dailyTemp}${'&#8457'} / night ${tempNight}${'&#8457'}</p>
             <img href="#" class="card-img-top" src="http://openweathermap.org/img/wn/${iconcode}@2x.png"></img>
              <p>${currentMain}</p>
             <p>Description: ${currentDescription}</p>
@@ -100,7 +100,7 @@ btn2.addEventListener("click", function () {
         userLatOne = parseFloat(latText)
         console.log(userLonOne, "user long")
         console.log(userLatOne, "user lat")
-fetch("https://api.openweathermap.org/data/2.5/onecall?lat=" + 88.12 + "&lon=" + -87.13 + "&units=" + units + "&appid=" + OWM_KEY)
+fetch("https://api.openweathermap.org/data/2.5/onecall?lat=" + 88.12 + "&lon=" + -82.21 + "&units=" + units + "&appid=" + OWM_KEY)
     // after response
     .then(response => response.json())
     .then(data => sanitizeData(data))
@@ -135,8 +135,8 @@ function oneDayForecast(forecast) {
     let allDates = date.toDateString();
     $('#weather').html(
         `
-      <div class="card mt-4">
-          <h3 class="ml-4">` + allDates + `</h3> 
+      <div class="card mt-4 one-day">
+          <h3 class="ml-4 text-center">` + allDates + `</h3> 
         <div class="card">
           <img src="http://openweathermap.org/img/wn/${forecast.currentDayIcon}@2x.png" alt="image">
          
