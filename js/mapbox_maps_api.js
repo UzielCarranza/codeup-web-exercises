@@ -1,7 +1,7 @@
 
-    let startLan = 90 //= 41.117622667840116;
+    let startLan = 41.09 //= 41.117622667840116;
     // 41.117622667840116, -85.14417894635905
-    let startLon = -89// = -85.14417894635905;
+    let startLon = -85.13// = -85.14417894635905;
 
     let map = initMap(startLon, startLan);
 
@@ -63,7 +63,6 @@
                     .setLngLat(coordinates)
                     .addTo(map)
                     .setPopup(popup);
-                popup.addTo(map);
             });
         }
 
