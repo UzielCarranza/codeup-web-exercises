@@ -51,5 +51,21 @@
         map.setZoom(15);
         marker.setPopup()
     });
+        var oliveGarden = {
+            address: "315 W Coliseum Blvd, Fort Wayne, IN 46805",
+            popupHTML: "<p>Olive garden!</p>"
+        };
+        function placeMarkerAndPopup(info, token, map) {
+            geocode(info.address, token).then(function(coordinates) {
+                let popup = new mapboxgl.Popup()
+                    .setHTML(info.popupHTML);
+                let marker = new mapboxgl.Marker()
+                    .setLngLat(coordinates)
+                    .addTo(map)
+                    .setPopup(popup);
+                popup.addTo(map);
+            });
+        }
 
+        placeMarkerAndPopup(oliveGarden, MAP_KEY, map);
 })
