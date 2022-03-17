@@ -14,12 +14,13 @@
 </head>
 <body>
 
+<div class="container--days">
 <!--from weather exercise-->
-<h1>7 Day weather</h1>
+<h1 class="show-location-h1">7 Day weather</h1>
 <!--<div id="icon"><img class="wicon" src="" alt="Weather icon"></div>-->
 
-<div id="weather">
-    <p>
+<div id="weather"></div>
+    <p class="show-location">
         Your location is <span id="latitude">0.00</span>°
         latitude by <span id="longitude">0.00</span>° longitude.
     </p>
@@ -28,12 +29,11 @@
     </button>
 </div>
 
+<button id="get-one--day">
+    Get My 1 day forecast
+</button>
+<div id="one-day--forecast"></div>
 
-<div id="one-day--forecast">
-    <button id="get-one--day">
-        Get My 1 day forecast
-    </button>
-</div>
 
         <section id="container">
 
@@ -42,11 +42,12 @@
             <div class="sho--info">
 
                 <h1>What country is your city from</h1>
-                <label for="search">Look for cities: </label>
-                <input id="search" type="text" placeholder="type here...">
                 <div class="country--selection">
                     <ul class="addMe"></ul>
                 </div>
+                <label for="search">Look for cities: </label>
+                <input id="search" type="text" placeholder="type here...">
+
             </div>
 
         </section>

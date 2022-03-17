@@ -69,7 +69,7 @@ function oneDayForecast(forecast) {
     let latText = document.getElementById("latitude");
     var longText = document.getElementById("longitude");
 
-    // button.addEventListener("click", function () {
+    button.addEventListener("click", function () {
         navigator.geolocation.getCurrentPosition(function (position) {
             let lat = position.coords.latitude;
             let long = position.coords.longitude;
@@ -88,7 +88,7 @@ function oneDayForecast(forecast) {
 
                 .then(data => fiveDayForecast(data))
         });
-    // });
+    });
 
 //7 day forecast function
 function fiveDayForecast(data) {
@@ -107,7 +107,7 @@ function fiveDayForecast(data) {
         var iconurl = "http://openweathermap.org/img/wn/" + iconcode + "@2x.png";
 
         $('.wicon').attr('src', iconurl);
-        html += '<li class="weather-days">' + counter + ' day will be like: ' + dailyTemp +
+        html += '<li class="weather-days">' + counter+" day "  + dailyTemp + '&#8457'+
             '<img href="#" class=wicon src="http://openweathermap.org/img/wn/' + iconcode + '@2x.png ">' + '</img>' + '</li> ';
     }
     html += '</ul>'
