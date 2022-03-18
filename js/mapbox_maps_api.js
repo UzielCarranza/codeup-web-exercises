@@ -78,6 +78,37 @@ $('#go').click(function () {
 
 
 
+//
+//
+// mapboxgl.accessToken =MAP_KEY;
+// function getMarker(coordinates){
+//     return new{
+//
+//     }
+// // }
+//
+// function setGeoCoderEventListener(){
+//     geocoder.on("result", function (e){
+//         console.log(e.result.geometry)
+//     })
+// }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
