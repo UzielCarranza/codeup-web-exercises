@@ -1,106 +1,100 @@
 // //MAP
+
+mapboxgl.accessToken = MAP_KEY
 let startLan = 41.09 //= 41.117622667840116;
-// 41.117622667840116, -85.14417894635905
 let startLon = -85.13// = -85.14417894635905;
 
 let map = initMap(startLon, startLan);
+let marker;
+let popup;
 
-// let marker = createMarker(startLon, startLan);
-// let popup = createPopup(startLon, startLan);
-//
-
+const coordinates = document.getElementById('coordinates');
+addGeo()
+setGeocoderEventListener();
 
 function initMap(lon, lat) {
     mapboxgl.accessToken = MAP_KEY;
     return new mapboxgl.Map({
         container: 'map',
-        style: 'mapbox://styles/mapbox/streets-v9',
+        style: 'mapbox://styles/mapbox/streets-v11',
         zoom: 5,
         center: [lon, lat]
     });
-    // map.center(-82.01, 90.21)
+
 }
-// map.dragPan.isActive();
-// map.setZoom(15)
+function getMarker(coordinates) {
 
-// map.secCenter([lat, lon])
+    return new mapboxgl.Marker()
+        .setLngLat(coordinates)
+        .addTo(map)
 
-//
-// function createMarker(lon, lat) {
-//     return new mapboxgl.Marker()
-//         .setLngLat([lon, lat])
-//         .addTo(map)
-// }
-// marker.setPopup(popup);
-//
-//
-// function createPopup(lon, lat) {
-//     return new mapboxgl.Popup()
-//         .setLngLat([lon, lat])
-//         .setHTML("<p>Codeup Rocks!</p>")
-//
-// }
+}
 
+function getPopup(description, coordinates) {
+    return new mapboxgl.Popup()
+        .setLngLat(coordinates)
+        .setHTML(`<p>${description}</p>`)
+}
 
+function addGeo(){
+    geocoder = new MapboxGeocoder({
+        accessToken: MAP_KEY,
+        mapboxgl: mapboxgl,
+        marker: false,
+    });
+    map.addControl(geocoder);
+}
 
+function setGeocoderEventListener() {
+    geocoder.on("result", function (e) {
+        if (marker) {
+            marker.remove();
 
+        }
+        if (popup) {
+            popup.remove();
 
-//drag
-const coordinates = document.getElementById('coordinates');
+        }
 
-const markerDrag = new mapboxgl.Marker({
-    draggable: true
-})
-markerDrag.setLngLat([startLon, startLan])
-markerDrag.addTo(map);
+        marker = getMarker(e.result.geometry.coordinates);
+        popup = getPopup(e.result.place_name, e.result.geometry.coordinates);
+        marker.setPopup(popup)
 
-// parseFloat(long.toFixed(2));
-//on drag function
-function onDragEnd() {
-    const lngLat = markerDrag.getLngLat();
-    let mapLon = parseFloat(lngLat.lng.toFixed(2));
-    let mapLat = parseFloat(lngLat.lat.toFixed(2));
-    console.log(mapLat,"map lat")
-    console.log(mapLon,"map lat")
-    coordinates.style.display = 'block';
-    coordinates.innerHTML = `Longitude: ${lngLat.lng}<br />Latitude: ${lngLat.lat}`;
-    fetch(`https://api.openweathermap.org/data/2.5/onecall?lat=${mapLat}&lon=${mapLon}&units=${units}&appid=${OWM_KEY}`)
+            // saving data from the Mapbox Search response
+            const cityNameText = e.result.text;
+            const longitude = e.result.geometry.coordinates[0];
+            const latitude = e.result.geometry.coordinates[1];
+
+            console.log(longitude,"long")
+            console.log(latitude,"lat")
+
+        fetch(`https://api.openweathermap.org/data/2.5/onecall?lat=${latitude}&lon=${longitude}&units=${units}&appid=${OWM_KEY}`)
         // after response
         .then(response => response.json())
         .then(data => fiveDayForecastMap(data))
+
+
+    });
 }
+
 function fiveDayForecastMap(data) {
     $('#weather-map').fadeIn();
-    let html = "";
-    let iconcode;
-    let currentMain;
-    let days;
-    let dailyTemp;
-    let currentDescription;
-    let humidity;
-    let windSpeed;
-    let pressure;
-    let tempNight;
-    let dt;
-    let date;
-    let allDates;
-
+    html = "";
     html += '<ul class="card">'
     //iterate
     for (let i = 0; i < 5; i++) {
-        iconcode = data.daily[i].weather[0].icon;
-        currentMain = data.daily[i].weather[0].main;
-        days = data.daily[i];
-        dailyTemp = data.daily[i].temp.day;
-        currentDescription = data.daily[i].weather[0].description;
-        humidity = data.daily[i].humidity;
-        windSpeed = data.daily[i].wind_speed;
-        pressure = data.daily[i].pressure;
-        tempNight = data.daily[i].temp.night;
+       let iconcode = data.daily[i].weather[0].icon;
+        let currentMain = data.daily[i].weather[0].main;
+        let days = data.daily[i];
+        let dailyTemp = data.daily[i].temp.day;
+        let currentDescription = data.daily[i].weather[0].description;
+        let humidity = data.daily[i].humidity;
+        let windSpeed = data.daily[i].wind_speed;
+        let pressure = data.daily[i].pressure;
+        let tempNight = data.daily[i].temp.night;
         dt = data.daily[i].dt;
-        date = new Date(dt * 1000);
-        allDates = date.toDateString();
-
+        let date = new Date(dt * 1000);
+        let allDates = date.toDateString();
 
         html += `
         <li class="card-body my-0 py-0 px-0 m-4">
@@ -123,8 +117,90 @@ function fiveDayForecastMap(data) {
 }
 
 
-markerDrag.on('dragend', onDragEnd);
 
 
-console.log(markerDrag)
-console.log(markerDrag._lngLat)
+
+
+
+
+
+
+
+
+
+
+
+// const markerDrag = new mapboxgl.Marker({
+//     draggable: true
+// })
+// markerDrag.setLngLat([startLon, startLan])
+// markerDrag.addTo(map);
+//
+// function onDragEnd() {
+//     const lngLat = markerDrag.getLngLat();
+//     let mapLon = parseFloat(lngLat.lng.toFixed(2));
+//     let mapLat = parseFloat(lngLat.lat.toFixed(2));
+//     console.log(mapLat,"map lat")
+//     console.log(mapLon,"map lat")
+//     coordinates.style.display = 'block';
+//     coordinates.innerHTML = `Longitude: ${lngLat.lng}<br />Latitude: ${lngLat.lat}`;
+//
+//     console.log(e.result.geometry.coordinates[0])
+//     console.log(e.result.geometry.coordinates[1])
+//
+// }
+// markerDrag.on('dragend', onDragEnd);
+//
+// console.log(markerDrag)
+// console.log(markerDrag._lngLat)
+//
+
+// //drag
+// const coordinates = document.getElementById('coordinates');
+//
+// const markerDrag = new mapboxgl.Marker({
+//     draggable: true
+// })
+// markerDrag.setLngLat([startLon, startLan])
+// markerDrag.addTo(map);
+//
+// function onDragEnd() {
+//     const lngLat = markerDrag.getLngLat();
+//     let mapLon = parseFloat(lngLat.lng.toFixed(2));
+//     let mapLat = parseFloat(lngLat.lat.toFixed(2));
+//     console.log(mapLat,"map lat")
+//     console.log(mapLon,"map lat")
+//     coordinates.style.display = 'block';
+//     coordinates.innerHTML = `Longitude: ${lngLat.lng}<br />Latitude: ${lngLat.lat}`;
+// }
+//
+//
+// parseFloat(long.toFixed(2));
+//on drag function
+// function onDragEnd() {
+//     const lngLat = markerDrag.getLngLat();
+//     let mapLon = parseFloat(lngLat.lng.toFixed(2));
+//     let mapLat = parseFloat(lngLat.lat.toFixed(2));
+//     console.log(mapLat,"map lat")
+//     console.log(mapLon,"map lat")
+//     coordinates.style.display = 'block';
+//     coordinates.innerHTML = `Longitude: ${lngLat.lng}<br />Latitude: ${lngLat.lat}`;
+//     fetch(`https://api.openweathermap.org/data/2.5/onecall?lat=${mapLat}&lon=${mapLon}&units=${units}&appid=${OWM_KEY}`)
+//         // after response
+//         .then(response => response.json())
+//         .then(data => fiveDayForecastMap(data))
+// }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
