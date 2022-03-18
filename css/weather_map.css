@@ -15,39 +15,68 @@ li {
     height: auto;
 }
 
-.card-img-top{
+.card-img-top {
     width: 30%;
 }
 
-.card-body{
+.card-body {
     width: 20%;
     display: flex;
     flex-direction: column;
     align-items: center;
 }
 
-.card-body:hover{
-    box-shadow: 0 0 0 5px #fff, 0 0 0 10px rgb(70,130,180);
-    border: 2px solid rgb(100,149,237);
+.card-body:hover {
+    box-shadow: 0 0 0 5px #fff, 0 0 0 10px rgb(70, 130, 180);
+    border: 2px solid rgb(100, 149, 237);
     transform: scale(0.9);
     color: #fff;
-    background-color: rgb(50,206,250)
+    background-color: rgb(50, 206, 250)
 }
 
-.one-day{
-    background-color: rgb(50,206,250);
+.one-day {
+    background-color: rgb(50, 206, 250);
 }
-h3{
+
+h3 {
     color: #fff;
 }
-.one-day:hover{
-    box-shadow: 0 0 0 5px #fff, 0 0 0 10px rgb(70,130,180);
-    border: 2px solid rgb(100,149,237);
-    transform: scale(0.9);
+
+.one-day:hover {
+    box-shadow: 0 0 0 5px #fff, 0 0 0 10px rgb(70, 130, 180);
+    border: 2px solid rgb(100, 149, 237);
     color: #333333;
-    background-color: rgb(50,206,250);
+    background-color: rgb(50, 206, 250);
 }
 
-#navbar-location{
+#navbar-location {
     margin-bottom: 3em;
+}
+
+#map {
+    /* the width and height may be set to any size */
+    width: 90%;
+    height: 500px;
+    margin: auto;
+}
+
+/*
+dragable
+*/
+
+.coordinates {
+    background: rgba(0, 0, 0, 0.5);
+    color: #fff;
+    position: absolute;
+    bottom: 40px;
+    left: 10px;
+    padding: 5px 10px;
+    margin: 0;
+    font-size: 11px;
+    line-height: 18px;
+    border-radius: 3px;
+    display: none;
+}
+.close-icon {
+    cursor: pointer;
 }

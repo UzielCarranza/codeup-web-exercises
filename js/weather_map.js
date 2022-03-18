@@ -1,12 +1,11 @@
 $('#navbar-location').click(function (e) {
     e.preventDefault()
 })
+
 var units = 'Imperial'
 
 
-
-
-//get location 5 days
+//get location 5 days event listener
 let button = document.getElementById("get-location");
 let latText = document.getElementById("latitude");
 let longText = document.getElementById("longitude");
@@ -16,14 +15,10 @@ button.addEventListener("click", function () {
         let lat = position.coords.latitude;
         let long = position.coords.longitude;
 
-        latText = lat.toFixed(2);
-        longText = long.toFixed(2);
-        userLon = parseFloat(longText)
-        userLat = parseFloat(latText)
-        console.log(userLon, "user long")
-        console.log(userLat, "user lat")
+        latText = parseFloat(lat.toFixed(2));
+        longText = parseFloat(long.toFixed(2));
 
-        fetch(`https://api.openweathermap.org/data/2.5/onecall?lat=${userLat}&lon=${userLon}&units=${units}&appid=${OWM_KEY}`)
+        fetch(`https://api.openweathermap.org/data/2.5/onecall?lat=${67.02}&lon=${-88.2}&units=${units}&appid=${OWM_KEY}`)
             // after response
             .then(response => response.json())
 
@@ -31,9 +26,9 @@ button.addEventListener("click", function () {
     });
 })
 
-//7 day forecast function
+//5 day forecast function
 function fiveDayForecast(data) {
-    console.log(data.current)
+    $('#weather').fadeIn();
     let html = "";
     let counter = 0;
     var iconcode;
@@ -49,7 +44,7 @@ function fiveDayForecast(data) {
     let date;
     let allDates;
 
-    html += '<ul class="card">'
+    html += '<ul class="card" data-effect="fadeIn"> '
     //iterate
     for (let i = 0; i < 5; i++) {
         counter++
@@ -79,13 +74,16 @@ function fiveDayForecast(data) {
             <p>Pressure: ${pressure}</p>
             </li> `
     }
-    html += '</ul>'
+    html +=
+        '    <span class="pull-right clickable close-icon mr-4"><i class="fa fa-times"></i></span></ul>'
     $('#weather').html(html)
-
+    $(".close-icon").click(function() {
+        $(this).closest('#weather').fadeOut();
+    })
 }
 
 
-//1 day forecast
+//1 day forecast listener
 let btn2 = document.getElementById('get-location-oneday')
 //get location one day
 btn2.addEventListener("click", function () {
@@ -93,23 +91,17 @@ btn2.addEventListener("click", function () {
         let lat = position.coords.latitude;
         let long = position.coords.longitude;
 
-        latText = lat.toFixed(2);
-        longText = long.toFixed(2);
-        userLonOne = parseFloat(longText)
-        userLatOne = parseFloat(latText)
-        console.log(userLonOne, "user long")
-        console.log(userLatOne, "user lat")
 
-        // var url = "https://api.openweathermap.org/data/2.5/weather?q="+cityName+"&appid=1b81668fc60a1d1905a3e5a311d45414";
-
-        fetch(`https://api.openweathermap.org/data/2.5/onecall?lat=${userLatOne}&lon=${userLonOne}&units=${units}&appid=${OWM_KEY}`)
+        latText = parseFloat(lat.toFixed(2));
+        longText = parseFloat(long.toFixed(2));
+        fetch(`https://api.openweathermap.org/data/2.5/onecall?lat=${latText}&lon=${longText}&units=${units}&appid=${OWM_KEY}`)
     // after response
     .then(response => response.json())
     .then(data => sanitizeData(data))
     .then(data => oneDayForecast(data))
     });
 });
-
+//sanitize data
 function sanitizeData(data) {
 
     return {
@@ -128,16 +120,16 @@ function sanitizeData(data) {
     }
 
 }
-
+//one day forecasr
 //language: HTML
 function oneDayForecast(forecast) {
 
-
+    $('#weather').fadeIn();
     let date = new Date(`${forecast.dt}` * 1000);
     let allDates = date.toDateString();
     $('#weather').html(
         `
-      <div class="card mt-4 one-day">
+      <div class="card mt-4 one-day" data-effect="fadeIn">
           <h3 class="ml-4 text-center">` + allDates + `</h3> 
         <div class="card">
           <img src="http://openweathermap.org/img/wn/${forecast.currentDayIcon}@2x.png" alt="image">
@@ -150,33 +142,140 @@ function oneDayForecast(forecast) {
             <p>Wind speed: ${forecast.wind}</p>
             <p>Pressure: ${forecast.pressure}</p>
         </div>
+        <span class="pull-right clickable close-icon mr-4" data-effect="fadeOut"><i class="fa fa-times"></i></span>
         </div>
       </div>`
     );
+    $(".close-icon").click(function() {
+        $(this).closest('#weather').fadeOut();
+    })
 };
 
 
+// //MAP
+let startLan = 41.09 //= 41.117622667840116;
+// 41.117622667840116, -85.14417894635905
+let startLon = -85.13// = -85.14417894635905;
+
+let map = initMap(startLon, startLan);
+
+// let marker = createMarker(startLon, startLan);
+// let popup = createPopup(startLon, startLan);
 //
-// //userInput
-// let btn3 = document.getElementById('')
-// //get location one day
-// btn2.addEventListener("click", function () {
-//     navigator.geolocation.getCurrentPosition(function (position) {
-//         let lat = position.coords.latitude;
-//         let long = position.coords.longitude;
+
+
+function initMap(lon, lat) {
+    mapboxgl.accessToken = MAP_KEY;
+    return new mapboxgl.Map({
+        container: 'map',
+        style: 'mapbox://styles/mapbox/streets-v9',
+        zoom: 5,
+        center: [lon, lat]
+    });
+    // map.center(-82.01, 90.21)
+}
+// map.dragPan.isActive();
+// map.setZoom(15)
+
+// map.secCenter([lat, lon])
+
 //
-//         latText = lat.toFixed(2);
-//         longText = long.toFixed(2);
-//         userLonOne = parseFloat(longText)
-//         userLatOne = parseFloat(latText)
-//         console.log(userLonOne, "user long")
-//         console.log(userLatOne, "user lat")
+// function createMarker(lon, lat) {
+//     return new mapboxgl.Marker()
+//         .setLngLat([lon, lat])
+//         .addTo(map)
+// }
+// marker.setPopup(popup);
 //
-//         fetch(`https://api.openweathermap.org/data/2.5/onecall?${cityName}&units=${units}&appid=${OWM_KEY}`)
-//             // after response
-//             .then(response => response.json())
-//             .then(data => sanitizeData(data))
-//             .then(data => oneDayForecast(data))
-//     });
-// });
 //
+// function createPopup(lon, lat) {
+//     return new mapboxgl.Popup()
+//         .setLngLat([lon, lat])
+//         .setHTML("<p>Codeup Rocks!</p>")
+//
+// }
+
+
+//drag
+const coordinates = document.getElementById('coordinates');
+
+const markerDrag = new mapboxgl.Marker({
+    draggable: true
+})
+    markerDrag.setLngLat([startLon, startLan])
+    markerDrag.addTo(map);
+
+// parseFloat(long.toFixed(2));
+//on drag function
+function onDragEnd() {
+    const lngLat = markerDrag.getLngLat();
+    let mapLon = parseFloat(lngLat.lng.toFixed(2));
+    let mapLat = parseFloat(lngLat.lat.toFixed(2));
+    console.log(mapLat,"map lat")
+    console.log(mapLon,"map lat")
+    coordinates.style.display = 'block';
+    coordinates.innerHTML = `Longitude: ${lngLat.lng}<br />Latitude: ${lngLat.lat}`;
+    fetch(`https://api.openweathermap.org/data/2.5/onecall?lat=${mapLat}&lon=${mapLon}&units=${units}&appid=${OWM_KEY}`)
+        // after response
+        .then(response => response.json())
+        .then(data => fiveDayForecastMap(data))
+}
+function fiveDayForecastMap(data) {
+    $('#weather-map').fadeIn();
+    let html = "";
+    let iconcode;
+    let currentMain;
+    let days;
+    let dailyTemp;
+    let currentDescription;
+    let humidity;
+    let windSpeed;
+    let pressure;
+    let tempNight;
+    let dt;
+    let date;
+    let allDates;
+
+    html += '<ul class="card">'
+    //iterate
+    for (let i = 0; i < 5; i++) {
+        iconcode = data.daily[i].weather[0].icon;
+        currentMain = data.daily[i].weather[0].main;
+        days = data.daily[i];
+        dailyTemp = data.daily[i].temp.day;
+        currentDescription = data.daily[i].weather[0].description;
+        humidity = data.daily[i].humidity;
+        windSpeed = data.daily[i].wind_speed;
+        pressure = data.daily[i].pressure;
+        tempNight = data.daily[i].temp.night;
+        dt = data.daily[i].dt;
+        date = new Date(dt * 1000);
+        allDates = date.toDateString();
+
+
+        html += `
+        <li class="card-body my-0 py-0 px-0 m-4">
+        <p>${allDates}</p>
+        <p> day ${dailyTemp}${'&#8457'} / night ${tempNight}${'&#8457'}</p>
+            <img href="#" class="card-img-top" src="http://openweathermap.org/img/wn/${iconcode}@2x.png"></img>
+             <p>${currentMain}</p>
+            <p>Description: ${currentDescription}</p>
+            <p>Humidity: ${humidity}</p>
+            <p>Wind: ${windSpeed}</p>
+            <p>Pressure: ${pressure}</p>
+            </li> `
+    }
+    html += '<span class="pull-right clickable close-icon mr-4" data-effect="fadeOut"><i class="fa fa-times"></i></span></ul>'
+    $('#weather-map').html(html)
+    $(".close-icon").click(function() {
+        $(this).closest('#weather-map').fadeOut();
+    })
+
+}
+
+
+markerDrag.on('dragend', onDragEnd);
+
+
+console.log(markerDrag)
+console.log(markerDrag._lngLat)
