@@ -1,3 +1,49 @@
+// //MAP
+let startLan = 41.09 //= 41.117622667840116;
+// 41.117622667840116, -85.14417894635905
+let startLon = -85.13// = -85.14417894635905;
+
+let map = initMap(startLon, startLan);
+
+// let marker = createMarker(startLon, startLan);
+// let popup = createPopup(startLon, startLan);
+//
+
+
+function initMap(lon, lat) {
+    mapboxgl.accessToken = MAP_KEY;
+    return new mapboxgl.Map({
+        container: 'map',
+        style: 'mapbox://styles/mapbox/streets-v9',
+        zoom: 5,
+        center: [lon, lat]
+    });
+    // map.center(-82.01, 90.21)
+}
+// map.dragPan.isActive();
+// map.setZoom(15)
+
+// map.secCenter([lat, lon])
+
+//
+// function createMarker(lon, lat) {
+//     return new mapboxgl.Marker()
+//         .setLngLat([lon, lat])
+//         .addTo(map)
+// }
+// marker.setPopup(popup);
+//
+//
+// function createPopup(lon, lat) {
+//     return new mapboxgl.Popup()
+//         .setLngLat([lon, lat])
+//         .setHTML("<p>Codeup Rocks!</p>")
+//
+// }
+
+
+
+
 
 //drag
 const coordinates = document.getElementById('coordinates');
