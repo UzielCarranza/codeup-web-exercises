@@ -18,7 +18,7 @@ button.addEventListener("click", function () {
         latText = parseFloat(lat.toFixed(2));
         longText = parseFloat(long.toFixed(2));
 
-        fetch(`https://api.openweathermap.org/data/2.5/onecall?lat=${67.02}&lon=${-88.2}&units=${units}&appid=${OWM_KEY}`)
+        fetch(`https://api.openweathermap.org/data/2.5/onecall?lat=${latText}&lon=${longText}&units=${units}&appid=${OWM_KEY}`)
             // after response
             .then(response => response.json())
 
