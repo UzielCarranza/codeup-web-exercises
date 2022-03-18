@@ -64,10 +64,7 @@ function setGeocoderEventListener() {
             const cityNameText = e.result.text;
             const longitude = e.result.geometry.coordinates[0];
             const latitude = e.result.geometry.coordinates[1];
-
-            console.log(longitude,"long")
-            console.log(latitude,"lat")
-
+        // api.openweathermap.org/data/2.5/forecast/daily?lat={lat}&lon={lon}&cnt={cnt}&appid={API key}
         fetch(`https://api.openweathermap.org/data/2.5/onecall?lat=${latitude}&lon=${longitude}&units=${units}&appid=${OWM_KEY}`)
         // after response
         .then(response => response.json())
@@ -80,7 +77,7 @@ function setGeocoderEventListener() {
 function fiveDayForecastMap(data) {
     $('#weather-map').fadeIn();
     html = "";
-    html += '<ul class="card">'
+    html += `<h6 class="span-card">${data.timezone} </h6><ul class="card">`
     //iterate
     for (let i = 0; i < 5; i++) {
        let iconcode = data.daily[i].weather[0].icon;

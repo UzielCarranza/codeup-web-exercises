@@ -9,7 +9,7 @@ var units = 'Imperial'
 let button = document.getElementById("get-location");
 let latText = document.getElementById("latitude");
 let longText = document.getElementById("longitude");
-
+// //
 button.addEventListener("click", function () {
     navigator.geolocation.getCurrentPosition(function (position) {
         let lat = position.coords.latitude;
@@ -28,9 +28,9 @@ button.addEventListener("click", function () {
 
 //5 day forecast function
 function fiveDayForecast(data) {
+    console.log(data.timezone)
     $('#weather').fadeIn();
     let html = "";
-    let counter = 0;
     var iconcode;
     let currentMain;
     let days;
@@ -43,11 +43,14 @@ function fiveDayForecast(data) {
     let dt;
     let date;
     let allDates;
+    let place = data.timezone;
 
-    html += '<ul class="card" data-effect="fadeIn"> '
+    html += `
+        <h6 class="span-card">${place} </h6>
+        <ul class="card" data-effect="fadeIn"> `
+
     //iterate
     for (let i = 0; i < 5; i++) {
-        counter++
         iconcode = data.daily[i].weather[0].icon;
         currentMain = data.daily[i].weather[0].main;
         days = data.daily[i];
@@ -104,7 +107,9 @@ btn2.addEventListener("click", function () {
 //sanitize data
 function sanitizeData(data) {
 
+    console.log(data.timezone)
     return {
+        placed: data.timezone,
         manDescription: data.current.weather[0].main,
         currentDayDescription: data.current.weather[0].description,
         currentDayIcon: data.current.weather[0].icon,
@@ -129,6 +134,7 @@ function oneDayForecast(forecast) {
     let allDates = date.toDateString();
     $('#weather').html(
         `
+        <h6 class="span-card">${forecast.placed} </h6>
       <div class="card mt-4 one-day" data-effect="fadeIn">
           <h3 class="ml-4 text-center">` + allDates + `</h3> 
         <div class="card">
