@@ -5,7 +5,9 @@
 html{
     scroll-behavior: smooth;
 }
-
+body{
+    background-color: #f1faee;
+}
 li {
     list-style: none;
 }
@@ -105,4 +107,24 @@ dragable
 #weather{
     width: 100%;
     padding: 2px;
+}
+
+.title{
+    margin-left: 6em;
+    padding-left: 1.3em;
+}
+
+
+/*
+footer
+*/
+
+.footer{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    width: 50%;
+    margin: 4em auto auto;
+    padding-bottom: 3em;
+
 }

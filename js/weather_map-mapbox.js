@@ -58,8 +58,8 @@ function setGeocoderEventListener() {
 
         marker = getMarker(e.result.geometry.coordinates);
         popup = getPopup(e.result.place_name, e.result.geometry.coordinates);
-        marker.setPopup(popup)
 
+        marker.setPopup(popup)
             // saving data from the Mapbox Search response
             const cityNameText = e.result.text;
             const longitude = e.result.geometry.coordinates[0];
@@ -76,8 +76,12 @@ function setGeocoderEventListener() {
 
 function fiveDayForecastMap(data) {
     $('#weather-map').fadeIn();
+    let name = data.timezone;
+    name.replaceAll(/_/g, " ");
+    console.log(name)
+        // str.replace(/_/g, '');
     html = "";
-    html += `<h6 class="span-card">${data.timezone} </h6><ul class="card">`
+    html += `<h6 class="span-card">${name} </h6><ul class="card">`
     //iterate
     for (let i = 0; i < 5; i++) {
        let iconcode = data.daily[i].weather[0].icon;
@@ -89,7 +93,7 @@ function fiveDayForecastMap(data) {
         let windSpeed = data.daily[i].wind_speed;
         let pressure = data.daily[i].pressure;
         let tempNight = data.daily[i].temp.night;
-        dt = data.daily[i].dt;
+        let dt = data.daily[i].dt;
         let date = new Date(dt * 1000);
         let allDates = date.toDateString();
 
@@ -113,16 +117,22 @@ function fiveDayForecastMap(data) {
 
 }
 
+map.on('click', function (e){
 
+    let onClickLng = e.lngLat.lng;
+    let onClickLat = e.lngLat.lat;
+    if (marker) {
+        marker.remove();
+    }
+    marker = getMarker([onClickLng, onClickLat])
+    popup = getPopup('',[onClickLng,onClickLat])
+    marker.setPopup(popup)
 
-
-
-
-
-
-
-
-
+    fetch(`https://api.openweathermap.org/data/2.5/onecall?lat=${onClickLat}&lon=${onClickLng}&units=${units}&appid=${OWM_KEY}`)
+        // after response
+        .then(response => response.json())
+        .then(data => fiveDayForecastMap(data))
+})
 
 
 
