@@ -1,17 +1,15 @@
 // //MAP
-
 mapboxgl.accessToken = MAP_KEY
-let startLan = 41.09 //= 41.117622667840116;
-let startLon = -85.13// = -85.14417894635905;
-
+let startLan = 41.09
+let startLon = -85.13
 let map = initMap(startLon, startLan);
 let marker;
 let popup;
 
 const coordinates = document.getElementById('coordinates');
-addGeo()
+addGeo();
 setGeocoderEventListener();
-
+getWeatherClick();
 function initMap(lon, lat) {
     mapboxgl.accessToken = MAP_KEY;
     return new mapboxgl.Map({
@@ -27,7 +25,6 @@ function getMarker(coordinates) {
     return new mapboxgl.Marker()
         .setLngLat(coordinates)
         .addTo(map)
-
 }
 
 function getPopup(description, coordinates) {
@@ -55,7 +52,6 @@ function setGeocoderEventListener() {
             popup.remove();
 
         }
-
         marker = getMarker(e.result.geometry.coordinates);
         popup = getPopup(e.result.place_name, e.result.geometry.coordinates);
 
@@ -69,17 +65,12 @@ function setGeocoderEventListener() {
         // after response
         .then(response => response.json())
         .then(data => fiveDayForecastMap(data))
-
-
     });
 }
 
 function fiveDayForecastMap(data) {
     $('#weather-map').fadeIn();
     let name = data.timezone;
-    name.replaceAll(/_/g, " ");
-    console.log(name)
-        // str.replace(/_/g, '');
     html = "";
     html += `<h6 class="span-card">${name} </h6><ul class="card">`
     //iterate
@@ -114,26 +105,26 @@ function fiveDayForecastMap(data) {
     $(".close-icon").click(function() {
         $(this).closest('#weather-map').fadeOut();
     })
-
 }
 
-map.on('click', function (e){
+function getWeatherClick() {
+    map.on('click', function (e) {
 
-    let onClickLng = e.lngLat.lng;
-    let onClickLat = e.lngLat.lat;
-    if (marker) {
-        marker.remove();
-    }
-    marker = getMarker([onClickLng, onClickLat])
-    popup = getPopup('',[onClickLng,onClickLat])
-    marker.setPopup(popup)
+        let onClickLng = e.lngLat.lng;
+        let onClickLat = e.lngLat.lat;
+        if (marker) {
+            marker.remove();
+        }
+        marker = getMarker([onClickLng, onClickLat])
+        popup = getPopup('', [onClickLng, onClickLat])
+        marker.setPopup(popup)
 
-    fetch(`https://api.openweathermap.org/data/2.5/onecall?lat=${onClickLat}&lon=${onClickLng}&units=${units}&appid=${OWM_KEY}`)
-        // after response
-        .then(response => response.json())
-        .then(data => fiveDayForecastMap(data))
-})
-
+        fetch(`https://api.openweathermap.org/data/2.5/onecall?lat=${onClickLat}&lon=${onClickLng}&units=${units}&appid=${OWM_KEY}`)
+            // after response
+            .then(response => response.json())
+            .then(data => fiveDayForecastMap(data))
+    })
+}
 
 
 
@@ -179,23 +170,6 @@ map.on('click', function (e){
 //     console.log(mapLon,"map lat")
 //     coordinates.style.display = 'block';
 //     coordinates.innerHTML = `Longitude: ${lngLat.lng}<br />Latitude: ${lngLat.lat}`;
-// }
-//
-//
-// parseFloat(long.toFixed(2));
-//on drag function
-// function onDragEnd() {
-//     const lngLat = markerDrag.getLngLat();
-//     let mapLon = parseFloat(lngLat.lng.toFixed(2));
-//     let mapLat = parseFloat(lngLat.lat.toFixed(2));
-//     console.log(mapLat,"map lat")
-//     console.log(mapLon,"map lat")
-//     coordinates.style.display = 'block';
-//     coordinates.innerHTML = `Longitude: ${lngLat.lng}<br />Latitude: ${lngLat.lat}`;
-//     fetch(`https://api.openweathermap.org/data/2.5/onecall?lat=${mapLat}&lon=${mapLon}&units=${units}&appid=${OWM_KEY}`)
-//         // after response
-//         .then(response => response.json())
-//         .then(data => fiveDayForecastMap(data))
 // }
 
 

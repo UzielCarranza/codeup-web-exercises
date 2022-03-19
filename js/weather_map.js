@@ -128,7 +128,6 @@ function sanitizeData(data) {
 //one day forecasr
 //language: HTML
 function oneDayForecast(forecast) {
-
     $('#weather').fadeIn();
     let date = new Date(`${forecast.dt}` * 1000);
     let allDates = date.toDateString();
