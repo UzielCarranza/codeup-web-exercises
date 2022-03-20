@@ -108,16 +108,13 @@ function fiveDayForecastMap(data) {
 }
 
 function getWeatherClick() {
-    map.on('click', function (e) {
-
+    map.on('dblclick', function (e) {
         let onClickLng = e.lngLat.lng;
         let onClickLat = e.lngLat.lat;
         if (marker) {
             marker.remove();
         }
         marker = getMarker([onClickLng, onClickLat])
-        popup = getPopup('', [onClickLng, onClickLat])
-        marker.setPopup(popup)
 
         fetch(`https://api.openweathermap.org/data/2.5/onecall?lat=${onClickLat}&lon=${onClickLng}&units=${units}&appid=${OWM_KEY}`)
             // after response
