@@ -1,24 +1,22 @@
 $('#navbar-location').click(function (e) {
     e.preventDefault()
 })
+var units = 'Imperial';
+var latUser
+var lonUser;
 
-var units = 'Imperial'
-
-
-//get location 5 days event listener
+// //get location 5 days event listener
 let button = document.getElementById("get-location");
-let latText = document.getElementById("latitude");
-let longText = document.getElementById("longitude");
-// //
+
+//on click get locations and start fetch
 button.addEventListener("click", function () {
     navigator.geolocation.getCurrentPosition(function (position) {
         let lat = position.coords.latitude;
         let long = position.coords.longitude;
+        latUser = parseFloat(lat.toFixed(2));
+        lonUser = parseFloat(long.toFixed(2));
 
-        latText = parseFloat(lat.toFixed(2));
-        longText = parseFloat(long.toFixed(2));
-
-        fetch(`https://api.openweathermap.org/data/2.5/onecall?lat=${latText}&lon=${longText}&units=${units}&appid=${OWM_KEY}`)
+        fetch(`https://api.openweathermap.org/data/2.5/onecall?lat=${latUser}&lon=${lonUser}&units=${units}&appid=${OWM_KEY}`)
             // after response
             .then(response => response.json())
 
@@ -28,10 +26,9 @@ button.addEventListener("click", function () {
 
 //5 day forecast function
 function fiveDayForecast(data) {
-    console.log(data.timezone)
     $('#weather').fadeIn();
     let html = "";
-    var iconcode;
+    let iconcode;
     let currentMain;
     let days;
     let dailyTemp;
@@ -48,7 +45,6 @@ function fiveDayForecast(data) {
     html += `
         <h6 class="span-card">${place} </h6>
         <ul class="card" data-effect="fadeIn"> `
-
     //iterate
     for (let i = 0; i < 5; i++) {
         iconcode = data.daily[i].weather[0].icon;
@@ -63,7 +59,6 @@ function fiveDayForecast(data) {
         dt = data.daily[i].dt;
         date = new Date(dt * 1000);
         allDates = date.toDateString();
-
 
         html += `
         <li class="card-body my-0 py-0 px-0 m-4">
@@ -93,11 +88,9 @@ btn2.addEventListener("click", function () {
     navigator.geolocation.getCurrentPosition(function (position) {
         let lat = position.coords.latitude;
         let long = position.coords.longitude;
-
-
-        latText = parseFloat(lat.toFixed(2));
-        longText = parseFloat(long.toFixed(2));
-        fetch(`https://api.openweathermap.org/data/2.5/onecall?lat=${latText}&lon=${longText}&units=${units}&appid=${OWM_KEY}`)
+        latUser = parseFloat(lat.toFixed(2));
+        lonUser = parseFloat(long.toFixed(2));
+        fetch(`https://api.openweathermap.org/data/2.5/onecall?lat=${latUser}&lon=${lonUser}&units=${units}&appid=${OWM_KEY}`)
     // after response
     .then(response => response.json())
     .then(data => sanitizeData(data))
@@ -106,8 +99,6 @@ btn2.addEventListener("click", function () {
 });
 //sanitize data
 function sanitizeData(data) {
-
-    console.log(data.timezone)
     return {
         placed: data.timezone,
         manDescription: data.current.weather[0].main,
