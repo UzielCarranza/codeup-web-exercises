@@ -1,6 +1,6 @@
-/** {*/
-/*    border: 1px solid black;*/
-/*}*/
+* {
+    border: 1px solid black;
+}
 
 html{
     scroll-behavior: smooth;
@@ -127,4 +127,42 @@ footer
     margin: 4em auto auto;
     padding-bottom: 3em;
 
+}
+
+@media only screen and (max-width: 600px) {
+    .card{
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+        justify-content: space-evenly;
+        width: 100%;
+    }
+    .card-body{
+        width: 25%;
+    }
+    .card-body:nth-child(5){
+        width: 25%;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+
+    }
+    p{
+        text-align: center;
+    }
+    .footer{
+        display: flex;
+        flex-direction: row;
+        justify-content: space-evenly;
+        margin: 2% 0;
+        padding: 0;
+        align-items: center;
+        width: 100%;
+    }
+    .footer > li{
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
 }
