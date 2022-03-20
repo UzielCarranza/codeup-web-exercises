@@ -72,8 +72,7 @@ function fiveDayForecast(data) {
             <p>Pressure: ${pressure}</p>
             </li> `
     }
-    html +=
-        '    <span class="pull-right clickable close-icon mr-4"><i class="fa fa-times"></i></span></ul>'
+    html += '<span class="pull-right clickable close-icon mr-4"><i class="fa fa-times"></i></span></ul>'
     $('#weather').html(html)
     $(".close-icon").click(function() {
         $(this).closest('#weather').fadeOut();
@@ -118,7 +117,7 @@ function sanitizeData(data) {
 }
 //one day forecasr
 //language: HTML
-function oneDayForecast(forecast) {
+    function oneDayForecast(forecast) {
     $('#weather').fadeIn();
     let date = new Date(`${forecast.dt}` * 1000);
     let allDates = date.toDateString();
