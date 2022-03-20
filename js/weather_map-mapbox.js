@@ -1,3 +1,4 @@
+
 // //MAP
 mapboxgl.accessToken = MAP_KEY
 let startLan = 41.09
@@ -10,6 +11,7 @@ const coordinates = document.getElementById('coordinates');
 addGeo();
 setGeocoderEventListener();
 getWeatherClick();
+
 function initMap(lon, lat) {
     mapboxgl.accessToken = MAP_KEY;
     return new mapboxgl.Map({
@@ -20,8 +22,8 @@ function initMap(lon, lat) {
     });
 
 }
-function getMarker(coordinates) {
 
+function getMarker(coordinates) {
     return new mapboxgl.Marker()
         .setLngLat(coordinates)
         .addTo(map)
@@ -33,7 +35,7 @@ function getPopup(description, coordinates) {
         .setHTML(`<p>${description}</p>`)
 }
 
-function addGeo(){
+function addGeo() {
     geocoder = new MapboxGeocoder({
         accessToken: MAP_KEY,
         mapboxgl: mapboxgl,
@@ -46,36 +48,35 @@ function setGeocoderEventListener() {
     geocoder.on("result", function (e) {
         if (marker) {
             marker.remove();
-
         }
         if (popup) {
             popup.remove();
-
         }
         marker = getMarker(e.result.geometry.coordinates);
         popup = getPopup(e.result.place_name, e.result.geometry.coordinates);
 
         marker.setPopup(popup)
-            // saving data from the Mapbox Search response
-            const cityNameText = e.result.text;
-            const longitude = e.result.geometry.coordinates[0];
-            const latitude = e.result.geometry.coordinates[1];
-        // api.openweathermap.org/data/2.5/forecast/daily?lat={lat}&lon={lon}&cnt={cnt}&appid={API key}
+        const cityNameText = e.result.text;
+        console.log(cityNameText)
+        const longitude = e.result.geometry.coordinates[0];
+        const latitude = e.result.geometry.coordinates[1];
+
         fetch(`https://api.openweathermap.org/data/2.5/onecall?lat=${latitude}&lon=${longitude}&units=${units}&appid=${OWM_KEY}`)
-        // after response
-        .then(response => response.json())
-        .then(data => fiveDayForecastMap(data))
+            // after response
+            .then(response => response.json())
+            .then(data => fiveDayForecastMap(data))
     });
 }
 
 function fiveDayForecastMap(data) {
     $('#weather-map').fadeIn();
     let name = data.timezone;
+    console.log(name)
     html = "";
     html += `<h6 class="span-card">${name} </h6><ul class="card">`
     //iterate
     for (let i = 0; i < 5; i++) {
-       let iconcode = data.daily[i].weather[0].icon;
+        let iconcode = data.daily[i].weather[0].icon;
         let currentMain = data.daily[i].weather[0].main;
         let days = data.daily[i];
         let dailyTemp = data.daily[i].temp.day;
@@ -102,7 +103,7 @@ function fiveDayForecastMap(data) {
     }
     html += '<span class="pull-right clickable close-icon mr-4" data-effect="fadeOut"><i class="fa fa-times"></i></span></ul>'
     $('#weather-map').html(html)
-    $(".close-icon").click(function() {
+    $(".close-icon").click(function () {
         $(this).closest('#weather-map').fadeOut();
     })
 }
@@ -124,52 +125,21 @@ function getWeatherClick() {
 }
 
 
+$('#directions').click(function (e){
+    map.addControl(
+        new MapboxDirections({
+            accessToken: mapboxgl.accessToken
+        }),
+        'top-right'
+    );
+    map.addControl(new mapboxgl.GeolocateControl({
+        positionOptions: {
+            enableHighAccuracy: true
+        },
+        trackUserLocation: true
+    }))
 
-// const markerDrag = new mapboxgl.Marker({
-//     draggable: true
-// })
-// markerDrag.setLngLat([startLon, startLan])
-// markerDrag.addTo(map);
-//
-// function onDragEnd() {
-//     const lngLat = markerDrag.getLngLat();
-//     let mapLon = parseFloat(lngLat.lng.toFixed(2));
-//     let mapLat = parseFloat(lngLat.lat.toFixed(2));
-//     console.log(mapLat,"map lat")
-//     console.log(mapLon,"map lat")
-//     coordinates.style.display = 'block';
-//     coordinates.innerHTML = `Longitude: ${lngLat.lng}<br />Latitude: ${lngLat.lat}`;
-//
-//     console.log(e.result.geometry.coordinates[0])
-//     console.log(e.result.geometry.coordinates[1])
-//
-// }
-// markerDrag.on('dragend', onDragEnd);
-//
-// console.log(markerDrag)
-// console.log(markerDrag._lngLat)
-//
-
-// //drag
-// const coordinates = document.getElementById('coordinates');
-//
-// const markerDrag = new mapboxgl.Marker({
-//     draggable: true
-// })
-// markerDrag.setLngLat([startLon, startLan])
-// markerDrag.addTo(map);
-//
-// function onDragEnd() {
-//     const lngLat = markerDrag.getLngLat();
-//     let mapLon = parseFloat(lngLat.lng.toFixed(2));
-//     let mapLat = parseFloat(lngLat.lat.toFixed(2));
-//     console.log(mapLat,"map lat")
-//     console.log(mapLon,"map lat")
-//     coordinates.style.display = 'block';
-//     coordinates.innerHTML = `Longitude: ${lngLat.lng}<br />Latitude: ${lngLat.lat}`;
-// }
-
-
+})
 
 
 
