@@ -192,12 +192,17 @@ footer
         justify-content: space-evenly;
     }
 
-    #weather > .card {
+    #weather >.card {
         display: flex;
-        flex-direction: column;
+        flex-direction: row;
         justify-content: space-evenly;
-        width: 80%;
+        width: 100%;
         margin: auto;
+    }
+    #weather >.card>.card-body{
+        border: 10px solid rgb(50, 206, 250);
+        width: 25%;
+        height: 26em;
     }
 
     .card > img {
@@ -214,4 +219,25 @@ footer
         height: 26em;
     }
 
+}
+
+
+@media only screen and (max-width: 768px) {
+    #weather{
+        display: flex;
+        flex-direction: column;
+        justify-content: space-evenly;
+    }
+    #weather >.card{
+        width: 100%;
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+    }
+    #weather >.card>.card-body{
+        border: 10px solid rgb(50, 206, 250);
+        width: 25%;
+        margin: 0;
+        padding: 0;
+    }
 }
