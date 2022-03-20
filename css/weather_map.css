@@ -1,6 +1,6 @@
-* {
-    border: 1px solid black;
-}
+/** {*/
+/*    border: 1px solid black;*/
+/*}*/
 
 html{
     scroll-behavior: smooth;
@@ -130,27 +130,31 @@ footer
 }
 
 @media only screen and (max-width: 600px) {
-    .card{
+    .card {
         display: flex;
         flex-direction: row;
         flex-wrap: wrap;
         justify-content: space-evenly;
         width: 100%;
     }
-    .card-body{
+
+    .card-body {
         width: 25%;
     }
-    .card-body:nth-child(5){
+
+    .card-body:nth-child(5) {
         width: 25%;
         display: flex;
         flex-direction: column;
         justify-content: center;
 
     }
-    p{
+
+    p {
         text-align: center;
     }
-    .footer{
+
+    .footer {
         display: flex;
         flex-direction: row;
         justify-content: space-evenly;
@@ -159,10 +163,55 @@ footer
         align-items: center;
         width: 100%;
     }
-    .footer > li{
+
+    .footer > li {
         width: 100%;
         display: flex;
         flex-direction: column;
         align-items: center;
     }
+
+    nav {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-evenly;
+        border: 3px solid rgb(50, 206, 250);
+    }
+
+    .form-inline {
+        width: 100%;
+        display: flex;
+        flex-direction: row;
+        justify-content: space-evenly;
+        margin: 1em;
+    }
+
+    #weather {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-evenly;
+    }
+
+    #weather > .card {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-evenly;
+        width: 80%;
+        margin: auto;
+    }
+
+    .card > img {
+        width: 20%;
+        margin: 0 90%;
+    }
+
+    .card > p {
+        width: 90%;
+    }
+    #weather-map >.card>.card-body{
+        border: 10px solid rgb(50, 206, 250);
+        width: 25%;
+        height: 26em;
+    }
+
 }
