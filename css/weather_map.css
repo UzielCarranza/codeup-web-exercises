@@ -194,53 +194,66 @@ footer
 
     #weather >.card {
         display: flex;
-        flex-direction: row;
-        justify-content: space-evenly;
+        flex-direction: column;
+        justify-content: space-around;
         width: 100%;
-        margin: auto;
+        margin: 0;
+        padding: 0;
     }
     #weather >.card>.card-body{
         border: 10px solid rgb(50, 206, 250);
-        width: 25%;
-        height: 26em;
+        width: 100%;
+        padding: 0 !important;
+        margin: 0 !important;
+        display: flex;
+        flex-flow: row wrap;
     }
 
-    .card > img {
-        width: 20%;
-        margin: 0 90%;
+    #weather >.card >.card-body>img {
+        width: 15%;
     }
 
-    .card > p {
-        width: 90%;
+    #weather >.card >.card-body>p {
+        width: 100%;
     }
     #weather-map >.card>.card-body{
         border: 10px solid rgb(50, 206, 250);
         width: 25%;
-        height: 26em;
+
     }
+    .bottom{
+        width: 20% !important;
+        display: flex;
+        flex-flow: row wrap;
+        height: 2em;
+    }
+
 
 }
 
 
-@media only screen and (max-width: 768px) {
-    #weather{
-        display: flex;
-        flex-direction: column;
-        justify-content: space-evenly;
-    }
-    #weather >.card{
-        width: 100%;
-        display: flex;
-        flex-direction: row;
-        flex-wrap: wrap;
-    }
-    #weather >.card>.card-body{
-        border: 10px solid rgb(50, 206, 250);
-        width: 25%;
-        margin: 0;
-        padding: 0;
-    }
-}
+/*@media only screen and (max-width: 600px){*/
+/*    #weather{*/
+/*        display: flex;*/
+/*        flex-direction: column;*/
+/*        justify-content: space-evenly;*/
+/*    }*/
+/*    #weather >.card{*/
+/*        width: 100%;*/
+/*        display: flex;*/
+/*        flex-direction: row;*/
+/*        flex-wrap: wrap;*/
+/*    }*/
+/*    #weather >.card>.card-body{*/
+/*        border: 10px solid rgb(50, 206, 250);*/
+/*        width: 25%;*/
+/*        margin: 0;*/
+/*        padding: 0;*/
+/*    }*/
+/*}*/
+
+
+
 .mapboxgl-ctrl-geocoder--icon-search{
     display: none !important;
 }

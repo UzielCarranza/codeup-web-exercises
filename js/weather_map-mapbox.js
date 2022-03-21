@@ -1,4 +1,3 @@
-
 // //MAP
 mapboxgl.accessToken = MAP_KEY
 let startLan = 41.09
@@ -125,13 +124,15 @@ function getWeatherClick() {
 }
 
 
-$('#directions').click(function (e){
+$('#directions').click(function (e) {
+
     map.addControl(
         new MapboxDirections({
             accessToken: mapboxgl.accessToken
         }),
         'top-right'
     );
+
     map.addControl(new mapboxgl.GeolocateControl({
         positionOptions: {
             enableHighAccuracy: true
@@ -139,14 +140,46 @@ $('#directions').click(function (e){
         trackUserLocation: true
     }))
 
+
+    if (marker) {
+        marker.remove()
+    }
+
+    console.log($('.mapboxgl-ctrl-directions'))
+
 })
 
-
-
-
-
-
-
+//
+// $(document).ready(function(){
+// function handleDirections() {
+//
+//     map.addControl(
+//         new MapboxDirections({
+//             accessToken: mapboxgl.accessToken
+//         }),
+//         'top-right'
+//     );
+//
+//     map.addControl(new mapboxgl.GeolocateControl({
+//         positionOptions: {
+//             enableHighAccuracy: true
+//         },
+//         trackUserLocation: true
+//     }))
+//
+//
+//     if (marker) {
+//         marker.remove()
+//     }
+//
+//
+// }
+//     $('body').on('click', handleDirections)
+//
+//     map.off('dblclick', '#string')
+// })
+//
+//
 
 
 
