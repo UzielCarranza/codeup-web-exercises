@@ -1,6 +1,3 @@
-/** {*/
-/*    border: 1px solid black;*/
-/*}*/
 
 html{
     scroll-behavior: smooth;
@@ -218,8 +215,32 @@ footer
     }
     #weather-map >.card>.card-body{
         border: 10px solid rgb(50, 206, 250);
-        width: 25%;
+        width: 100%;
 
+    }
+    #weather-map >.card {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-around;
+        width: 100%;
+        margin: 0;
+        padding: 0;
+    }
+    #weather-map >.card>.card-body{
+        border: 10px solid rgb(50, 206, 250);
+        width: 100%;
+        padding: 0 !important;
+        margin: 0 !important;
+        display: flex;
+        flex-flow: row wrap;
+    }
+
+    #weather-map >.card >.card-body>img {
+        width: 15%;
+    }
+
+    #weather-map >.card >.card-body>p {
+        width: 100%;
     }
     .bottom{
         width: 20% !important;
