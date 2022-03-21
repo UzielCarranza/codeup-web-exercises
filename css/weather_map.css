@@ -249,7 +249,19 @@ footer
         height: 2em;
     }
 
+    #map {
+        /* the width and height may be set to any size */
+        width: 60%;
+        height: 950px;
+        margin: auto;
+    }
 
+    /*.directions-control-instructions{*/
+    /*    height: 20em;*/
+    /*}*/
+    .mapbox-directions-steps{
+        height: 12em;
+    }
 }
 
 
