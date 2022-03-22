@@ -39,11 +39,13 @@ const languages = ['JavaScript', 'TypeScript', 'React'];
 
 // TODO: rewrite the object literal using object property shorthand
 
-users.push({
-    name: 'uziel',
-    email: 'some@email.com',
-    languages: ['java', 'C', 'JavaScript']
-});
+
+    users.push({
+        name,
+        email,
+        languages
+    });
+console.log(users)
 
 
 
