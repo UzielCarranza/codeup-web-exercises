@@ -45,13 +45,11 @@ users.push({
     email,
     languages
 });
-console.log(users)
 
 
 // TODO: replace `var` with `let` in the following variable declarations
 let emails = [];
 let names = [];
-console.log(emails)
 // TODO: rewrite the following using arrow functions
 
 let developersEmail = () => {
@@ -67,8 +65,6 @@ let developersName = () => {
 }
 developersEmail()
 developersName()
-console.log(names)
-console.log(emails)
 
 
 // TODO: replace `var` with `let` in the following declaration
@@ -77,14 +73,10 @@ users.forEach(function (name) {
     // TODO: rewrite the code below to use object destructuring assignment
     //       note that you can also use destructuring assignment in the function
     //       parameter definition
-    // const name = user.name;
-    // const email = user.email;
-    // const languages = user.languages;
 
     // TODO: rewrite the assignment below to use template strings
     developers.push(`${name.name}'s email is ${name.email}. ${name.name} knows ${languages.join(', ')}`);
 });
-console.log(developers)
 
 // TODO: Use `let` for the following variable
 let list = '<ul>';
@@ -93,10 +85,8 @@ let list = '<ul>';
 for (let developer of developers) {
 
     // TODO: rewrite the assignment below to use template strings
-    list += `'<li> ${developer} </li>`;
+    list += `<li> ${developer} </li>`;
 }
-
-// for (let element of iterable) {
-//     // ...
-// }
 list += '</ul>';
+
+$('body').append(list)
