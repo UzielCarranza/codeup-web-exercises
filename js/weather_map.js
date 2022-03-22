@@ -66,7 +66,7 @@ function fiveDayForecast(data) {
         <p> day ${dailyTemp}${'&#8457'} / night ${tempNight}${'&#8457'}</p>
             <img href="#" class="card-img-top" src="http://openweathermap.org/img/wn/${iconcode}@2x.png"></img>
              <p class="bottom">${currentMain}</p>
-            <p class="d-none d-sm-block">Description: ${currentDescription}</p>
+            <p class="bottom d-none d-sm-block">Description: ${currentDescription}</p>
             <p class="bottom">Humidity: ${humidity}</p>
             <p class="bottom">Wind: ${windSpeed}</p>
             <p class="bottom">Pressure: ${pressure}</p>
