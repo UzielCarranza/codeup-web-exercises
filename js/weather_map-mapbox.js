@@ -114,11 +114,27 @@ function getWeatherClick() {
         }
         marker = getMarker([onClickLng, onClickLat])
 
+        marker.setDraggable(true)
+
+        marker.on('dragend', onDragEnd);
         fetch(`https://api.openweathermap.org/data/2.5/onecall?lat=${onClickLat}&lon=${onClickLng}&units=${units}&appid=${OWM_KEY}`)
             // after response
             .then(response => response.json())
             .then(data => fiveDayForecastMap(data))
     })
+}
+
+function onDragEnd() {
+    const lngLat = marker.getLngLat();
+    coordinates.style.display = 'block';
+    coordinates.innerHTML = `Longitude: ${lngLat.lng}<br />Latitude: ${lngLat.lat}`;
+    let latitudeDrag = `${lngLat.lat}`;
+    let longitudeDrag = `${lngLat.lng}`;
+    console.log(latitudeDrag, longitudeDrag)
+    fetch(`https://api.openweathermap.org/data/2.5/onecall?lat=${latitudeDrag}&lon=${longitudeDrag}&units=${units}&appid=${OWM_KEY}`)
+        // after response
+        .then(response => response.json())
+        .then(data => fiveDayForecastMap(data))
 }
 
 
@@ -146,38 +162,6 @@ $('#directions').click(function (e) {
     console.log($('.mapboxgl-ctrl-directions'))
 
 })
-
-//
-// $(document).ready(function(){
-// function handleDirections() {
-//
-//     map.addControl(
-//         new MapboxDirections({
-//             accessToken: mapboxgl.accessToken
-//         }),
-//         'top-right'
-//     );
-//
-//     map.addControl(new mapboxgl.GeolocateControl({
-//         positionOptions: {
-//             enableHighAccuracy: true
-//         },
-//         trackUserLocation: true
-//     }))
-//
-//
-//     if (marker) {
-//         marker.remove()
-//     }
-//
-//
-// }
-//     $('body').on('click', handleDirections)
-//
-//     map.off('dblclick', '#string')
-// })
-//
-//
 
 
 
