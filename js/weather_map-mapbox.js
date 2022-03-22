@@ -53,7 +53,6 @@ function setGeocoderEventListener() {
         }
         marker = getMarker(e.result.geometry.coordinates);
         popup = getPopup(e.result.place_name, e.result.geometry.coordinates);
-        marker.setDraggable(true)
         marker.setPopup(popup)
         const cityNameText = e.result.text;
         const longitude = e.result.geometry.coordinates[0];
