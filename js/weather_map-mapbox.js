@@ -130,7 +130,6 @@ function onDragEnd() {
     coordinates.innerHTML = `Longitude: ${lngLat.lng}<br />Latitude: ${lngLat.lat}`;
     let latitudeDrag = `${lngLat.lat}`;
     let longitudeDrag = `${lngLat.lng}`;
-    console.log(latitudeDrag, longitudeDrag)
     fetch(`https://api.openweathermap.org/data/2.5/onecall?lat=${latitudeDrag}&lon=${longitudeDrag}&units=${units}&appid=${OWM_KEY}`)
         // after response
         .then(response => response.json())
@@ -158,9 +157,6 @@ $('#directions').click(function (e) {
     if (marker) {
         marker.remove()
     }
-
-    console.log($('.mapboxgl-ctrl-directions'))
-
 })
 
 $( "#directions" ).hover(function() {
