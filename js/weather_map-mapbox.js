@@ -126,8 +126,8 @@ function getWeatherClick() {
 
 function onDragEnd() {
     const lngLat = marker.getLngLat();
-    coordinates.style.display = 'block';
-    coordinates.innerHTML = `Longitude: ${lngLat.lng}<br />Latitude: ${lngLat.lat}`;
+    // coordinates.style.display = 'block';
+    // coordinates.innerHTML = `Longitude: ${lngLat.lng}<br />Latitude: ${lngLat.lat}`;
     let latitudeDrag = `${lngLat.lat}`;
     let longitudeDrag = `${lngLat.lng}`;
     fetch(`https://api.openweathermap.org/data/2.5/onecall?lat=${latitudeDrag}&lon=${longitudeDrag}&units=${units}&appid=${OWM_KEY}`)
