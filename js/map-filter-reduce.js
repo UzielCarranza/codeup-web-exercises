@@ -43,18 +43,25 @@ let knowsThreeLanguages = users.filter(user => user.languages.length >= 3);
 console.log(knowsThreeLanguages)
 
 
-let knows3Languages = users.filter(function (user){
-    return user.languages.length >= 3;
-})
-
-knows3Languages.forEach(function (user){
-    console.log(user.languages)
-})
+// let knows3Languages = users.filter(function (user){
+//     return user.languages.length >= 3;
+// })
+//
+// knows3Languages.forEach(function (user){
+//     console.log(user.languages)
+// })
 
 // Use .map to create an array of strings where each element is a user's email address
 
 let usersEmail = users.map(user => user.email);
 console.log(usersEmail)
+
+// let emailAdresses = users.map(function (user){
+//     return user.email
+// })
+// emailAdresses.forEach(function (user){
+//     console.log(email)
+// })
 
 
 // Use .reduce to get the total years of experience from the list of users. Once you get the total of years you can use the result to calculate the average.
