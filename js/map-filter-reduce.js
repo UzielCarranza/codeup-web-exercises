@@ -62,9 +62,33 @@ let totalYears = users.reduce((total, user) => {
     return total + user.yearsOfExperience
 }, 0) / users.length;
 
-
 console.log(totalYears)
 
 
+// Use .reduce to get the longest email from the list of users.
 
+//
+// let biggestEmaillength = usersEmail.reduce((total, userEmail) =>{
+//     return max
+// }, 0)
+// console.log(biggestEmaillength)
+
+
+function maxValue(emails) {
+    const max = usersEmail.reduce((total, email) => {
+        return total < email ? total : email;
+    });
+    return max;
+}
+
+console.log(maxValue())
+
+// items.reduce(
+//     (accumulator, currentValue) => {
+//         return [
+//             Math.min(currentValue, accumulator[0]),
+//             Math.max(currentValue, accumulator[1])
+//         ];
+//     }, [Number.MAX_VALUE, Number.MIN_VALUE]
+// );
 
