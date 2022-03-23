@@ -43,6 +43,14 @@ let knowsThreeLanguages = users.filter(user => user.languages.length >= 3);
 console.log(knowsThreeLanguages)
 
 
+let knows3Languages = users.filter(function (user){
+    return user.languages.length >= 3;
+})
+
+knows3Languages.forEach(function (user){
+    console.log(user.languages)
+})
+
 // Use .map to create an array of strings where each element is a user's email address
 
 let usersEmail = users.map(user => user.email);
