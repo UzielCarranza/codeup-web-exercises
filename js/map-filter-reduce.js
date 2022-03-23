@@ -95,4 +95,28 @@ let longestEmail = users.reduce((longest, user)=> {
     return longest;
 }, '')
 
-console.log(longestEmail)
+console.log(longestEmail);
+
+
+
+// Use .reduce to get the list of user's names in a single string. Example: Your instructors are: ryan, luis, zach, fernando, justin.
+let instructors = users.reduce((resultString, user)=>{
+    return resultString += user.name + ", ";
+}, 'your instructors are: ')
+
+
+console.log(instructors)
+
+//bonus
+
+let languages = users.reduce((list, user) =>{
+    user.languages.forEach(function (lang){
+        if (!list.includes(lang)){
+            list.push(lang)
+        }
+    })
+
+    return list
+}, [])
+
+console.log(languages)
