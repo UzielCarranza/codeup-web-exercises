@@ -36,10 +36,20 @@ const users = [
     }
 ];
 
-// var evens = numbers.filter(function(n) {
-//     return n % 2 === 0;
-// });
-// console.log(evens); // [2, 4, 6, 8, 10]
 
-let knowsThreeLanguages = users.filter(user => user.languages.length >= 3)
+// Use .filter to create an array of user objects where each user object has at least 3 languages in the languages array.
+
+let knowsThreeLanguages = users.filter(user => user.languages.length >= 3);
 console.log(knowsThreeLanguages)
+
+
+// Use .map to create an array of strings where each element is a user's email address
+
+let usersEmail = users.map(user => user.email);
+console.log(usersEmail)
+
+//
+// var incremented = numbers.map(function(n) {
+//     return n + 1;
+// });
+// console.log(incremented); // [2, 3, 4, 5, 6, 7, 8, 9, 10, 11]
