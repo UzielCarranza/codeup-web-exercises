@@ -79,13 +79,13 @@ users.forEach(function (name) {
 });
 
 // TODO: Use `let` for the following variable
-let list = '<ul>';
+let list = '<ul class="card d-flex flex-row justify-content-between" style="width: 100%;">';
 
 // TODO: rewrite the following loop to use a for..of loop
 for (let developer of developers) {
 
     // TODO: rewrite the assignment below to use template strings
-    list += `<li> ${developer} </li>`;
+    list += `<li class="card-body"> ${developer} </li>`;
 }
 list += '</ul>';
 
