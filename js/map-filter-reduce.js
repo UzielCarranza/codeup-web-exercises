@@ -64,6 +64,10 @@ console.log(usersEmail)
 // })
 
 
+
+
+
+
 // Use .reduce to get the total years of experience from the list of users. Once you get the total of years you can use the result to calculate the average.
 
 
@@ -84,3 +88,11 @@ function maxValue(emails) {
 
 console.log(maxValue())
 
+let longestEmail = users.reduce((longest, user)=> {
+    if (user.email.length > longest.length){
+        longest = user.email;
+    }
+    return longest;
+}, '')
+
+console.log(longestEmail)
