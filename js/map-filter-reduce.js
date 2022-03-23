@@ -35,3 +35,11 @@ const users = [
         yearsOfExperience: 9
     }
 ];
+
+// var evens = numbers.filter(function(n) {
+//     return n % 2 === 0;
+// });
+// console.log(evens); // [2, 4, 6, 8, 10]
+
+let knowsThreeLanguages = users.filter(user => user.languages.length >= 3)
+console.log(knowsThreeLanguages)
