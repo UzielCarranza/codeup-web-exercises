@@ -22,3 +22,20 @@ function getCommetLastCommit(username) {
         .then(data => data.json())
         .then(data => console.log(data[0].payload.commits[0].message))
 }
+
+
+function getUserLastPush(username) {
+    return fetch(`https://api.github.com/users/${username}/events/public`)
+        .then(res => res.json())
+        .then(events => {
+            for (let event of events) {
+                if (event.type === 'PushEvent') {
+                    console.log(event)
+
+                    return event;
+                }
+            }
+        })
+}
+
+getUserLastPush("UzielCarranza")
