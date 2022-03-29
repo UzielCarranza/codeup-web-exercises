@@ -8,12 +8,11 @@ fetch(url, {headers: {'Authorization': GIT_HUB}})
     .then(data => console.log(data[0].commit.author.date))
 
 
-// function getUser(username) {
-//     return fetch(`https://api.github.com/users/${login}`)
-//         .then(response => response.json())
-//         .then(response => {
-//             return response;
-//         })
-// }
-//
-// console.log(getUser());
+
+
+const url2 = 'https://api.github.com/users/UzielCarranza/events';
+// https://api.github.com/repos/gmPuryear/codeup-web-exercises/commits
+
+fetch(url2, {headers: {'Authorization': GIT_HUB}})
+    .then(data => data.json())
+    .then(data => console.log(data[0].payload.commits[0].message))
